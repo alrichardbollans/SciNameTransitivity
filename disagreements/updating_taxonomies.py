@@ -207,8 +207,8 @@ def get_all_databases():
     return v10_taxa, v11_taxa, v12_taxa, v13_taxa
 
 
-def summarise_results(dir_path: str, tag: str):
-    old_record_summary = pd.read_csv(os.path.join(dir_path, 'v10_old_records_summary.csv'), index_col=0)
+def summarise_results(dir_path: str, tag: str, old_tag = 'v10'):
+    old_record_summary = pd.read_csv(os.path.join(dir_path, f'{old_tag}_old_records_summary.csv'), index_col=0)
     num_of_original_names = int(old_record_summary.at['unique', 'taxon_name_w_authors'])
 
     total_results = pd.read_csv(os.path.join(dir_path, 'all_results.csv'))

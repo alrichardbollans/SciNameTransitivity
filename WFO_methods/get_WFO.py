@@ -21,26 +21,20 @@ ranks_to_use = list(sorted(
 
 
 def parse_wfo_data(all_wfo_data):
+    ## Get a copy that wont be edited, just for sanity checks
     all_wfo_data_untouched = all_wfo_data.copy(deep=True)
-    ### Check statuses in data
-    statuses = all_wfo_data['taxonomicStatus'].dropna().unique().tolist()
-    assert (list(sorted(statuses)) == ['Accepted', 'Synonym', 'Unchecked']) or (
-            statuses == ['Synonym', 'Doubtful', 'Accepted', 'heterotypicSynonym', 'homotypicSynonym'])
 
     # restrict to genus and lower
-
+    # some genus names werent correctly set
+    all_wfo_data['genus'] = np.where(all_wfo_data['taxonRank'] == 'genus', all_wfo_data['scientificName'], all_wfo_data['genus'])
     all_wfo_data = all_wfo_data[~all_wfo_data['genus'].isna()]
 
     all_wfo_data['taxonRank'] = all_wfo_data['taxonRank'].str.lower()  # in old version they use upper case :(
-    ahhhh = list(sorted(all_wfo_data['taxonRank'].unique().tolist()))
-    for a in ahhhh:
-        assert a in ranks_to_use
 
     ### set scientificnames to include authors
     all_wfo_data['taxon_name_w_authors'] = all_wfo_data['scientificName'] + ' ' + all_wfo_data['scientificNameAuthorship'].fillna('').astype(str)
 
     ## Add a species name
-
     print(all_wfo_data['taxonRank'].unique().tolist())
     all_wfo_data['species_name'] = np.where(all_wfo_data['taxonRank'] == 'genus', np.nan,
                                             all_wfo_data['genus'] + ' ' + all_wfo_data['specificEpithet'].fillna('').astype(str))
@@ -51,39 +45,48 @@ def parse_wfo_data(all_wfo_data):
     ### Remove instances without accepted ids
     resolved_wfo_data = all_wfo_data.dropna(subset=['accepted_name_id'])
 
-    ### Check statuses again
-    statuses = resolved_wfo_data['taxonomicStatus'].unique().tolist()
-    assert (list(sorted(statuses)) == ['Accepted', 'Synonym']) or (
-            statuses == ['Synonym', 'Accepted', 'heterotypicSynonym', 'homotypicSynonym'])
-
     ### Use the accepted IDs to get accepted names from the original dataframe
     accepted_data = all_wfo_data[all_wfo_data['taxonomicStatus'] == 'Accepted'][['taxonID', 'taxon_name_w_authors', 'species_name', 'genus']]
     accepted_data = accepted_data.dropna(subset=['taxonID'])
     accepted_data = accepted_data.rename(
         columns={'taxonID': 'acc_id', 'taxon_name_w_authors': 'accepted_name_w_author', 'species_name': 'accepted_species',
                  'genus': 'accepted_genus'})
+
     resolved_wfo_data = pd.merge(resolved_wfo_data, accepted_data, how='left', left_on=['accepted_name_id'], right_on=['acc_id'])
 
+    ###################
     ### Sanity checks
     accepted_check = resolved_wfo_data[resolved_wfo_data['taxonomicStatus'] == 'Accepted']
     pd.testing.assert_series_equal(accepted_check['taxon_name_w_authors'], accepted_data['accepted_name_w_author'], check_names=False,
                                    check_index=False)
 
+    ### Check statuses in data
+    statuses = all_wfo_data_untouched['taxonomicStatus'].dropna().unique().tolist()
+    assert (list(sorted(statuses)) == ['Accepted', 'Synonym', 'Unchecked']) or (
+            statuses == ['Synonym', 'Doubtful', 'Accepted', 'heterotypicSynonym', 'homotypicSynonym'])
+
+    ### Check statuses again
+    statuses = resolved_wfo_data['taxonomicStatus'].unique().tolist()
+    assert (list(sorted(statuses)) == ['Accepted', 'Synonym']) or (
+            statuses == ['Synonym', 'Accepted', 'heterotypicSynonym', 'homotypicSynonym'])
+
+    ahhhh = list(sorted(all_wfo_data['taxonRank'].unique().tolist()))
+    for a in ahhhh:
+        assert a in ranks_to_use
+
     # Cases where accepted_ids in resolved_wfo_data aren't found in accepted_data
     nan_issues = resolved_wfo_data[resolved_wfo_data['accepted_name_w_author'].isna()]
     if len(nan_issues) > 0:
-        # In old version, some taxa resolve to an ID which just isn't in the data but these won't be included anyway
-        # should_be_accepted = all_wfo_data_untouched[all_wfo_data_untouched['taxonID'].isin(nan_issues['accepted_name_id'].values)]
-        # should_be_accepted2 = accepted_data[accepted_data['acc_id'].isin(nan_issues['accepted_name_id'].values)]
+        # In old version, some taxa resolve to an ID which isn't counted as accepted. These will just be removed
+        to_check = resolved_wfo_data[~resolved_wfo_data['accepted_name_id'].isin(accepted_data['acc_id'].values)]
+        things_that_have_been_removed = all_wfo_data_untouched[all_wfo_data_untouched['taxonID'].isin(to_check['accepted_name_id'].values)]
+        to_check2 = resolved_wfo_data[~resolved_wfo_data['accepted_name_id'].isin(all_wfo_data_untouched['taxonID'].values)]
 
-        dataset_issues = all_wfo_data_untouched[all_wfo_data_untouched['acceptedNameUsageID'].isna()]
-        dataset_issues2 = all_wfo_data_untouched[~all_wfo_data_untouched['acceptedNameUsageID'].isin(all_wfo_data_untouched['taxonID'].values)]
-
-        non_issues = nan_issues[nan_issues['taxonID'].isin(dataset_issues['taxonID'].values)]
-
-        should_be_accepted3 = all_wfo_data[all_wfo_data['taxonID'].isin(nan_issues['accepted_name_id'].values)]
-        assert should_be_accepted3['taxonomicStatus'].tolist() == ['Doubtful']
-        assert len(nan_issues) < 25
+        what_are_these = all_wfo_data_untouched[all_wfo_data_untouched['taxonID'].isin(nan_issues['accepted_name_id'].values)]
+        what_are_these = what_are_these[
+            ~what_are_these['taxonRank'].isin(['family', 'tribe', 'subfamily', 'order', 'class', 'subtribe'])]  # a family/tribe etc.. was erroneously included
+        print(what_are_these['taxonomicStatus'].unique().tolist())
+        assert 'Accepted' not in what_are_these['taxonomicStatus'].values
 
     ## Only return cases with accepted names
     resolved_wfo_data = resolved_wfo_data.dropna(subset=['accepted_name_w_author'])

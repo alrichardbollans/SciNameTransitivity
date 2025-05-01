@@ -1,12 +1,12 @@
-,taxon_name_w_authors,v11_accepted_name_w_author,v12_taxon_name_w_authors,v12_chained_accepted_name_w_author,v12_chained_accepted_species_w_author,v12_direct_accepted_name_w_author,v12_direct_accepted_species_w_author
-2000,Cyathea insularis Domin,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. boivinii,Gymnosphaera boivinii (Mett. ex Ettingsh.) Tardieu
-31122,Eucalyptus pseudoglobulus Naudin ex Maiden,Eucalyptus stjohnii (F.Muell. ex R.T.Baker) R.T.Baker,Eucalyptus stjohnii (F.Muell. ex R.T.Baker) R.T.Baker,,,Eucalyptus pseudoglobulus Naudin ex Maiden,Eucalyptus pseudoglobulus Naudin ex Maiden
-450226,Gymnosphaera melanotricha (Tardieu) Tardieu,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. lobata (Rakotondr.) S.Y.Dong,Gymnosphaera boivinii (Mett. ex Ettingsh.) Tardieu
-450227,Alsophila castanea Baker,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. boivinii,Gymnosphaera boivinii (Mett. ex Ettingsh.) Tardieu
-450228,Alsophila melanotricha Tardieu,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. lobata (Rakotondr.) S.Y.Dong,Gymnosphaera boivinii (Mett. ex Ettingsh.) Tardieu
-450229,Cyathea badia Domin,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. boivinii,Gymnosphaera boivinii (Mett. ex Ettingsh.) Tardieu
-450230,Cyathea melanotricha (Tardieu) Tindale,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. lobata (Rakotondr.) S.Y.Dong,Gymnosphaera boivinii (Mett. ex Ettingsh.) Tardieu
-450231,Cyathea rigidula Baker,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. boivinii,Gymnosphaera boivinii (Mett. ex Ettingsh.) Tardieu
-1141469,Eucalyptus globulus subsp. pseudoglobulus (Naudin ex Maiden) J.B.Kirkp.,Eucalyptus stjohnii (F.Muell. ex R.T.Baker) R.T.Baker,Eucalyptus stjohnii (F.Muell. ex R.T.Baker) R.T.Baker,,,Eucalyptus pseudoglobulus Naudin ex Maiden,Eucalyptus pseudoglobulus Naudin ex Maiden
-1198594,Carthamus lanatus var. baeticus (Boiss. & Reut.) Cout.,Carthamus lanatus subsp. lanatus,Carthamus lanatus subsp. lanatus,,,Carthamus creticus L.,Carthamus creticus L.
-1198595,Carthamus lanatus subsp. baeticus (Boiss. & Reut.) Nyman,Carthamus lanatus subsp. lanatus,Carthamus lanatus subsp. lanatus,,,Carthamus creticus L.,Carthamus creticus L.
+,taxon_name_w_authors,v11_accepted_name_w_author,v12_taxon_name_w_authors,v12_chained_accepted_name_w_author,v12_chained_accepted_species,v12_direct_accepted_name_w_author,v12_direct_accepted_species
+2000,Cyathea insularis Domin,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. boivinii,Gymnosphaera boivinii
+31122,Eucalyptus pseudoglobulus Naudin ex Maiden,Eucalyptus stjohnii (F.Muell. ex R.T.Baker) R.T.Baker,Eucalyptus stjohnii (F.Muell. ex R.T.Baker) R.T.Baker,,,Eucalyptus pseudoglobulus Naudin ex Maiden,Eucalyptus pseudoglobulus
+450226,Gymnosphaera melanotricha (Tardieu) Tardieu,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. lobata (Rakotondr.) S.Y.Dong,Gymnosphaera boivinii
+450227,Alsophila castanea Baker,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. boivinii,Gymnosphaera boivinii
+450228,Alsophila melanotricha Tardieu,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. lobata (Rakotondr.) S.Y.Dong,Gymnosphaera boivinii
+450229,Cyathea badia Domin,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. boivinii,Gymnosphaera boivinii
+450230,Cyathea melanotricha (Tardieu) Tindale,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. lobata (Rakotondr.) S.Y.Dong,Gymnosphaera boivinii
+450231,Cyathea rigidula Baker,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. boivinii,Gymnosphaera boivinii
+1141469,Eucalyptus globulus subsp. pseudoglobulus (Naudin ex Maiden) J.B.Kirkp.,Eucalyptus stjohnii (F.Muell. ex R.T.Baker) R.T.Baker,Eucalyptus stjohnii (F.Muell. ex R.T.Baker) R.T.Baker,,,Eucalyptus pseudoglobulus Naudin ex Maiden,Eucalyptus pseudoglobulus
+1198594,Carthamus lanatus var. baeticus (Boiss. & Reut.) Cout.,Carthamus lanatus subsp. lanatus,Carthamus lanatus subsp. lanatus,,,Carthamus creticus L.,Carthamus creticus
+1198595,Carthamus lanatus subsp. baeticus (Boiss. & Reut.) Nyman,Carthamus lanatus subsp. lanatus,Carthamus lanatus subsp. lanatus,,,Carthamus creticus L.,Carthamus creticus

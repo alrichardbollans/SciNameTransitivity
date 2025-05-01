@@ -1,20 +1,20 @@
-,taxon_name_w_authors,v10_accepted_name_w_author,v13_taxon_name_w_authors,v13_chained_accepted_name_w_author,v13_chained_accepted_species_w_author,v13_direct_accepted_name_w_author,v13_direct_accepted_species_w_author
-9004,Attalea polysticha (Burret) Wess.Boer,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii (Trail ex Thurn) Wess.Boer
-9005,Orbignya polysticha Burret,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii (Trail ex Thurn) Wess.Boer
-9006,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii (Trail ex Thurn) Wess.Boer
-9007,Orbignya sabulosa Barb.Rodr.,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii (Trail ex Thurn) Wess.Boer
-9008,Attalea agrestis Barb.Rodr.,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii (Trail ex Thurn) Wess.Boer
-9009,Orbignya sagotii Trail ex Thurn,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii (Trail ex Thurn) Wess.Boer
-397900,Carthamus lanatus var. baeticus (Boiss. & Reut.) Cout.,Carthamus lanatus subsp. lanatus,Carthamus lanatus subsp. lanatus,,,Carthamus creticus L.,Carthamus creticus L.
-397901,Carthamus lanatus subsp. baeticus (Boiss. & Reut.) Nyman,Carthamus lanatus subsp. lanatus,Carthamus lanatus subsp. lanatus,,,Carthamus creticus L.,Carthamus creticus L.
-397902,Centaurea lanata (L.) Lam. & DC.,Carthamus lanatus subsp. lanatus,Carthamus lanatus subsp. lanatus,,,Phonus lanatus (L.) Hill,Phonus lanatus (L.) Hill
-444118,Alsophila melanotricha Tardieu,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. lobata (Rakotondr.) S.Y.Dong,Gymnosphaera boivinii (Mett. ex Ettingsh.) Tardieu
-444119,Cyathea badia Domin,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. boivinii,Gymnosphaera boivinii (Mett. ex Ettingsh.) Tardieu
-444120,Cyathea insularis Domin,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. boivinii,Gymnosphaera boivinii (Mett. ex Ettingsh.) Tardieu
-444121,Cyathea melanotricha (Tardieu) Tindale,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. lobata (Rakotondr.) S.Y.Dong,Gymnosphaera boivinii (Mett. ex Ettingsh.) Tardieu
-444122,Cyathea rigidula Baker,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. boivinii,Gymnosphaera boivinii (Mett. ex Ettingsh.) Tardieu
-444123,Gymnosphaera melanotricha (Tardieu) Tardieu,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. lobata (Rakotondr.) S.Y.Dong,Gymnosphaera boivinii (Mett. ex Ettingsh.) Tardieu
-444124,Alsophila castanea Baker,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. boivinii,Gymnosphaera boivinii (Mett. ex Ettingsh.) Tardieu
-585984,"Narcissus miniatus Donn.-Morg., Koop. & Zonn.",Narcissus deficiens Herb.,Narcissus deficiens Herb.,,,"Narcissus miniatus Donn.-Morg., Koop. & Zonn.","Narcissus miniatus Donn.-Morg., Koop. & Zonn."
-585985,Narcissus miniatus subsp. orientalis M.Salmon,Narcissus deficiens Herb.,Narcissus deficiens Herb.,,,"Narcissus miniatus Donn.-Morg., Koop. & Zonn.","Narcissus miniatus Donn.-Morg., Koop. & Zonn."
-1119394,Orbignya agrestis (Barb.Rodr.) Burret,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii (Trail ex Thurn) Wess.Boer
+,taxon_name_w_authors,v10_accepted_name_w_author,v13_taxon_name_w_authors,v13_chained_accepted_name_w_author,v13_chained_accepted_species,v13_direct_accepted_name_w_author,v13_direct_accepted_species
+9004,Attalea polysticha (Burret) Wess.Boer,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii
+9005,Orbignya polysticha Burret,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii
+9006,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii
+9007,Orbignya sabulosa Barb.Rodr.,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii
+9008,Attalea agrestis Barb.Rodr.,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii
+9009,Orbignya sagotii Trail ex Thurn,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii
+397900,Carthamus lanatus var. baeticus (Boiss. & Reut.) Cout.,Carthamus lanatus subsp. lanatus,Carthamus lanatus subsp. lanatus,,,Carthamus creticus L.,Carthamus creticus
+397901,Carthamus lanatus subsp. baeticus (Boiss. & Reut.) Nyman,Carthamus lanatus subsp. lanatus,Carthamus lanatus subsp. lanatus,,,Carthamus creticus L.,Carthamus creticus
+397902,Centaurea lanata (L.) Lam. & DC.,Carthamus lanatus subsp. lanatus,Carthamus lanatus subsp. lanatus,,,Phonus lanatus (L.) Hill,Phonus lanatus
+444118,Alsophila melanotricha Tardieu,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. lobata (Rakotondr.) S.Y.Dong,Gymnosphaera boivinii
+444119,Cyathea badia Domin,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. boivinii,Gymnosphaera boivinii
+444120,Cyathea insularis Domin,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. boivinii,Gymnosphaera boivinii
+444121,Cyathea melanotricha (Tardieu) Tindale,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. lobata (Rakotondr.) S.Y.Dong,Gymnosphaera boivinii
+444122,Cyathea rigidula Baker,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. boivinii,Gymnosphaera boivinii
+444123,Gymnosphaera melanotricha (Tardieu) Tardieu,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. lobata (Rakotondr.) S.Y.Dong,Gymnosphaera boivinii
+444124,Alsophila castanea Baker,Alsophila bullata Baker,Alsophila bullata Baker,,,Gymnosphaera boivinii var. boivinii,Gymnosphaera boivinii
+585984,"Narcissus miniatus Donn.-Morg., Koop. & Zonn.",Narcissus deficiens Herb.,Narcissus deficiens Herb.,,,"Narcissus miniatus Donn.-Morg., Koop. & Zonn.",Narcissus miniatus
+585985,Narcissus miniatus subsp. orientalis M.Salmon,Narcissus deficiens Herb.,Narcissus deficiens Herb.,,,"Narcissus miniatus Donn.-Morg., Koop. & Zonn.",Narcissus miniatus
+1119394,Orbignya agrestis (Barb.Rodr.) Burret,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii

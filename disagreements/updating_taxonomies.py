@@ -51,13 +51,13 @@ def chain_two_databases(older_taxa_version: pd.DataFrame, newer_taxa_version: pd
     relevant_v13_names_for_chaining = v12_records[old_tag + '_accepted_name_w_author'].dropna().unique().tolist()
     # names in new database where taxon name is accepted name in old database
     v13_records_for_chaining = newer_taxa_version[newer_taxa_version['taxon_name_w_authors'].isin(relevant_v13_names_for_chaining)][
-        ['taxon_name_w_authors', 'accepted_name_w_author', 'accepted_species_w_author']]
+        ['taxon_name_w_authors', 'accepted_name_w_author', 'accepted_species']]
     v13_records_for_chaining = v13_records_for_chaining.drop_duplicates(keep='first')
     v13_records_for_chaining = v13_records_for_chaining.drop_duplicates(subset=['taxon_name_w_authors'],
                                                                         keep=False)  # Ignore cases with multiple resolutions, as these are ambiguous anyway
     v13_records_for_chaining = v13_records_for_chaining.rename(
         columns={'taxon_name_w_authors': new_tag + '_taxon_name_w_authors', 'accepted_name_w_author': new_tag + '_chained_accepted_name_w_author',
-                 'accepted_species_w_author': new_tag + '_chained_accepted_species_w_author'})
+                 'accepted_species': new_tag + '_chained_accepted_species'})
     # chained result where taxon_name_w_authors are resolved to v13_chained_accepted_name_w_author, mediated by old database
     chained_updated_records = pd.merge(v12_records, v13_records_for_chaining, left_on=old_tag + '_accepted_name_w_author',
                                        right_on=new_tag + '_taxon_name_w_authors')
@@ -71,14 +71,14 @@ def get_direct_name_updates(v12_taxa: pd.DataFrame, v13_taxa: pd.DataFrame, new_
 
     # relevant names in new database where taxon name is taxon name in old database
     v13_updated_records = v13_taxa[v13_taxa['taxon_name_w_authors'].isin(unique_names)][
-        ['taxon_name_w_authors', 'accepted_name_w_author', 'accepted_species_w_author']]
+        ['taxon_name_w_authors', 'accepted_name_w_author', 'accepted_species']]
     v13_updated_records = v13_updated_records.dropna(subset=['accepted_name_w_author'])
     v13_updated_records = v13_updated_records.drop_duplicates(keep='first')
     v13_updated_records = v13_updated_records.drop_duplicates(subset=['taxon_name_w_authors'],
                                                               keep=False)  # Ignore cases with multiple resolutions, as these are ambiguous anyway
     v13_updated_records = v13_updated_records.rename(
         columns={'accepted_name_w_author': new_tag + '_direct_accepted_name_w_author',
-                 'accepted_species_w_author': new_tag + '_direct_accepted_species_w_author'})
+                 'accepted_species': new_tag + '_direct_accepted_species'})
     v13_updated_records.describe(include='all').to_csv(os.path.join(out_dir, 'direct_updated_records_summary.csv'))
 
     return v13_updated_records
@@ -103,17 +103,17 @@ def compare_and_output_chained_and_direct_updates(chained_updated_records, direc
     results_df.to_csv(os.path.join(out_dir, 'all_results.csv'))
     results_df.describe(include='all').to_csv(os.path.join(out_dir, 'all_results_summary.csv'))
 
-    species_ambiguity_results = results_df.dropna(subset=[new_tag + '_direct_accepted_species_w_author'])
+    species_ambiguity_results = results_df.dropna(subset=[new_tag + '_direct_accepted_species'])
     species_ambiguity_results = species_ambiguity_results[
-        species_ambiguity_results[new_tag + '_direct_accepted_species_w_author'] != species_ambiguity_results[
-            new_tag + '_chained_accepted_species_w_author']]
+        species_ambiguity_results[new_tag + '_direct_accepted_species'] != species_ambiguity_results[
+            new_tag + '_chained_accepted_species']]
 
     species_ambiguity_results.to_csv(os.path.join(out_dir, 'species_results.csv'))
     species_ambiguity_results.describe(include='all').to_csv(os.path.join(out_dir, 'species_results_summary.csv'))
 
-    species_ambiguity_results[new_tag + '_chained_accepted_genus'] = species_ambiguity_results[new_tag + '_chained_accepted_species_w_author'].apply(
+    species_ambiguity_results[new_tag + '_chained_accepted_genus'] = species_ambiguity_results[new_tag + '_chained_accepted_species'].apply(
         get_genus_from_full_name)
-    species_ambiguity_results[new_tag + '_direct_accepted_genus'] = species_ambiguity_results[new_tag + '_direct_accepted_species_w_author'].apply(
+    species_ambiguity_results[new_tag + '_direct_accepted_genus'] = species_ambiguity_results[new_tag + '_direct_accepted_species'].apply(
         get_genus_from_full_name)
 
     genus_ambiguity_results = species_ambiguity_results.dropna(subset=[new_tag + '_direct_accepted_genus'])
@@ -155,14 +155,14 @@ def compare_all_pairs():
                          'v10', 'v13')
     compare_two_versions(v10_taxa, v12_taxa,
                          'v10', 'v12')
-    # compare_two_versions(v11_taxa, v13_taxa,
-    #                      'v11', 'v13')
+    compare_two_versions(v11_taxa, v13_taxa,
+                         'v11', 'v13')
 
     compare_two_versions(v10_taxa, v11_taxa,
                          'v10', 'v11')
-    # compare_two_versions(v11_taxa, v12_taxa,
-    #                      'v11', 'v12')
-    # compare_two_versions(v12_taxa, v13_taxa, 'v12', 'v13')
+    compare_two_versions(v11_taxa, v12_taxa,
+                         'v11', 'v12')
+    compare_two_versions(v12_taxa, v13_taxa, 'v12', 'v13')
 
 
 def full_chain_results():

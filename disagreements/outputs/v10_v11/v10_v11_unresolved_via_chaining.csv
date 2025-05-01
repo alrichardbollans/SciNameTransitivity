@@ -1,13 +1,13 @@
-,taxon_name_w_authors,v10_accepted_name_w_author,v11_taxon_name_w_authors,v11_chained_accepted_name_w_author,v11_chained_accepted_species_w_author,v11_direct_accepted_name_w_author,v11_direct_accepted_species_w_author
-9058,Attalea polysticha (Burret) Wess.Boer,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii (Trail ex Thurn) Wess.Boer
-9059,Orbignya polysticha Burret,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii (Trail ex Thurn) Wess.Boer
-9060,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii (Trail ex Thurn) Wess.Boer
-9061,Orbignya sabulosa Barb.Rodr.,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii (Trail ex Thurn) Wess.Boer
-9062,Attalea agrestis Barb.Rodr.,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii (Trail ex Thurn) Wess.Boer
-9063,Orbignya sagotii Trail ex Thurn,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii (Trail ex Thurn) Wess.Boer
-134187,Widdringtonia cedarbergensis J.A.Marsh,Widdringtonia wallichii Endl. ex Carrière,Widdringtonia wallichii Endl. ex Carrière,,,Widdringtonia cedarbergensis J.A.Marsh,Widdringtonia cedarbergensis J.A.Marsh
-461866,Cirsium szovitsii (K.Koch) Boiss.,Cirsium ciliatum subsp. szovitsii (K.Koch) Petr.,Cirsium ciliatum subsp. szovitsii (K.Koch) Petr.,,,"Lophiolepis ciliata subsp. szovitsii (K.Koch) Bureš, Del Guacchio, Iamonico & P.Caputo","Lophiolepis ciliata (Murray) Del Guacchio, Bureš, Iamonico & P.Caputo"
-461868,Epitrachys szovitsii K.Koch,Cirsium ciliatum subsp. szovitsii (K.Koch) Petr.,Cirsium ciliatum subsp. szovitsii (K.Koch) Petr.,,,"Lophiolepis ciliata subsp. szovitsii (K.Koch) Bureš, Del Guacchio, Iamonico & P.Caputo","Lophiolepis ciliata (Murray) Del Guacchio, Bureš, Iamonico & P.Caputo"
-593299,"Narcissus miniatus Donn.-Morg., Koop. & Zonn.",Narcissus deficiens Herb.,Narcissus deficiens Herb.,,,"Narcissus miniatus Donn.-Morg., Koop. & Zonn.","Narcissus miniatus Donn.-Morg., Koop. & Zonn."
-593300,Narcissus miniatus subsp. orientalis M.Salmon,Narcissus deficiens Herb.,Narcissus deficiens Herb.,,,"Narcissus miniatus Donn.-Morg., Koop. & Zonn.","Narcissus miniatus Donn.-Morg., Koop. & Zonn."
-1133198,Orbignya agrestis (Barb.Rodr.) Burret,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii (Trail ex Thurn) Wess.Boer
+,taxon_name_w_authors,v10_accepted_name_w_author,v11_taxon_name_w_authors,v11_chained_accepted_name_w_author,v11_chained_accepted_species,v11_direct_accepted_name_w_author,v11_direct_accepted_species
+9058,Attalea polysticha (Burret) Wess.Boer,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii
+9059,Orbignya polysticha Burret,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii
+9060,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii
+9061,Orbignya sabulosa Barb.Rodr.,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii
+9062,Attalea agrestis Barb.Rodr.,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii
+9063,Orbignya sagotii Trail ex Thurn,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii
+134187,Widdringtonia cedarbergensis J.A.Marsh,Widdringtonia wallichii Endl. ex Carrière,Widdringtonia wallichii Endl. ex Carrière,,,Widdringtonia cedarbergensis J.A.Marsh,Widdringtonia cedarbergensis
+461866,Cirsium szovitsii (K.Koch) Boiss.,Cirsium ciliatum subsp. szovitsii (K.Koch) Petr.,Cirsium ciliatum subsp. szovitsii (K.Koch) Petr.,,,"Lophiolepis ciliata subsp. szovitsii (K.Koch) Bureš, Del Guacchio, Iamonico & P.Caputo",Lophiolepis ciliata
+461868,Epitrachys szovitsii K.Koch,Cirsium ciliatum subsp. szovitsii (K.Koch) Petr.,Cirsium ciliatum subsp. szovitsii (K.Koch) Petr.,,,"Lophiolepis ciliata subsp. szovitsii (K.Koch) Bureš, Del Guacchio, Iamonico & P.Caputo",Lophiolepis ciliata
+593299,"Narcissus miniatus Donn.-Morg., Koop. & Zonn.",Narcissus deficiens Herb.,Narcissus deficiens Herb.,,,"Narcissus miniatus Donn.-Morg., Koop. & Zonn.",Narcissus miniatus
+593300,Narcissus miniatus subsp. orientalis M.Salmon,Narcissus deficiens Herb.,Narcissus deficiens Herb.,,,"Narcissus miniatus Donn.-Morg., Koop. & Zonn.",Narcissus miniatus
+1133198,Orbignya agrestis (Barb.Rodr.) Burret,Attalea microcarpa Mart.,Attalea microcarpa Mart.,,,Attalea sagotii (Trail ex Thurn) Wess.Boer,Attalea sagotii

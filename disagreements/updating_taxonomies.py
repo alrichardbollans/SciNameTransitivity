@@ -151,16 +151,18 @@ def compare_two_versions(v12_taxa: pd.DataFrame, v13_taxa: pd.DataFrame, old_tag
 def compare_all_pairs():
     v10_taxa, v11_taxa, v12_taxa, v13_taxa = get_all_databases()
 
-    # compare_two_versions(v12_taxa, v13_taxa, 'v12', 'v13')
     compare_two_versions(v10_taxa, v13_taxa,
                          'v10', 'v13')
-    compare_two_versions(v11_taxa, v13_taxa,
-                         'v11', 'v13')
+    compare_two_versions(v10_taxa, v12_taxa,
+                         'v10', 'v12')
+    # compare_two_versions(v11_taxa, v13_taxa,
+    #                      'v11', 'v13')
 
     compare_two_versions(v10_taxa, v11_taxa,
                          'v10', 'v11')
-    compare_two_versions(v11_taxa, v12_taxa,
-                         'v11', 'v12')
+    # compare_two_versions(v11_taxa, v12_taxa,
+    #                      'v11', 'v12')
+    # compare_two_versions(v12_taxa, v13_taxa, 'v12', 'v13')
 
 
 def full_chain_results():
@@ -187,15 +189,10 @@ def full_chain_results():
 
 
 def get_all_databases():
-    # v10_taxa = get_all_taxa(version='10')
-    # v11_taxa = get_all_taxa(version='11')
-    # v12_taxa = get_all_taxa(version='12')
-    # v13_taxa = get_all_taxa(version=None)
-    #
-    # v10_taxa.to_csv(os.path.join('inputs', 'v10_taxa.csv'))
-    # v11_taxa.to_csv(os.path.join('inputs', 'v11_taxa.csv'))
-    # v12_taxa.to_csv(os.path.join('inputs', 'v12_taxa.csv'))
-    # v13_taxa.to_csv(os.path.join('inputs', 'v13_taxa.csv'))
+    # v10_taxa = get_all_taxa(version='10', output_csv=os.path.join('inputs', 'v10_taxa.csv'))
+    # v11_taxa = get_all_taxa(version='11', output_csv=os.path.join('inputs', 'v11_taxa.csv'))
+    # v12_taxa = get_all_taxa(version='12', output_csv=os.path.join('inputs', 'v12_taxa.csv'))
+    # v13_taxa = get_all_taxa(version=None, output_csv=os.path.join('inputs', 'v13_taxa.csv'))
 
     v10_taxa = pd.read_csv(os.path.join('inputs', 'v10_taxa.csv'), index_col=0)
     v11_taxa = pd.read_csv(os.path.join('inputs', 'v11_taxa.csv'), index_col=0)
@@ -210,31 +207,35 @@ def get_all_databases():
     return v10_taxa, v11_taxa, v12_taxa, v13_taxa
 
 
-def summarise_results():
-    old_record_summary = pd.read_csv(os.path.join('outputs', 'v10_v13', 'v10_old_records_summary.csv'), index_col=0)
+def summarise_results(dir_path: str, tag: str):
+    old_record_summary = pd.read_csv(os.path.join(dir_path, 'v10_old_records_summary.csv'), index_col=0)
     num_of_original_names = int(old_record_summary.at['unique', 'taxon_name_w_authors'])
 
-    total_results = pd.read_csv(os.path.join('outputs', 'v10_v13', 'all_results.csv'))
+    total_results = pd.read_csv(os.path.join(dir_path, 'all_results.csv'))
     num_total_results = len(total_results['taxon_name_w_authors'].unique().tolist())
 
-    species_results = pd.read_csv(os.path.join('outputs', 'v10_v13', 'species_results.csv'))
+    species_results = pd.read_csv(os.path.join(dir_path, 'species_results.csv'))
     num_species_results = len(species_results['taxon_name_w_authors'].unique().tolist())
 
-    genus_results = pd.read_csv(os.path.join('outputs', 'v10_v13', 'genus_results.csv'))
+    genus_results = pd.read_csv(os.path.join(dir_path, 'genus_results.csv'))
     num_genus_results = len(genus_results['taxon_name_w_authors'].unique().tolist())
 
-    unresolved = pd.read_csv(os.path.join('outputs', 'v10_v13', 'v10_v13_unresolved_via_chaining.csv'))
+    unresolved = pd.read_csv(os.path.join(dir_path, f'{tag}_unresolved_via_chaining.csv'))
     num_unresolved = len(unresolved['taxon_name_w_authors'].unique().tolist())
 
-
     out_df = pd.DataFrame([num_of_original_names, num_total_results, num_species_results, num_genus_results, num_unresolved])
-    out_df.columns = ['v10_v13']
+    out_df.columns = [tag]
     out_df.index = ['original_names', 'total_disagreements', 'species_disagreements', 'genus_disagreements', 'unresolved_via_chaining']
-    out_df.to_csv(os.path.join('outputs', 'v10_v13', 'result_summary.csv'))
+
+    out_df['Percentages'] = 100* out_df[tag] / num_of_original_names
+    out_df.to_csv(os.path.join(dir_path, 'result_summary.csv'))
     pass
 
 
 if __name__ == '__main__':
-    # compare_all_pairs()
-    # full_chain_results()
-    summarise_results()
+    compare_all_pairs()
+    full_chain_results()
+    summarise_results(os.path.join('outputs', 'v10_v13'),'v10_v13')
+    summarise_results(os.path.join('outputs', 'v10_v12'),'v10_v12')
+    summarise_results(os.path.join('outputs', 'v10_v11'),'v10_v11')
+    summarise_results(os.path.join('outputs', 'full_chain'),'v10_11_12_v13')

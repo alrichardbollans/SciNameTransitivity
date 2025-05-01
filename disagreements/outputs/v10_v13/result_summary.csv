@@ -1,6 +1,6 @@
-,v10_v13
-original_names,1359750
-total_disagreements,9732
-species_disagreements,4179
-genus_disagreements,314
-unresolved_via_chaining,19
+,v10_v13,Percentages
+original_names,1359750,100.0
+total_disagreements,9732,0.7157198014340872
+species_disagreements,4179,0.3073359073359073
+genus_disagreements,314,0.023092480235337377
+unresolved_via_chaining,19,0.0013973156830299688

@@ -20,7 +20,7 @@ _Species B_ and so the recorded entry in WikiData is for _Species B_ when the da
 entry is updated accordingly (either internally or when someone downloads the data and updates the taxonomy themselves) is the resolution of _Species B_
 in v13 the same as the (presumably more accurate) direct resolution of _Species A_?
 
-## Preliminary Findings
+## Some Findings
 
 It turns out this is not necessarily the case (examples are currently organised in [outputs](disagreements/outputs)). For example, _Panicum nitidum_ Lam. resolves to _Dichanthelium dichotomum_ (L.) Gould in v10, which in turn
 resolves to _Dichanthelium dichotomum_ (L.) Gould in v13. However, if you were to use v13 directly to resolve the name given in the publication you get
@@ -33,7 +33,9 @@ direct resolution of _Listrostachys pescatoriana_ (Lindl.) S.Moore -> _Listrosta
 
 I also found that chaining the resolutions via periodic updates e.g. v10->v11->v12->v13, doesn't seem to mitigate the issue.
 
-While these percentages seem small, the drift across v10-v13 is less than 2 years of updates, and it's an issue that propagates over time.
+While these percentages seem small, the drift across v10-v13 is less than 2 years of updates (v10 released 2022-12-08, v13 released 2024-05-21).
+
+It's an issue that propagates over time --- a discrepancy for 0.24% of plant names for v10-v11 and 0.52% for v10-v12 compared to 0.72% for v10-v13.
 
 This analysis uses the [wcvpy python package](https://github.com/alrichardbollans/wcvpy) and WCVP versions downloaded from http://sftp.kew.org/pub/data-repositories/WCVP/.
 

@@ -145,6 +145,10 @@ def compare_two_versions(v12_taxa: pd.DataFrame, v13_taxa: pd.DataFrame, old_tag
     # relevant names in new database where taxon name is taxon name in old database
     v13_updated_records = get_direct_name_updates(v12_taxa, v13_taxa, new_tag, out_dir)
     results_df = compare_and_output_chained_and_direct_updates(chained_updated_records, v13_updated_records, old_tag, new_tag, out_dir)
+
+    # Add a check here that no accepted names in v12 are in output
+    problems = results_df[results_df['taxon_name_w_authors'] == results_df[f'{old_tag}_accepted_name_w_author']]
+    assert len(problems) == 0
     return results_df
 
 
@@ -207,7 +211,7 @@ def get_all_databases():
     return v10_taxa, v11_taxa, v12_taxa, v13_taxa
 
 
-def summarise_results(dir_path: str, tag: str, old_tag = 'v10'):
+def summarise_results(dir_path: str, tag: str, old_tag='v10'):
     old_record_summary = pd.read_csv(os.path.join(dir_path, f'{old_tag}_old_records_summary.csv'), index_col=0)
     num_of_original_names = int(old_record_summary.at['unique', 'taxon_name_w_authors'])
 
@@ -227,7 +231,7 @@ def summarise_results(dir_path: str, tag: str, old_tag = 'v10'):
     out_df.columns = [tag]
     out_df.index = ['original_names', 'total_disagreements', 'species_disagreements', 'genus_disagreements', 'unresolved_via_chaining']
 
-    out_df['Percentages'] = 100* out_df[tag] / num_of_original_names
+    out_df['Percentages'] = 100 * out_df[tag] / num_of_original_names
     out_df.to_csv(os.path.join(dir_path, 'result_summary.csv'))
     pass
 
@@ -235,7 +239,7 @@ def summarise_results(dir_path: str, tag: str, old_tag = 'v10'):
 if __name__ == '__main__':
     compare_all_pairs()
     full_chain_results()
-    summarise_results(os.path.join('outputs', 'v10_v13'),'v10_v13')
-    summarise_results(os.path.join('outputs', 'v10_v12'),'v10_v12')
-    summarise_results(os.path.join('outputs', 'v10_v11'),'v10_v11')
-    summarise_results(os.path.join('outputs', 'full_chain'),'v10_11_12_v13')
+    summarise_results(os.path.join('outputs', 'v10_v13'), 'v10_v13')
+    summarise_results(os.path.join('outputs', 'v10_v12'), 'v10_v12')
+    summarise_results(os.path.join('outputs', 'v10_v11'), 'v10_v11')
+    summarise_results(os.path.join('outputs', 'full_chain'), 'v10_11_12_v13')

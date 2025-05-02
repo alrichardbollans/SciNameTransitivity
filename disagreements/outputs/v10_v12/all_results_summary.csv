@@ -1,0 +1,5 @@
+,taxon_name_w_authors,v10_accepted_name_w_author,v12_taxon_name_w_authors,v12_chained_accepted_name_w_author,v12_chained_accepted_species,v12_direct_accepted_name_w_author,v12_direct_accepted_species
+count,7132,7132,7132,7132,7007,7132,7011
+unique,7132,2653,2653,2651,2480,2963,2634
+top,Bryophyllum peltigerum (Desc.) V.V.Byalt,Sorghum bicolor (L.) Moench,Sorghum bicolor (L.) Moench,Sorghum bicolor (L.) Moench,Sorghum bicolor,Sorghum bicolor subsp. bicolor,Sorghum bicolor
+freq,1,330,330,330,330,330,330

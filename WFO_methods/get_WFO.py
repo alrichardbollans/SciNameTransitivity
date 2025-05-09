@@ -180,7 +180,7 @@ def look_at_example(old_wfo_data, new_wfo_data, taxon_name_w_authors):
         direct_resolution = None
         print(f'No direct resolution found for {taxon_name_w_authors}')
     print(
-        f'Name: {taxon_name_w_authors} resolves to {acc_name_from_old} and then {chained_example['accepted_name_w_author'].iloc[0]}. Direct resolution is {direct_resolution}')
+        f'Name: {taxon_name_w_authors} resolves to {acc_name_from_old} and then {chained_example["accepted_name_w_author"].iloc[0]}. Direct resolution is {direct_resolution}')
 
 
 if __name__ == '__main__':

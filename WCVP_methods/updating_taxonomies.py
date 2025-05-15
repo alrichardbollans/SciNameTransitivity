@@ -5,7 +5,10 @@ from pkg_resources import resource_filename
 from wcvpy.wcvp_download import get_all_taxa, add_authors_to_col
 from wcvpy.wcvp_name_matching import get_genus_from_full_name
 
-_output_path = resource_filename(__name__, 'outputs')
+repo_path = os.environ.get('KEWSCRATCHPATH')
+this_repo_path = os.path.join(repo_path, 'TaxoDrift')
+_output_path = os.path.join(this_repo_path, 'WCVP_methods', 'outputs')
+_input_path = os.path.join(this_repo_path, 'WCVP_methods', 'inputs')
 
 if not os.path.isdir(_output_path):
     os.mkdir(_output_path)
@@ -90,7 +93,7 @@ def compare_and_output_chained_and_direct_updates(chained_updated_records, direc
     # remove cases with no direct accepted name in new version
     results_df = merged_df.dropna(subset=[new_tag + '_direct_accepted_name_w_author'])
 
-    # get results with no resolution from chaining
+    # get results where chaining provides no results even though direct match does
     unresolved_via_chaining = results_df[results_df[new_tag + '_chained_accepted_name_w_author'].isna()]
     unresolved_via_chaining.to_csv(os.path.join(out_dir, '_'.join([old_tag, new_tag]) + '_unresolved_via_chaining.csv'))
 
@@ -133,8 +136,7 @@ def compare_two_versions(v12_taxa: pd.DataFrame, v13_taxa: pd.DataFrame, old_tag
     # For all taxa with unique names (inc. author strings) in old taxon database
     # If the name resolves uniquely to a non-nan accepted name in both the old and new database
     # Find the accepted name resolution when the name is resolved first to the old taxonomy then the new taxonomy
-    # If no such name exists, add to cases_that_cant_update
-    # else, check if this name is the same as the name when directly resolved using the new database. If not, store in out_dict
+    # If no such name exists, ignore, if not check if this name is the same as the name when directly resolved using the new database.
     out_dir = os.path.join(_output_path,
                            '_'.join([old_tag, new_tag]))
     os.makedirs(out_dir, exist_ok=True)
@@ -193,15 +195,15 @@ def full_chain_results():
 
 
 def get_all_databases():
-    # v10_taxa = get_all_taxa(version='10', output_csv=os.path.join('inputs', 'v10_taxa.csv'))
-    # v11_taxa = get_all_taxa(version='11', output_csv=os.path.join('inputs', 'v11_taxa.csv'))
-    # v12_taxa = get_all_taxa(version='12', output_csv=os.path.join('inputs', 'v12_taxa.csv'))
-    # v13_taxa = get_all_taxa(version=None, output_csv=os.path.join('inputs', 'v13_taxa.csv'))
+    # v10_taxa = get_all_taxa(version='10', output_csv=os.path.join(_input_path, 'v10_taxa.csv'))
+    # v11_taxa = get_all_taxa(version='11', output_csv=os.path.join(_input_path, 'v11_taxa.csv'))
+    # v12_taxa = get_all_taxa(version='12', output_csv=os.path.join(_input_path, 'v12_taxa.csv'))
+    # v13_taxa = get_all_taxa(version=None, output_csv=os.path.join(_input_path, 'v13_taxa.csv'))
 
-    v10_taxa = pd.read_csv(os.path.join('inputs', 'v10_taxa.csv'), index_col=0)
-    v11_taxa = pd.read_csv(os.path.join('inputs', 'v11_taxa.csv'), index_col=0)
-    v12_taxa = pd.read_csv(os.path.join('inputs', 'v12_taxa.csv'), index_col=0)
-    v13_taxa = pd.read_csv(os.path.join('inputs', 'v13_taxa.csv'), index_col=0)
+    v10_taxa = pd.read_csv(os.path.join(_input_path, 'v10_taxa.csv'), index_col=0)
+    v11_taxa = pd.read_csv(os.path.join(_input_path, 'v11_taxa.csv'), index_col=0)
+    v12_taxa = pd.read_csv(os.path.join(_input_path, 'v12_taxa.csv'), index_col=0)
+    v13_taxa = pd.read_csv(os.path.join(_input_path, 'v13_taxa.csv'), index_col=0)
 
     v10_taxa['taxon_name_w_authors'] = add_authors_to_col(v10_taxa, 'taxon_name')
     v11_taxa['taxon_name_w_authors'] = add_authors_to_col(v11_taxa, 'taxon_name')
@@ -224,12 +226,13 @@ def summarise_results(dir_path: str, tag: str, old_tag='v10'):
     genus_results = pd.read_csv(os.path.join(dir_path, 'genus_results.csv'))
     num_genus_results = len(genus_results['taxon_name_w_authors'].unique().tolist())
 
-    unresolved = pd.read_csv(os.path.join(dir_path, f'{tag}_unresolved_via_chaining.csv'))
-    num_unresolved = len(unresolved['taxon_name_w_authors'].unique().tolist())
+    unresolved_via_chaining = pd.read_csv(os.path.join(dir_path, f'{tag}_unresolved_via_chaining.csv'))
+    num_unresolved_via_chaining = len(unresolved_via_chaining['taxon_name_w_authors'].unique().tolist())
 
-    out_df = pd.DataFrame([num_of_original_names, num_total_results, num_species_results, num_genus_results, num_unresolved])
+    out_df = pd.DataFrame([num_of_original_names, num_total_results, num_species_results, num_genus_results, num_unresolved_via_chaining])
     out_df.columns = [tag]
-    out_df.index = ['original_names', 'total_disagreements', 'species_disagreements', 'genus_disagreements', 'unresolved_via_chaining']
+    out_df.index = ['original_names', 'total_disagreements', 'species_disagreements', 'genus_disagreements',
+                    'unresolved_via_chaining_despite_a_direct_resolution']
 
     out_df['Percentages'] = 100 * out_df[tag] / num_of_original_names
     out_df.to_csv(os.path.join(dir_path, 'result_summary.csv'))

@@ -17,12 +17,16 @@ _all_ranks = list(sorted(
      'phylum', 'kingdom', 'suborder', 'subkingdom']))
 
 ranks_to_use = list(sorted(
-    ['variety', 'species', 'form', 'forma', 'nothospecies', 'subspecies', 'unranked', 'prole', 'subvariety', 'lusus', 'subform', 'section',
-     'subseries', 'series',
-     'subsection', 'subgenus', 'genus']))
+    ['Variety', 'Species', 'Form', 'Forma', 'Nothospecies', 'Subspecies', 'Unranked', 'Prole', 'Subvariety', 'Lusus', 'Subform', 'Section',
+     'Subseries', 'Series',
+     'Subsection', 'Subgenus', 'Genus']))
 
 
 def wfo_sanity_checks(all_wfo_data_untouched, all_wfo_data, accepted_data, resolved_wfo_data):
+    resolved_wfo_data[
+        ['taxonID', 'taxon_name', 'taxon_name_w_authors', 'accepted_name', 'accepted_name_w_author', 'accepted_name_id', 'accepted_species',
+         'accepted_species_w_author', 'accepted_genus',
+         'taxon_rank', 'taxon_status']].head(1000).to_csv('wfo_sanity_check.csv')
     ###################
     ### Sanity checks
     accepted_check = resolved_wfo_data[resolved_wfo_data['taxonomicStatus'] == 'Accepted']
@@ -57,7 +61,7 @@ def wfo_sanity_checks(all_wfo_data_untouched, all_wfo_data, accepted_data, resol
         what_are_these = all_wfo_data_untouched[all_wfo_data_untouched['taxonID'].isin(nan_issues['accepted_name_id'].values)]
         what_are_these = what_are_these[
             ~what_are_these['taxonRank'].isin(
-                ['family', 'tribe', 'subfamily', 'order', 'class', 'subtribe'])]  # a family/tribe etc.. was erroneously included
+                ['Family', 'Tribe', 'Subfamily', 'Order', 'Class', 'Subtribe'])]  # a family/tribe etc.. was erroneously included
         print(what_are_these['taxonomicStatus'].unique().tolist())
         assert 'Accepted' not in what_are_these['taxonomicStatus'].values
 
@@ -68,16 +72,20 @@ def parse_wfo_data(all_wfo_data):
 
     # restrict to genus and lower
     # some genus names werent correctly set
-    all_wfo_data['genus'] = np.where(all_wfo_data['taxonRank'] == 'genus', all_wfo_data['scientificName'], all_wfo_data['genus'])
+    all_wfo_data['genus'] = np.where(all_wfo_data['taxonRank'] == 'Genus', all_wfo_data['scientificName'], all_wfo_data['genus'])
     all_wfo_data = all_wfo_data[~all_wfo_data['genus'].isna()]
 
     ### set scientificnames to include authors
-    all_wfo_data['taxon_name_w_authors'] = all_wfo_data['scientificName'] + ' ' + all_wfo_data['scientificNameAuthorship'].fillna('').astype(str)
+    all_wfo_data['taxon_name'] = all_wfo_data['scientificName']
+    all_wfo_data['taxon_name_w_authors'] = all_wfo_data['taxon_name'] + ' ' + all_wfo_data['scientificNameAuthorship'].fillna('').astype(str)
 
     ## Add a species name
     print(all_wfo_data['taxonRank'].unique().tolist())
-    all_wfo_data['species_name'] = np.where(all_wfo_data['taxonRank'] == 'genus', np.nan,
+    all_wfo_data['species_name'] = np.where(all_wfo_data['taxonRank'] == 'Genus', np.nan,
                                             all_wfo_data['genus'] + ' ' + all_wfo_data['specificEpithet'].fillna('').astype(str))
+    all_wfo_data['species_name_w_author'] = np.where(all_wfo_data['species_name'].isna(), np.nan,
+                                                     all_wfo_data['species_name'] + ' ' + all_wfo_data['scientificNameAuthorship'].fillna('').astype(
+                                                         str))
 
     ### Set accepted_name_ids either from taxonID (for accepted names) or acceptedNameUsageID
     all_wfo_data['accepted_name_id'] = np.where(all_wfo_data['taxonomicStatus'] == 'Accepted', all_wfo_data['taxonID'],
@@ -86,13 +94,18 @@ def parse_wfo_data(all_wfo_data):
     resolved_wfo_data = all_wfo_data.dropna(subset=['accepted_name_id'])
 
     ### Use the accepted IDs to get accepted names from the original dataframe
-    accepted_data = all_wfo_data[all_wfo_data['taxonomicStatus'] == 'Accepted'][['taxonID', 'taxon_name_w_authors', 'species_name', 'genus']]
+    accepted_data = all_wfo_data[all_wfo_data['taxonomicStatus'] == 'Accepted'][
+        ['taxonID', 'taxon_name', 'taxon_name_w_authors', 'species_name', 'species_name_w_author', 'genus']]
     accepted_data = accepted_data.dropna(subset=['taxonID'])
     accepted_data = accepted_data.rename(
-        columns={'taxonID': 'acc_id', 'taxon_name_w_authors': 'accepted_name_w_author', 'species_name': 'accepted_species',
+        columns={'taxonID': 'acc_id', 'taxon_name': 'accepted_name', 'taxon_name_w_authors': 'accepted_name_w_author',
+                 'species_name': 'accepted_species',
+                 'species_name_w_author': 'accepted_species_w_author',
                  'genus': 'accepted_genus'})
 
     resolved_wfo_data = pd.merge(resolved_wfo_data, accepted_data, how='left', left_on=['accepted_name_id'], right_on=['acc_id'])
+    resolved_wfo_data['taxon_rank'] = resolved_wfo_data['taxonRank']
+    resolved_wfo_data['taxon_status'] = resolved_wfo_data['taxonomicStatus']
 
     wfo_sanity_checks(all_wfo_data_untouched, all_wfo_data, accepted_data, resolved_wfo_data)
 
@@ -100,7 +113,11 @@ def parse_wfo_data(all_wfo_data):
     resolved_wfo_data = resolved_wfo_data.dropna(subset=['accepted_name_w_author'])
 
     ### and only return used columns
-    return resolved_wfo_data[['taxonID', 'taxon_name_w_authors', 'accepted_name_w_author', 'accepted_name_id', 'accepted_species', 'accepted_genus']]
+
+    return resolved_wfo_data[
+        ['taxonID', 'taxon_name', 'taxon_name_w_authors','accepted_name', 'accepted_name_w_author', 'accepted_name_id', 'accepted_species',
+         'accepted_species_w_author', 'accepted_genus',
+         'taxon_rank', 'taxon_status']]
 
 
 def get_csv_file(tag, extension):
@@ -111,11 +128,10 @@ def get_csv_file(tag, extension):
 
 
 def clean_columns(all_wfo_data):
-    all_wfo_data['taxonRank'] = all_wfo_data['taxonRank'].str.lower()  # in old version they use upper case :(
+    all_wfo_data['taxonRank'] = all_wfo_data['taxonRank'].str.capitalize()  # in old version they use upper case :(
     all_wfo_data['taxonomicStatus'] = all_wfo_data['taxonomicStatus'].str.capitalize()  # in old version they use upper case :(
     all_wfo_data['taxonomicStatus'] = np.where(all_wfo_data['taxonomicStatus'] == 'Accetped', 'Accepted',
                                                all_wfo_data['taxonomicStatus'])  # spelling mistake
-
 
     ## Fix some issues around hybrid characters and generally clean
     all_wfo_data['scientificName'] = all_wfo_data['scientificName'].apply(remove_spacelike_chars)
@@ -130,7 +146,7 @@ def get_version(version: str, extension: str):
 
     all_wfo_data = pd.read_csv(csv_file, sep='\t', encoding='latin1')
 
-    all_wfo_data = all_wfo_data.rename(columns={'ï»¿taxonID':'taxonID'}) ## This was a weird error in the earliest version
+    all_wfo_data = all_wfo_data.rename(columns={'ï»¿taxonID': 'taxonID'})  ## This was a weird error in the earliest version
 
     all_wfo_data['scientificName'] = all_wfo_data['scientificName'].str.encode('latin1').str.decode('utf-8', errors='replace')
     all_wfo_data['scientificNameAuthorship'] = all_wfo_data['scientificNameAuthorship'].str.encode('latin1').str.decode('utf-8', errors='replace')
@@ -184,12 +200,11 @@ def look_at_example(old_wfo_data, new_wfo_data, taxon_name_w_authors):
 
 
 if __name__ == '__main__':
-    new,new_tag = get_latest_version()
+    new, new_tag = get_latest_version()
     old, old_tag = get_oldest_version()
-    look_at_example(old,new,'Senecio bowenkampi Phil.')
-    look_at_example(old,new,'Haplopappus wigginsii S.F.Blake')
-    look_at_example(old,new,'Helichrysum leptolepis DC.')
+    look_at_example(old, new, 'Senecio bowenkampi Phil.')
+    look_at_example(old, new, 'Haplopappus wigginsii S.F.Blake')
+    look_at_example(old, new, 'Helichrysum leptolepis DC.')
     #
     # get_other_versions()
     # get_latest_version()
-

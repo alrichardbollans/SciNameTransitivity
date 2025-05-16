@@ -1,17 +1,19 @@
 import os
 
 from WFO_methods.get_WFO import get_latest_version, get_oldest_version, get_other_versions
-from disagreements.updating_taxonomies import compare_two_versions, summarise_results, chain_two_databases, get_direct_name_updates, \
+from chaining_methods import compare_two_versions, summarise_results, chain_two_databases, get_direct_name_updates, \
     compare_and_output_chained_and_direct_updates
 
-_output_path = os.path.join('outputs')
+repo_path = os.environ.get('KEWSCRATCHPATH')
+this_repo_path = os.path.join(repo_path, 'TaxoDrift')
+_output_path = os.path.join(this_repo_path, 'WFO_methods', 'outputs')
 
 
 def main_case():
     latest_version, new_tag = get_latest_version()
     oldest_version, old_tag = get_oldest_version()
 
-    compare_two_versions(oldest_version, latest_version, old_tag, new_tag)
+    compare_two_versions(oldest_version, latest_version, old_tag, new_tag, _output_path)
     path_tag = f'{old_tag}_{new_tag}'
     summarise_results(os.path.join(_output_path, path_tag), path_tag, old_tag=old_tag)
 
@@ -21,7 +23,7 @@ def compare_all_pairs():
     other_versions = get_other_versions()
     for other_version in other_versions:
         print(f'Running {other_version}')
-        compare_two_versions(oldest_version, other_versions[other_version], old_tag, other_version)
+        compare_two_versions(oldest_version, other_versions[other_version], old_tag, other_version, _output_path)
         path_tag = f'{old_tag}_{other_version}'
         summarise_results(os.path.join(_output_path, path_tag), path_tag, old_tag=old_tag)
 

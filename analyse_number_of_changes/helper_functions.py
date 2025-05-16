@@ -64,9 +64,9 @@ def get_species_differences(df1: pd.DataFrame, df2: pd.DataFrame, old_tag: str, 
     df1[df1[name_col].isin(old_species_not_in_new)].to_csv(os.path.join(out_dir, f'dissappeared_species_{file_tag}.csv'))
 
 
-def get_accepted_species_that_become_synonyms(df1, df2, old_tag: str, new_tag: str, with_authorship: bool = True):
+def get_accepted_species_that_become_unaccepted(df1, df2, old_tag: str, new_tag: str, with_authorship: bool = True):
     tag = '_'.join([old_tag, new_tag])
-    out_dir = os.path.join(_output_path, tag)
+    out_dir = os.path.join(_output_path, tag, 'accepted_species_that_become_unaccepted')
     os.makedirs(out_dir, exist_ok=True)
 
     if with_authorship:
@@ -103,18 +103,19 @@ def get_accepted_species_that_become_synonyms(df1, df2, old_tag: str, new_tag: s
         else:
             out_list.append(str(len(old_accepted_names_that_are_now_status_df['taxon_name_w_authors'].unique().tolist())))
             out_index.append(f'Number which are now {status}')
-    out_df = pd.DataFrame(
-        out_list)
+
+        old_accepted_names_that_are_now_status_df.to_csv(os.path.join(out_dir, f'accepted_species_that_become_{status}_{file_tag}.csv'))
+    out_df = pd.DataFrame(out_list)
     out_df.columns = [tag]
 
     out_df.index = out_index
 
-    out_df.to_csv(os.path.join(out_dir, f'accepted_species_that_become_synonyms_summary_{file_tag}.csv'))
+    out_df.to_csv(os.path.join(out_dir, f'accepted_species_that_become_unaccepted_summary_{file_tag}.csv'))
 
 
-def get_synonym_species_that_become_accepted(df1, df2, old_tag: str, new_tag: str, with_authorship: bool = True):
+def get_unaccepted_species_that_become_accepted(df1, df2, old_tag: str, new_tag: str, with_authorship: bool = True):
     tag = '_'.join([old_tag, new_tag])
-    out_dir = os.path.join(_output_path, tag)
+    out_dir = os.path.join(_output_path, tag, 'unaccepted_species_that_become_accepted')
     os.makedirs(out_dir, exist_ok=True)
 
     if with_authorship:
@@ -123,24 +124,34 @@ def get_synonym_species_that_become_accepted(df1, df2, old_tag: str, new_tag: st
     else:
         raise ValueError('I think with_authorship should be True for this particular analysis')
 
-    old_synonym_species = df1[df1[wcvp_columns['rank']] == 'Species']
-    old_synonym_species = old_synonym_species[old_synonym_species[wcvp_columns['status']] == 'Synonym'][
-        'taxon_name_w_authors'].dropna().unique().tolist()
 
-    accepted_new_df = df2[df2[wcvp_columns['status']].isin(['Accepted', 'Artificial Hybrid'])]
+    old_species = df1[df1[wcvp_columns['rank']] == 'Species']
+    old_non_accepted_species_df = old_species[~old_species[wcvp_columns['status']].isin(['Accepted', 'Artificial Hybrid'])]
+    new_accepted_species = df2[wcvp_accepted_columns['species_w_author']].dropna().unique().tolist()
+    old_non_accepted_species_that_become_accepted_df = old_non_accepted_species_df[
+        old_non_accepted_species_df['taxon_name_w_authors'].isin(new_accepted_species)]
 
-    old_names_that_are_now_accepted_df = accepted_new_df[accepted_new_df['taxon_name_w_authors'].isin(old_synonym_species)]
-    old_names_that_are_now_accepted = old_names_that_are_now_accepted_df['taxon_name_w_authors'].unique().tolist()
+    out_list = [str(len(old_non_accepted_species_df['taxon_name_w_authors'].unique().tolist())),
+                str(len(old_non_accepted_species_that_become_accepted_df['taxon_name_w_authors'].unique().tolist()))]
+    out_index = ['number of old unaccepted species names', 'old unaccepted species names are now accepted']
+    statuses = old_non_accepted_species_that_become_accepted_df[wcvp_columns['status']].unique().tolist()
+    for status in statuses:
+        old_status_species = \
+            old_non_accepted_species_that_become_accepted_df[old_non_accepted_species_that_become_accepted_df[wcvp_columns['status']] == status]
 
-    print(f'{len(old_names_that_are_now_accepted)} old synonyms species are now accepted out of {len(old_synonym_species)}')
+        print(
+            f'{len(old_status_species)} old {status} species are now accepted out of {len(old_non_accepted_species_df)}')
+        old_status_species.to_csv(os.path.join(out_dir, f'{status}_species_that_become_accepted_{file_tag}.csv'))
 
-    out_df = pd.DataFrame(
-        [len(old_synonym_species), len(old_names_that_are_now_accepted)])
+        out_list.append(str(len(old_status_species['taxon_name_w_authors'].unique().tolist())))
+        out_index.append(f'Number of old {status}s which are now accepted')
+
+    out_df = pd.DataFrame(out_list)
     out_df.columns = [tag]
 
-    out_df.index = ['number of old species synonyms', 'number of which are now accepted']
+    out_df.index = out_index
 
-    out_df.to_csv(os.path.join(out_dir, f'synonym_species_that_become_accepted_summary_{file_tag}.csv'))
+    out_df.to_csv(os.path.join(out_dir, f'unaccepted_species_that_become_accepted_summary_{file_tag}.csv'))
 
 
 def get_names_that_resolve_in_old_but_not_in_new(v12_taxa: pd.DataFrame, v13_taxa: pd.DataFrame, old_tag: str, new_tag: str,

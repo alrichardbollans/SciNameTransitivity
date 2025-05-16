@@ -1,7 +1,7 @@
 import os
 
 from WFO_methods.get_WFO import get_latest_version, get_oldest_version, get_other_versions, other_version_strings, all_wfo_version_strings, \
-    oldest_wfo_version_string
+    oldest_wfo_version_string, get_version_comparable_to_v10, wfo_version_comparable_to_v10_string
 from chaining_methods import compare_two_versions, summarise_results, chain_two_databases, get_direct_name_updates, \
     compare_and_output_chained_and_direct_updates
 
@@ -11,18 +11,23 @@ _output_path = os.path.join(this_repo_path, 'WFO_methods', 'outputs')
 
 
 def main_case():
-
-
     compare_two_versions(oldest_version, latest_version, old_tag, new_tag, _output_path)
     path_tag = f'{old_tag}_{new_tag}'
     summarise_results(os.path.join(_output_path, path_tag), path_tag, old_tag=old_tag)
 
 
 def compare_all_pairs():
-
     for other_version in other_versions:
         print(f'Running {other_version}')
         compare_two_versions(oldest_version, other_versions[other_version], old_tag, other_version, _output_path)
+        path_tag = f'{old_tag}_{other_version}'
+        summarise_results(os.path.join(_output_path, path_tag), path_tag, old_tag=old_tag)
+
+
+def compare_pairs_to_v10_equivalent():
+    for other_version in other_versions:
+        print(f'Running {other_version}')
+        compare_two_versions(v10_equiv, other_versions[other_version], v10_equiv_tag, other_version, _output_path)
         path_tag = f'{old_tag}_{other_version}'
         summarise_results(os.path.join(_output_path, path_tag), path_tag, old_tag=old_tag)
 
@@ -61,7 +66,16 @@ def main():
     summarise_results(os.path.join(_output_path, 'wfo_full_chain'), 'previous_chain_202406', old_tag=oldest_wfo_version_string)
     for y in all_wfo_version_strings:
         if y != oldest_wfo_version_string:
-            summarise_results(os.path.join(_output_path, f'{oldest_wfo_version_string}_{y}'), f'{oldest_wfo_version_string}_{y}', old_tag=oldest_wfo_version_string)
+            summarise_results(os.path.join(_output_path, f'{oldest_wfo_version_string}_{y}'), f'{oldest_wfo_version_string}_{y}',
+                              old_tag=oldest_wfo_version_string)
+
+    compare_pairs_to_v10_equivalent()
+    for y in all_wfo_version_strings:
+        try:
+            summarise_results(os.path.join(_output_path, f'{wfo_version_comparable_to_v10_string}_{y}'), f'{oldest_wfo_version_string}_{y}',
+                              old_tag=oldest_wfo_version_string)
+        except:
+            print(f'Could not summarise {y}')
 
 
 if __name__ == '__main__':
@@ -69,5 +83,6 @@ if __name__ == '__main__':
 
     latest_version, new_tag = get_latest_version()
     oldest_version, old_tag = get_oldest_version()
+    v10_equiv, v10_equiv_tag = get_version_comparable_to_v10()
 
     main()

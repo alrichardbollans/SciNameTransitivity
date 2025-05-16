@@ -4,6 +4,8 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 from matplotlib import pyplot as plt
+from scipy import stats
+from scipy.stats import spearmanr
 
 from WFO_methods.get_WFO import all_wfo_version_strings, oldest_wfo_version_string
 
@@ -12,30 +14,33 @@ this_repo_path = os.path.join(repo_path, 'TaxoDrift')
 _wcvp_output_path = os.path.join(this_repo_path, 'WCVP_methods', 'outputs')
 _wfo_output_path = os.path.join(this_repo_path, 'WFO_methods', 'outputs')
 
+
 def get_wcvp_species_results():
-    data = [['2022-10',0]]
-    version_dict = {'2023-04':'v11', '2023-09': 'v12', '2024-05':'v13'}
+    data = [['2022-10', 0]]
+    version_dict = {'2023-04': 'v11', '2023-09': 'v12', '2024-05': 'v13'}
     for y in version_dict:
-        result_df = pd.read_csv(os.path.join(_wcvp_output_path, f'v10_{version_dict[y]}','result_summary.csv'), index_col=0)
+        result_df = pd.read_csv(os.path.join(_wcvp_output_path, f'v10_{version_dict[y]}', 'result_summary.csv'), index_col=0)
         species_percent = result_df['Percentages'].loc['species_disagreements']
         print(species_percent)
         data.append([y, species_percent])
     return data
 
+
 def get_wfo_species_results():
-    data = [[oldest_wfo_version_string,0]]
+    data = [[oldest_wfo_version_string, 0]]
     for y in all_wfo_version_strings:
         if y != oldest_wfo_version_string:
-            result_df = pd.read_csv(os.path.join(_wfo_output_path, f'{oldest_wfo_version_string}_{y}','result_summary.csv'), index_col=0)
+            result_df = pd.read_csv(os.path.join(_wfo_output_path, f'{oldest_wfo_version_string}_{y}', 'result_summary.csv'), index_col=0)
             species_percent = result_df['Percentages'].loc['species_disagreements']
-            print(species_percent)
+            # print(species_percent)
             y_formatted = y[:4] + '-' + y[4:]
             data.append([y_formatted, species_percent])
     return data
 
+
 def plot_changes():
     # flights = sns.load_dataset("flights")
-
+    sns.set_theme()
     wcvp_df = pd.DataFrame(get_wcvp_species_results(),
                            columns=['Year', 'Species Discrepancy (%)'])
     wcvp_df['Taxonomy'] = 'WCVP'
@@ -56,8 +61,43 @@ def plot_changes():
 
     # ax.set_xticklabels([])
 
-    plt.show()
+    plt.savefig('outputs/species_discrepancy_over_time.png', dpi=300)
+
+
+def do_permutation_spearman_test(x, y):
+    def statistic(x):  # permute only `x`
+
+        return stats.spearmanr(x, y).statistic
+
+    res_exact = stats.permutation_test((x,), statistic,
+
+                                       permutation_type='pairings')
+    return res_exact
+
+
+def spearman_tests():
+    wcvp_data = get_wcvp_species_results()
+
+    # Test monotonic relationships of data over time
+    y = [wcvp_data.index(c) for c in wcvp_data[1:]]  ## remove first case as thats a given
+
+    x = [c[1] for c in wcvp_data[1:]]
+    res_exact = do_permutation_spearman_test(x, y)
+    print(res_exact)
+    print(res_exact.statistic)
+    print(res_exact.pvalue)
+
+    wfo_data = get_wfo_species_results()
+
+    y = [wfo_data.index(c) for c in wfo_data[1:]]  ## remove first case as thats a given
+
+    x = [c[1] for c in wfo_data[1:]]
+    res_exact = do_permutation_spearman_test(x, y)
+    print(res_exact)
+    print(res_exact.statistic)
+    print(res_exact.pvalue)
 
 
 if __name__ == '__main__':
-    plot_changes()
+    # plot_changes()
+    spearman_tests()

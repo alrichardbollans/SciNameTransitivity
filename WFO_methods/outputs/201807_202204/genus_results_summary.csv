@@ -1,0 +1,5 @@
+,taxon_name_w_authors,201807_accepted_name_w_author,202204_taxon_name_w_authors,202204_chained_accepted_name_w_author,202204_chained_accepted_species,202204_direct_accepted_name_w_author,202204_direct_accepted_species,202204_chained_accepted_genus,202204_direct_accepted_genus
+count,6047,6047,6047,6047,5630,6047,6047,5630,6047
+unique,6047,2258,2258,2252,2164,2576,2488,1053,1123
+top,Persica Mill.,Cestrum L.,Cestrum L.,Cestrum L.,Panicum acuminatum,Sasaella masamuneana (Makino) Hatus. & Muroi,Sasaella masamuneana,Panicum,Cyperus
+freq,1,182,182,182,65,63,63,417,344

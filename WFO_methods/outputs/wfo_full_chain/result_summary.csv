@@ -1,6 +1,6 @@
 ,previous_chain_202406,Percentages
 original_names,1051028,100.0
-total_disagreements,59778,5.687574450918529
-species_disagreements,19578,1.8627477098612026
-genus_disagreements,4147,0.394566081969272
-unresolved_via_chaining,0,0.0
+total_disagreements,61825,5.882336150892269
+species_disagreements,20038,1.9065143840126049
+genus_disagreements,4095,0.3896185448912874
+unresolved_via_chaining_despite_a_direct_resolution,0,0.0

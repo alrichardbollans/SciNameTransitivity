@@ -21,8 +21,75 @@ ranks_to_use = list(sorted(
      'Subseries', 'Series',
      'Subsection', 'Subgenus', 'Genus']))
 
+class WFO_Version():
+
+    def __init__(self, tag, extension, DOI):
+        self.tag = tag
+        self.extension = extension
+        self.DOI = DOI
+
+    def get_csv_file(self):
+        input_zip_file = os.path.join(_wfo_downloads_path, f'WFOTaxonomicBackbone_{self.tag}.zip')
+        zf = zipfile.ZipFile(input_zip_file)
+        csv_file = zf.open(f'classification.{self.extension}')
+        return csv_file
+
+
+def all_versions():
+    out_list = [WFO_Version('201807', 'txt', 'https://zenodo.org/records/7460142'),
+                # dont use these versions. 201903 comes without headers. 201904 is 27Gb for some reason
+                # WFO_Version('201903', 'txt', 'https://zenodo.org/records/7460932'),
+                # WFO_Version('201904', 'txt', 'https://zenodo.org/records/7461831'),
+                WFO_Version('201905', 'txt', 'https://zenodo.org/records/7462137'),
+                WFO_Version('202112', 'txt', 'https://zenodo.org/records/7462229'),
+                WFO_Version('202204', 'txt', 'https://zenodo.org/records/7462427'),
+                WFO_Version('202207', 'txt', 'https://zenodo.org/records/7462490'),
+                ## Versions after 202212 seems to have been overhauled and has different file extension and encoding
+                # Downloaded from zenodo _DwC_backbone
+                WFO_Version('202212', 'csv', 'https://zenodo.org/records/7467360'),
+                WFO_Version('202306', 'csv', 'https://zenodo.org/records/8079052'),
+                WFO_Version('202312', 'csv', 'https://zenodo.org/records/10425161'),
+                WFO_Version('202406', 'csv', 'https://zenodo.org/records/12171908'),
+                WFO_Version('202412', 'csv', 'https://zenodo.org/records/14538251'),
+                ]
+    return out_list
+
+WFO_VERSIONS = all_versions()
+
+latest_wfo_version_string = WFO_VERSIONS[-1].tag
+oldest_wfo_version_string = WFO_VERSIONS[0].tag
+other_version_strings = ['201905', '202112', '202204','202207','202212','202306','202312','202306','202406']
+all_wfo_version_strings = [oldest_wfo_version_string] + other_version_strings + [latest_wfo_version_string]
+wfo_version_comparable_to_v10_string = '202207'
+
+
+
+def get_version_from_tag(tag:str):
+    for c in all_versions():
+        if c.tag == tag:
+            return c
+    raise ValueError
 
 def wfo_sanity_checks(all_wfo_data_untouched, all_wfo_data, accepted_data, resolved_wfo_data):
+    """
+    Performs a series of sanity checks on WFO (World Flora Online) data. The function performs various validations on
+    the provided dataframes to ensure data consistency and correctness, particularly focusing on taxonomic status and
+    related information. It generates a CSV file listing specific attributes from one of the datasets and runs checks
+    on taxonomic statuses, accepted name references, and unresolved data issues.
+
+    :param all_wfo_data_untouched: Original WFO dataset, untouched and used as a reference for validations
+        and comparisons.
+    :type all_wfo_data_untouched: pandas.DataFrame
+    :param all_wfo_data: Processed or modified WFO dataset that requires validation.
+    :type all_wfo_data: pandas.DataFrame
+    :param accepted_data: Data containing information about accepted taxon names for validation against the WFO data.
+    :type accepted_data: pandas.DataFrame
+    :param resolved_wfo_data: Processed WFO data, where taxonomic issues have been resolved or partially resolved.
+        This dataset is the focus of several validations.
+    :type resolved_wfo_data: pandas.DataFrame
+    :return: None
+    :rtype: NoneType
+    """
     resolved_wfo_data[
         ['taxonID', 'taxon_name', 'taxon_name_w_authors', 'accepted_name', 'accepted_name_w_author', 'accepted_name_id', 'accepted_species',
          'accepted_species_w_author', 'accepted_genus',
@@ -115,16 +182,9 @@ def parse_wfo_data(all_wfo_data):
     ### and only return used columns
 
     return resolved_wfo_data[
-        ['taxonID', 'taxon_name', 'taxon_name_w_authors','accepted_name', 'accepted_name_w_author', 'accepted_name_id', 'accepted_species',
+        ['taxonID', 'taxon_name', 'taxon_name_w_authors', 'accepted_name', 'accepted_name_w_author', 'accepted_name_id', 'accepted_species',
          'accepted_species_w_author', 'accepted_genus',
          'taxon_rank', 'taxon_status']]
-
-
-def get_csv_file(tag, extension):
-    input_zip_file = os.path.join(_wfo_downloads_path, f'WFOTaxonomicBackbone_{tag}.zip')
-    zf = zipfile.ZipFile(input_zip_file)
-    csv_file = zf.open(f'classification.{extension}')
-    return csv_file
 
 
 def clean_columns(all_wfo_data):
@@ -141,8 +201,8 @@ def clean_columns(all_wfo_data):
     return all_wfo_data
 
 
-def get_version(version: str, extension: str):
-    csv_file = get_csv_file(version, extension)
+def get_version_data(version: WFO_Version):
+    csv_file = version.get_csv_file()
 
     all_wfo_data = pd.read_csv(csv_file, sep='\t', encoding='latin1')
 
@@ -157,31 +217,28 @@ def get_version(version: str, extension: str):
 
     return resolved
 
-
 def get_latest_version():
-    ## Versions after 2023 seems to have been overhauled and has different file extension and encoding
-    # Downloaded from zenodo _DwC_backbone
-    tag = '202406'
-    return get_version(tag, 'csv'), tag
+    version = get_version_from_tag(latest_wfo_version_string)
+    return get_version_data(version), latest_wfo_version_string
 
 
 def get_oldest_version():
-    tag = '201807'
-    return get_version(tag, 'txt'), tag
+    version = get_version_from_tag(oldest_wfo_version_string)
+    return get_version_data(version), oldest_wfo_version_string
 
+def get_version_comparable_to_v10():
+    version = get_version_from_tag(wfo_version_comparable_to_v10_string)
+    return get_version_data(version), wfo_version_comparable_to_v10_string
 
 def get_other_versions():
     out_dict = {}
-    for c in ['201905', '202112', '202207']:
-        resolved = get_version(c, 'txt')
-        out_dict[c] = resolved
-
-    for c in ['202306']:
-        resolved = get_version(c, 'csv')
-        out_dict[c] = resolved
+    for tag in other_version_strings:
+        print(f'Getting data for version {tag}')
+        version = get_version_from_tag(tag)
+        resolved = get_version_data(version)
+        out_dict[tag] = resolved
 
     return out_dict
-
 
 def look_at_example(old_wfo_data, new_wfo_data, taxon_name_w_authors):
     example = old_wfo_data[old_wfo_data['taxon_name_w_authors'] == taxon_name_w_authors]
@@ -200,6 +257,7 @@ def look_at_example(old_wfo_data, new_wfo_data, taxon_name_w_authors):
 
 
 if __name__ == '__main__':
+    get_other_versions()
     new, new_tag = get_latest_version()
     old, old_tag = get_oldest_version()
     look_at_example(old, new, 'Senecio bowenkampi Phil.')

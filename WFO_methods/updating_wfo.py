@@ -1,6 +1,7 @@
 import os
 
-from WFO_methods.get_WFO import get_latest_version, get_oldest_version, get_other_versions
+from WFO_methods.get_WFO import get_latest_version, get_oldest_version, get_other_versions, other_version_strings, all_wfo_version_strings, \
+    oldest_wfo_version_string
 from chaining_methods import compare_two_versions, summarise_results, chain_two_databases, get_direct_name_updates, \
     compare_and_output_chained_and_direct_updates
 
@@ -10,8 +11,7 @@ _output_path = os.path.join(this_repo_path, 'WFO_methods', 'outputs')
 
 
 def main_case():
-    latest_version, new_tag = get_latest_version()
-    oldest_version, old_tag = get_oldest_version()
+
 
     compare_two_versions(oldest_version, latest_version, old_tag, new_tag, _output_path)
     path_tag = f'{old_tag}_{new_tag}'
@@ -19,8 +19,7 @@ def main_case():
 
 
 def compare_all_pairs():
-    oldest_version, old_tag = get_oldest_version()
-    other_versions = get_other_versions()
+
     for other_version in other_versions:
         print(f'Running {other_version}')
         compare_two_versions(oldest_version, other_versions[other_version], old_tag, other_version, _output_path)
@@ -32,10 +31,7 @@ def full_chain_results():
     # Note when chaining like this, in intermediary steps ambiguous/non resolving names may be dropped.
     # This may somewhat reflect real world situations but is optimistic about the chaining process
     out_dir = os.path.join(_output_path, 'wfo_full_chain')
-    oldest_version, old_tag = get_oldest_version()
-    new, new_tag = get_latest_version()
-    other_versions = get_other_versions()
-    ordered_keys = ['201905', '202112', '202207', '202306']
+    ordered_keys = other_version_strings
     first_key = ordered_keys[0]
     # Start with 1 -> 2
     vold_next_chained = chain_two_databases(oldest_version, other_versions[first_key], old_tag, first_key, out_dir)
@@ -51,19 +47,27 @@ def full_chain_results():
             previous_tag = key
 
     # Then final case
-    full_chain = chain_two_databases(v_next_chained, new, 'previous_chain', new_tag, out_dir)
+    full_chain = chain_two_databases(v_next_chained, latest_version, 'previous_chain', new_tag, out_dir)
 
-    direct_updated_records = get_direct_name_updates(oldest_version, new, new_tag, out_dir)
+    direct_updated_records = get_direct_name_updates(oldest_version, latest_version, new_tag, out_dir)
     results_df = compare_and_output_chained_and_direct_updates(full_chain, direct_updated_records, 'previous_chain', new_tag, out_dir)
     pass
 
 
 def main():
-    # main_case()
-    # compare_all_pairs()
-    # full_chain_results()
-    summarise_results(os.path.join(_output_path, 'wfo_full_chain'), 'previous_chain_202406', old_tag='201807')
+    main_case()
+    compare_all_pairs()
+    full_chain_results()
+    summarise_results(os.path.join(_output_path, 'wfo_full_chain'), 'previous_chain_202406', old_tag=oldest_wfo_version_string)
+    for y in all_wfo_version_strings:
+        if y != oldest_wfo_version_string:
+            summarise_results(os.path.join(_output_path, f'{oldest_wfo_version_string}_{y}'), f'{oldest_wfo_version_string}_{y}', old_tag=oldest_wfo_version_string)
 
 
 if __name__ == '__main__':
+    other_versions = get_other_versions()
+
+    latest_version, new_tag = get_latest_version()
+    oldest_version, old_tag = get_oldest_version()
+
     main()

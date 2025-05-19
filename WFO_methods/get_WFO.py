@@ -60,8 +60,8 @@ latest_wfo_version_string = WFO_VERSIONS[-1].tag
 oldest_wfo_version_string = WFO_VERSIONS[0].tag
 other_version_strings = ['201905', '202112', '202204','202207','202212','202306','202312','202306','202406']
 all_wfo_version_strings = [oldest_wfo_version_string] + other_version_strings + [latest_wfo_version_string]
-wfo_version_comparable_to_v10_string = '202207'
-
+wfo_version_comparable_to_v10_string = '202212'
+wfo_version_strings_after_v10 = ['202306','202312','202306','202406']
 
 
 def get_version_from_tag(tag:str):
@@ -238,6 +238,13 @@ def get_other_versions():
         resolved = get_version_data(version)
         out_dict[tag] = resolved
 
+    return out_dict
+
+def get_versions_after_v10(other_versions:dict):
+    out_dict = {}
+    for v in other_versions:
+        if v in wfo_version_strings_after_v10:
+            out_dict[v] = other_versions[v]
     return out_dict
 
 def look_at_example(old_wfo_data, new_wfo_data, taxon_name_w_authors):

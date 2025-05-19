@@ -78,9 +78,11 @@ def get_all_databases():
 
 
 if __name__ == '__main__':
-    compare_all_pairs()
-    full_chain_results()
+    # compare_all_pairs()
+    # full_chain_results()
     summarise_results(os.path.join(_output_path, 'v10_v13'), 'v10_v13')
+    summarise_results(os.path.join(_output_path, 'v11_v13'), 'v11_v13', old_tag='v11')
+    summarise_results(os.path.join(_output_path, 'v12_v13'), 'v12_v13', old_tag='v12')
     summarise_results(os.path.join(_output_path, 'v10_v12'), 'v10_v12')
     summarise_results(os.path.join(_output_path, 'v10_v11'), 'v10_v11')
     summarise_results(os.path.join(_output_path, 'full_chain'), 'v10_11_12_v13')

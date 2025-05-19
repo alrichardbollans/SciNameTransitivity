@@ -23,6 +23,7 @@ def get_accepted_name_from_record(record: pd.DataFrame, reported_name: str):
 
 
 def chain_two_databases(older_taxa_version: pd.DataFrame, newer_taxa_version: pd.DataFrame, old_tag: str, new_tag: str, out_dir: str):
+    os.makedirs(out_dir, exist_ok=True)
     # Pick non-duplicated names
     unique_names = older_taxa_version['taxon_name_w_authors'].dropna().unique().tolist()
 

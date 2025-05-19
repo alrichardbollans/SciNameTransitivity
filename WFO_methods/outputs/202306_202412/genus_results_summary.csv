@@ -1,0 +1,5 @@
+,taxon_name_w_authors,202306_accepted_name_w_author,202412_taxon_name_w_authors,202412_chained_accepted_name_w_author,202412_chained_accepted_species,202412_direct_accepted_name_w_author,202412_direct_accepted_species,202412_chained_accepted_genus,202412_direct_accepted_genus
+count,3859,3859,3859,3859,3755,3859,3859,3755,3859
+unique,3859,1908,1908,1894,1821,2102,2038,864,793
+top,Myristica mouchico Baill. ex Stone,Strobocalyx arborea (Buch.-Ham.) Sch.Bip.,Strobocalyx arborea (Buch.-Ham.) Sch.Bip.,Strobocalyx arborea (Buch.-Ham.) Sch.Bip.,Strobocalyx arborea,Solanum violaceum Ortega,Solanum violaceum,Pentanema,Vernonia
+freq,1,23,23,23,23,22,22,75,315

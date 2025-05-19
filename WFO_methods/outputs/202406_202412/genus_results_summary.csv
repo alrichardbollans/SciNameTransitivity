@@ -1,0 +1,5 @@
+,taxon_name_w_authors,202406_accepted_name_w_author,202412_taxon_name_w_authors,202412_chained_accepted_name_w_author,202412_chained_accepted_species,202412_direct_accepted_name_w_author,202412_direct_accepted_species,202412_chained_accepted_genus,202412_direct_accepted_genus
+count,802,802,802,802,749,802,802,749,802
+unique,802,346,346,344,324,374,360,203,225
+top,Mertensia laevigata Kunth,Cyclodium heterodon var. abbreviatum (Presl) A.R.Sm.,Cyclodium heterodon var. abbreviatum (Presl) A.R.Sm.,Cyclodium heterodon var. abbreviatum (Presl) A.R.Sm.,Cyclodium heterodon,Vandenboschia radicans (Sw.) Copel.,Vandenboschia radicans,Huperzia,Phlegmariurus
+freq,1,20,20,20,20,16,16,53,53

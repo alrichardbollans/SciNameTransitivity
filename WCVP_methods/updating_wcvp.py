@@ -11,6 +11,8 @@ this_repo_path = os.path.join(repo_path, 'TaxoDrift')
 _output_path = os.path.join(this_repo_path, 'WCVP_methods', 'outputs')
 _input_path = os.path.join(this_repo_path, 'WCVP_methods', 'inputs')
 
+wcvp_version_order = ['v10', 'v11', 'v12', 'v13']
+
 if not os.path.isdir(_output_path):
     os.mkdir(_output_path)
 
@@ -18,17 +20,18 @@ if not os.path.isdir(_output_path):
 def compare_all_pairs():
     v10_taxa, v11_taxa, v12_taxa, v13_taxa = get_all_databases()
 
-    compare_two_versions(v10_taxa, v13_taxa,
-                         'v10', 'v13', _output_path)
+    compare_two_versions(v10_taxa, v11_taxa,
+                         'v10', 'v11', _output_path)
     compare_two_versions(v10_taxa, v12_taxa,
                          'v10', 'v12', _output_path)
+    compare_two_versions(v10_taxa, v13_taxa,
+                         'v10', 'v13', _output_path)
+
+    compare_two_versions(v11_taxa, v12_taxa,
+                         'v11', 'v12', _output_path)
     compare_two_versions(v11_taxa, v13_taxa,
                          'v11', 'v13', _output_path)
 
-    compare_two_versions(v10_taxa, v11_taxa,
-                         'v10', 'v11', _output_path)
-    compare_two_versions(v11_taxa, v12_taxa,
-                         'v11', 'v12', _output_path)
     compare_two_versions(v12_taxa, v13_taxa, 'v12', 'v13', _output_path)
 
 
@@ -73,16 +76,15 @@ def get_all_databases():
 
     return v10_taxa, v11_taxa, v12_taxa, v13_taxa
 
-
-
-
-
-if __name__ == '__main__':
+def main():
     # compare_all_pairs()
     # full_chain_results()
-    summarise_results(os.path.join(_output_path, 'v10_v13'), 'v10_v13')
-    summarise_results(os.path.join(_output_path, 'v11_v13'), 'v11_v13', old_tag='v11')
-    summarise_results(os.path.join(_output_path, 'v12_v13'), 'v12_v13', old_tag='v12')
-    summarise_results(os.path.join(_output_path, 'v10_v12'), 'v10_v12')
-    summarise_results(os.path.join(_output_path, 'v10_v11'), 'v10_v11')
-    summarise_results(os.path.join(_output_path, 'full_chain'), 'v10_11_12_v13')
+    for w in wcvp_version_order:
+        for w2 in wcvp_version_order:
+            try:
+                summarise_results(os.path.join(_output_path, f'{w}_{w2}'), f'{w}_{w2}', old_tag=w)
+            except:
+                print(f'Could not summarise {w}, {w2}')
+
+if __name__ == '__main__':
+    main()

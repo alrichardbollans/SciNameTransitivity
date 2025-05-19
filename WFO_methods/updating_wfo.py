@@ -34,6 +34,15 @@ def compare_all_pairs():
         path_tag = f'{other_version}_{new_wfo_tag}'
         summarise_results(os.path.join(_output_path, path_tag), path_tag, old_tag=other_version)
 
+        for other_version2 in other_versions:
+            # Get all combinations of other versions (if possible)
+            try:
+                compare_two_versions(other_versions[other_version2], other_versions[other_version], other_version2, other_version, _output_path)
+                path_tag = f'{other_version2}_{other_version}'
+                summarise_results(os.path.join(_output_path, path_tag), path_tag, old_tag=other_version2)
+            except:
+                print(f'Could not compare {other_version2} to {other_version}')
+
 
 def compare_pairs_to_v10_equivalent():
     for other_version in versions_after_v10:
@@ -73,21 +82,18 @@ def main():
     compare_all_pairs()
     full_chain_results(oldest_version, old_wfo_tag, other_versions, other_version_strings, os.path.join(_output_path, 'wfo_full_chain'))
     summarise_results(os.path.join(_output_path, 'wfo_full_chain'), 'previous_chain_202406', old_tag=old_wfo_tag)
-    for y in all_wfo_version_strings:
-        if y != old_wfo_tag:
-            summarise_results(os.path.join(_output_path, f'{old_wfo_tag}_{y}'), f'{old_wfo_tag}_{y}',
-                              old_tag=old_wfo_tag)
 
     main_case_v10_equivalent()
     compare_pairs_to_v10_equivalent()
     full_chain_results(v10_equiv, v10_equiv_tag, versions_after_v10, wfo_version_strings_after_v10,
                        os.path.join(_output_path, 'wfo_full_chain_after_v10'))
     for y in all_wfo_version_strings:
-        try:
-            summarise_results(os.path.join(_output_path, f'{wfo_version_comparable_to_v10_string}_{y}'), f'{oldest_wfo_version_string}_{y}',
-                              old_tag=oldest_wfo_version_string)
-        except:
-            print(f'Could not summarise {y}')
+        for y2 in all_wfo_version_strings:
+            try:
+                summarise_results(os.path.join(_output_path, f'{y2}_{y}'), f'{y2}_{y}',
+                                  old_tag=y2)
+            except:
+                print(f'Could not summarise {y}, {y2}')
 
 
 if __name__ == '__main__':

@@ -6,8 +6,7 @@ from matplotlib import pyplot as plt
 from scipy import stats
 
 from WCVP_methods.updating_wcvp import wcvp_version_order
-from WFO_methods.get_WFO import all_wfo_version_strings, oldest_wfo_version_string, wfo_version_comparable_to_v10_string, \
-    wfo_version_strings_after_v10, latest_wfo_version_string
+from WFO_methods.get_WFO import all_wfo_version_strings
 from plots_to_display.change_over_time_backwards import version_dict, format_wfo_string
 
 repo_path = os.environ.get('KEWSCRATCHPATH')
@@ -164,5 +163,5 @@ def spearman_tests():
 
 if __name__ == '__main__':
     plot_changes_separate_taxonomies()
-    # plot_changes_just_with_last_version()
-    # spearman_tests()
+    plot_changes_just_with_last_version()
+    spearman_tests()

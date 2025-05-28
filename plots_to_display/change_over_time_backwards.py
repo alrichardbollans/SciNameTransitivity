@@ -12,7 +12,7 @@ repo_path = os.environ.get('KEWSCRATCHPATH')
 this_repo_path = os.path.join(repo_path, 'TaxoDrift')
 _wcvp_output_path = os.path.join(this_repo_path, 'WCVP_methods', 'outputs')
 _wfo_output_path = os.path.join(this_repo_path, 'WFO_methods', 'outputs')
-version_dict = {'2022-10': 'v10', '2023-04': 'v11', '2023-09': 'v12', '2024-05': 'v13'}
+version_dict = {'2022-10': 'v10', '2023-04': 'v11', '2023-09': 'v12', '2024-05': 'v13', '2025-05': 'v14'}
 
 
 def format_wfo_string(given_string):
@@ -105,7 +105,7 @@ def plot_changes_separate_taxonomies():
     all_wfo_df = pd.DataFrame()
     for w in all_wfo_version_strings[1:]:
         wfo_df = pd.DataFrame(get_wfo_species_results(w),
-                               columns=['Date', 'Species Discrepancy (%)'])
+                              columns=['Date', 'Species Discrepancy (%)'])
         wfo_df['Taxonomy Version'] = f'WFO ({w})'
         all_wfo_df = pd.concat([all_wfo_df, wfo_df])
 
@@ -126,7 +126,6 @@ def plot_changes_separate_taxonomies():
     plt.close()
 
 
-
 def do_permutation_spearman_test(x, y):
     def statistic(x):  # permute only `x`
 
@@ -140,7 +139,7 @@ def do_permutation_spearman_test(x, y):
 
 def spearman_tests():
     out_data = []
-    wcvp_data = get_wcvp_species_results('v13')
+    wcvp_data = get_wcvp_species_results('v14')
 
     # Test monotonic relationships of data over time
     y = [wcvp_data.index(c) for c in wcvp_data[:-1]]  ## remove last case as thats a given
@@ -169,5 +168,5 @@ def spearman_tests():
 
 if __name__ == '__main__':
     plot_changes_separate_taxonomies()
-    # plot_changes_just_with_last_version()
-    # spearman_tests()
+    plot_changes_just_with_last_version()
+    spearman_tests()

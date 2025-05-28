@@ -1,0 +1,5 @@
+,taxon_name_w_authors,v12_accepted_name_w_author,v14_taxon_name_w_authors,v14_chained_accepted_name_w_author,v14_chained_accepted_species,v14_direct_accepted_name_w_author,v14_direct_accepted_species
+count,3882,3882,3882,3882,3877,3882,3882
+unique,3882,1464,1464,1455,1444,1693,1665
+top,Silene gonosperma var. pertica Bocquet,Achillea millefolium subsp. millefolium,Achillea millefolium subsp. millefolium,Achillea millefolium subsp. millefolium,Achillea millefolium,Morus acidosa Griff.,Achillea borealis
+freq,1,66,66,66,66,38,49

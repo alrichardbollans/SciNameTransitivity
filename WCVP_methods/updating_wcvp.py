@@ -11,14 +11,14 @@ this_repo_path = os.path.join(repo_path, 'TaxoDrift')
 _output_path = os.path.join(this_repo_path, 'WCVP_methods', 'outputs')
 _input_path = os.path.join(this_repo_path, 'WCVP_methods', 'inputs')
 
-wcvp_version_order = ['v10', 'v11', 'v12', 'v13']
+wcvp_version_order = ['v10', 'v11', 'v12', 'v13', 'v14']
 
 if not os.path.isdir(_output_path):
     os.mkdir(_output_path)
 
 
 def compare_all_pairs():
-    v10_taxa, v11_taxa, v12_taxa, v13_taxa = get_all_databases()
+    v10_taxa, v11_taxa, v12_taxa, v13_taxa, v14_taxa = get_all_databases()
 
     compare_two_versions(v10_taxa, v11_taxa,
                          'v10', 'v11', _output_path)
@@ -34,12 +34,18 @@ def compare_all_pairs():
 
     compare_two_versions(v12_taxa, v13_taxa, 'v12', 'v13', _output_path)
 
+    ## 14
+    compare_two_versions(v10_taxa, v14_taxa, 'v10', 'v14', _output_path)
+    compare_two_versions(v11_taxa, v14_taxa, 'v11', 'v14', _output_path)
+    compare_two_versions(v12_taxa, v14_taxa, 'v12', 'v14', _output_path)
+    compare_two_versions(v13_taxa, v14_taxa, 'v13', 'v14', _output_path)
+
 
 def full_chain_results():
     # Note when chaining like this, in intermediary steps ambiguous/non resolving names may be dropped.
     # This may somewhat reflect real world situations but is optimistic about the chaining process
     out_dir = os.path.join('outputs', 'full_chain')
-    v10_taxa, v11_taxa, v12_taxa, v13_taxa = get_all_databases()
+    v10_taxa, v11_taxa, v12_taxa, v13_taxa, v14_taxa = get_all_databases()
     # Start with 10 -> 11
     v10_11_chained = chain_two_databases(v10_taxa, v11_taxa, 'v10', 'v11', out_dir)
     v10_11_chained = v10_11_chained.rename(columns={'v11_chained_accepted_name_w_author': 'accepted_name_w_author'})
@@ -52,9 +58,14 @@ def full_chain_results():
 
     # Then -> 13
     v10_11_12_13_chained = chain_two_databases(v10_11_12_chained, v13_taxa, 'v10_11_12', 'v13', out_dir)
+    v10_11_12_13_chained = v10_11_12_13_chained.rename(columns={'v13_chained_accepted_name_w_author': 'accepted_name_w_author'})
+    v10_11_12_13_chained = v10_11_12_13_chained[['taxon_name_w_authors', 'accepted_name_w_author']]
 
-    direct_updated_records = get_direct_name_updates(v10_taxa, v13_taxa, 'v13', out_dir)
-    results_df = compare_and_output_chained_and_direct_updates(v10_11_12_13_chained, direct_updated_records, 'v10_11_12', 'v13', out_dir)
+    v10_11_12_13_14_chained = chain_two_databases(v10_11_12_13_chained, v14_taxa, 'v10_11_12_13', 'v14', out_dir)
+
+    direct_updated_records = get_direct_name_updates(v10_taxa, v14_taxa, 'v14', out_dir)
+    results_df = compare_and_output_chained_and_direct_updates(v10_11_12_13_14_chained, direct_updated_records,
+                                                               'v10_11_12_13', 'v14', out_dir)
     pass
 
 
@@ -62,29 +73,35 @@ def get_all_databases():
     # v10_taxa = get_all_taxa(version='10', output_csv=os.path.join(_input_path, 'v10_taxa.csv'))
     # v11_taxa = get_all_taxa(version='11', output_csv=os.path.join(_input_path, 'v11_taxa.csv'))
     # v12_taxa = get_all_taxa(version='12', output_csv=os.path.join(_input_path, 'v12_taxa.csv'))
-    # v13_taxa = get_all_taxa(version=None, output_csv=os.path.join(_input_path, 'v13_taxa.csv'))
+    # v13_taxa = get_all_taxa(version='13', output_csv=os.path.join(_input_path, 'v13_taxa.csv'))
+    v14_taxa = get_all_taxa(version=None, output_csv=os.path.join(_input_path, 'v14_taxa.csv'), get_new_version=True)
 
     v10_taxa = pd.read_csv(os.path.join(_input_path, 'v10_taxa.csv'), index_col=0)
     v11_taxa = pd.read_csv(os.path.join(_input_path, 'v11_taxa.csv'), index_col=0)
     v12_taxa = pd.read_csv(os.path.join(_input_path, 'v12_taxa.csv'), index_col=0)
     v13_taxa = pd.read_csv(os.path.join(_input_path, 'v13_taxa.csv'), index_col=0)
+    v14_taxa = pd.read_csv(os.path.join(_input_path, 'v14_taxa.csv'), index_col=0)
 
     v10_taxa['taxon_name_w_authors'] = add_authors_to_col(v10_taxa, 'taxon_name')
     v11_taxa['taxon_name_w_authors'] = add_authors_to_col(v11_taxa, 'taxon_name')
     v12_taxa['taxon_name_w_authors'] = add_authors_to_col(v12_taxa, 'taxon_name')
     v13_taxa['taxon_name_w_authors'] = add_authors_to_col(v13_taxa, 'taxon_name')
+    v14_taxa['taxon_name_w_authors'] = add_authors_to_col(v14_taxa, 'taxon_name')
 
-    return v10_taxa, v11_taxa, v12_taxa, v13_taxa
+    return v10_taxa, v11_taxa, v12_taxa, v13_taxa, v14_taxa
+
 
 def main():
     # compare_all_pairs()
     # full_chain_results()
+    summarise_results(os.path.join(_output_path, f'full_chain'), f'v10_11_12_13_v14', old_tag='v10')
     for w in wcvp_version_order:
         for w2 in wcvp_version_order:
             try:
                 summarise_results(os.path.join(_output_path, f'{w}_{w2}'), f'{w}_{w2}', old_tag=w)
             except:
                 print(f'Could not summarise {w}, {w2}')
+
 
 if __name__ == '__main__':
     main()

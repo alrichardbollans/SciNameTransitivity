@@ -1,0 +1,5 @@
+,taxon_name_w_authors,v12_accepted_name_w_author,v14_taxon_name_w_authors,v14_chained_accepted_name_w_author,v14_chained_accepted_species,v14_direct_accepted_name_w_author,v14_direct_accepted_species
+count,6900,6900,6900,6900,6697,6900,6702
+unique,6900,1980,1980,1970,1826,2418,2067
+top,Polypodium lanceolatum var. sinuatum Sim,Molinia caerulea (L.) Moench,Molinia caerulea (L.) Moench,Molinia caerulea (L.) Moench,Molinia caerulea,Molinia caerulea subsp. caerulea,Molinia caerulea
+freq,1,86,86,86,86,86,86

@@ -18,10 +18,8 @@ def main():
 
         for other_version2 in other_versions:
             # Get all combinations of other versions (if possible)
-            try:
+            if other_version2 !=other_version:
                 do_all_analyses_for_a_pair(other_versions[other_version2], other_versions[other_version], other_version2, other_version)
-            except:
-                print(f'Could not compare {other_version2} to {other_version}')
 
 
 if __name__ == '__main__':

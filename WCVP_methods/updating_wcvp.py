@@ -74,7 +74,7 @@ def get_all_databases():
     # v11_taxa = get_all_taxa(version='11', output_csv=os.path.join(_input_path, 'v11_taxa.csv'))
     # v12_taxa = get_all_taxa(version='12', output_csv=os.path.join(_input_path, 'v12_taxa.csv'))
     # v13_taxa = get_all_taxa(version='13', output_csv=os.path.join(_input_path, 'v13_taxa.csv'))
-    v14_taxa = get_all_taxa(version=None, output_csv=os.path.join(_input_path, 'v14_taxa.csv'), get_new_version=True)
+    # v14_taxa = get_all_taxa(version=None, output_csv=os.path.join(_input_path, 'v14_taxa.csv'), get_new_version=True)
 
     v10_taxa = pd.read_csv(os.path.join(_input_path, 'v10_taxa.csv'), index_col=0)
     v11_taxa = pd.read_csv(os.path.join(_input_path, 'v11_taxa.csv'), index_col=0)

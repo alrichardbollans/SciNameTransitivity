@@ -3,15 +3,23 @@ import os
 import pandas as pd
 from wcvpy.wcvp_download import wcvp_columns, wcvp_accepted_columns
 
+from WCVP_methods.updating_wcvp import wcvp_version_order
+
 repo_path = os.environ.get('KEWSCRATCHPATH')
 this_repo_path = os.path.join(repo_path, 'TaxoDrift')
 _output_path = os.path.join(this_repo_path, 'analyse_number_of_changes', 'outputs')
 
-
-def get_species_differences(df1: pd.DataFrame, df2: pd.DataFrame, old_tag: str, new_tag: str, with_authorship: bool = False):
+def get_out_dir(old_tag: str, new_tag: str):
     tag = '_'.join([old_tag, new_tag])
-    out_dir = os.path.join(_output_path, tag)
+    if old_tag in wcvp_version_order:
+        out_dir = os.path.join(_output_path, 'wcvp', tag)
+    else:
+        out_dir = os.path.join(_output_path, 'wfo', tag)
     os.makedirs(out_dir, exist_ok=True)
+    return out_dir, tag
+
+def get_species_differences(df1: pd.DataFrame, df2: pd.DataFrame, old_tag: str, new_tag: str, with_authorship: bool = False, output_list=False):
+    out_dir, tag = get_out_dir(old_tag, new_tag)
 
     if with_authorship:
         acc_species_col = 'accepted_species_w_author'
@@ -61,12 +69,14 @@ def get_species_differences(df1: pd.DataFrame, df2: pd.DataFrame, old_tag: str, 
 
     out_df.to_csv(os.path.join(out_dir, f'species_differences_summary_{file_tag}.csv'))
 
-    df1[df1[name_col].isin(old_species_not_in_new)].to_csv(os.path.join(out_dir, f'dissappeared_species_{file_tag}.csv'))
+    if output_list:
+        df1[df1[name_col].isin(old_species_not_in_new)].to_csv(os.path.join(out_dir, f'dissappeared_species_{file_tag}.csv'))
 
 
-def get_accepted_species_that_become_unaccepted(df1, df2, old_tag: str, new_tag: str, with_authorship: bool = True):
-    tag = '_'.join([old_tag, new_tag])
-    out_dir = os.path.join(_output_path, tag, 'accepted_species_that_become_unaccepted')
+def get_accepted_species_that_become_unaccepted(df1, df2, old_tag: str, new_tag: str, with_authorship: bool = True, output_list=False):
+    base_out_dir, tag = get_out_dir(old_tag, new_tag)
+
+    out_dir = os.path.join(base_out_dir, 'accepted_species_that_become_unaccepted')
     os.makedirs(out_dir, exist_ok=True)
 
     if with_authorship:
@@ -103,8 +113,8 @@ def get_accepted_species_that_become_unaccepted(df1, df2, old_tag: str, new_tag:
         else:
             out_list.append(str(len(old_accepted_names_that_are_now_status_df['taxon_name_w_authors'].unique().tolist())))
             out_index.append(f'Number which are now {status}')
-
-        old_accepted_names_that_are_now_status_df.to_csv(os.path.join(out_dir, f'accepted_species_that_become_{status}_{file_tag}.csv'))
+        if output_list:
+            old_accepted_names_that_are_now_status_df.to_csv(os.path.join(out_dir, f'accepted_species_that_become_{status}_{file_tag}.csv'))
     out_df = pd.DataFrame(out_list)
     out_df.columns = [tag]
 
@@ -113,9 +123,10 @@ def get_accepted_species_that_become_unaccepted(df1, df2, old_tag: str, new_tag:
     out_df.to_csv(os.path.join(out_dir, f'accepted_species_that_become_unaccepted_summary_{file_tag}.csv'))
 
 
-def get_unaccepted_species_that_become_accepted(df1, df2, old_tag: str, new_tag: str, with_authorship: bool = True):
-    tag = '_'.join([old_tag, new_tag])
-    out_dir = os.path.join(_output_path, tag, 'unaccepted_species_that_become_accepted')
+def get_unaccepted_species_that_become_accepted(df1, df2, old_tag: str, new_tag: str, with_authorship: bool = True, output_list=False):
+    base_out_dir, tag = get_out_dir(old_tag, new_tag)
+
+    out_dir = os.path.join(base_out_dir, 'unaccepted_species_that_become_accepted')
     os.makedirs(out_dir, exist_ok=True)
 
     if with_authorship:
@@ -123,7 +134,6 @@ def get_unaccepted_species_that_become_accepted(df1, df2, old_tag: str, new_tag:
         file_tag = 'w_author'
     else:
         raise ValueError('I think with_authorship should be True for this particular analysis')
-
 
     old_species = df1[df1[wcvp_columns['rank']] == 'Species']
     old_non_accepted_species_df = old_species[~old_species[wcvp_columns['status']].isin(['Accepted', 'Artificial Hybrid'])]
@@ -141,7 +151,8 @@ def get_unaccepted_species_that_become_accepted(df1, df2, old_tag: str, new_tag:
 
         print(
             f'{len(old_status_species)} old {status} species are now accepted out of {len(old_non_accepted_species_df)}')
-        old_status_species.to_csv(os.path.join(out_dir, f'{status}_species_that_become_accepted_{file_tag}.csv'))
+        if output_list:
+            old_status_species.to_csv(os.path.join(out_dir, f'{status}_species_that_become_accepted_{file_tag}.csv'))
 
         out_list.append(str(len(old_status_species['taxon_name_w_authors'].unique().tolist())))
         out_index.append(f'Number of old {status}s which are now accepted')
@@ -155,7 +166,7 @@ def get_unaccepted_species_that_become_accepted(df1, df2, old_tag: str, new_tag:
 
 
 def get_names_that_resolve_in_old_but_not_in_new(v12_taxa: pd.DataFrame, v13_taxa: pd.DataFrame, old_tag: str, new_tag: str,
-                                                 with_authorship: bool = False):
+                                                 with_authorship: bool = False, output_list=False):
     """
     Identify taxon names that resolve in the earlier dataset (v12) but not in the newer dataset (v13).
 
@@ -169,9 +180,7 @@ def get_names_that_resolve_in_old_but_not_in_new(v12_taxa: pd.DataFrame, v13_tax
     :return: A set of taxon names resolved in the v12 dataset but not in the v13 dataset.
     :rtype: set
     """
-    tag = '_'.join([old_tag, new_tag])
-    out_dir = os.path.join(_output_path, tag)
-    os.makedirs(out_dir, exist_ok=True)
+    out_dir, tag = get_out_dir(old_tag, new_tag)
 
     if with_authorship:
         taxon_name_col = 'taxon_name_w_authors'
@@ -191,8 +200,9 @@ def get_names_that_resolve_in_old_but_not_in_new(v12_taxa: pd.DataFrame, v13_tax
 
     names_that_resolve_in_old_but_not_in_new_df = v12_taxa[v12_taxa[taxon_name_col].isin(names_that_resolve_in_old_but_not_in_new)]
 
-    names_that_resolve_in_old_but_not_in_new_df[['taxon_name', 'taxon_name_w_authors']].to_csv(
-        os.path.join(out_dir, 'names_that_resolve_in_old_but_not_in_new.csv'))
+    if output_list:
+        names_that_resolve_in_old_but_not_in_new_df[['taxon_name', 'taxon_name_w_authors']].to_csv(
+            os.path.join(out_dir, 'names_that_resolve_in_old_but_not_in_new.csv'))
 
     num_of_original_names = len(names_that_resolve_in_v12)
     out_df = pd.DataFrame([num_of_original_names, len(names_that_resolve_in_old_but_not_in_new)])
@@ -203,3 +213,13 @@ def get_names_that_resolve_in_old_but_not_in_new(v12_taxa: pd.DataFrame, v13_tax
     out_df.to_csv(os.path.join(out_dir, 'names_that_resolve_in_old_but_not_in_new_summary.csv'))
 
     return names_that_resolve_in_old_but_not_in_new_df
+
+
+def do_all_analyses_for_a_pair(old_taxa, new_taxa, old_tag: str, new_tag: str):
+    get_species_differences(old_taxa, new_taxa, old_tag, new_tag)
+    get_species_differences(old_taxa, new_taxa, old_tag, new_tag, with_authorship=True)
+    get_accepted_species_that_become_unaccepted(old_taxa, new_taxa, old_tag, new_tag)
+
+    get_unaccepted_species_that_become_accepted(old_taxa, new_taxa, old_tag, new_tag)
+
+    get_names_that_resolve_in_old_but_not_in_new(old_taxa, new_taxa, old_tag, new_tag)

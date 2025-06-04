@@ -36,12 +36,13 @@ def compare_all_pairs():
 
         for other_version2 in other_versions:
             # Get all combinations of other versions (if possible)
-            try:
-                compare_two_versions(other_versions[other_version2], other_versions[other_version], other_version2, other_version, _output_path)
-                path_tag = f'{other_version2}_{other_version}'
-                summarise_results(os.path.join(_output_path, path_tag), path_tag, old_tag=other_version2)
-            except:
-                print(f'Could not compare {other_version2} to {other_version}')
+            if other_version2 !=other_version and other_version2 < other_version:
+                try:
+                    compare_two_versions(other_versions[other_version2], other_versions[other_version], other_version2, other_version, _output_path)
+                    path_tag = f'{other_version2}_{other_version}'
+                    summarise_results(os.path.join(_output_path, path_tag), path_tag, old_tag=other_version2)
+                except:
+                    print(f'Could not compare {other_version2} to {other_version}')
 
 
 def compare_pairs_to_v10_equivalent():

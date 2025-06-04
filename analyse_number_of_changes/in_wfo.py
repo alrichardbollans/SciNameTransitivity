@@ -12,14 +12,16 @@ def main():
 
     for other_version in other_versions:
         print(f'Running {other_version}')
-        do_all_analyses_for_a_pair(oldest_version, other_versions[other_version], old_wfo_tag, other_version)
-
-        do_all_analyses_for_a_pair(other_versions[other_version], latest_version, other_version, new_wfo_tag)
+        if other_version != old_wfo_tag:
+            do_all_analyses_for_a_pair(oldest_version, other_versions[other_version], old_wfo_tag, other_version)
+        if other_version != new_wfo_tag:
+            do_all_analyses_for_a_pair(other_versions[other_version], latest_version, other_version, new_wfo_tag)
 
         for other_version2 in other_versions:
             # Get all combinations of other versions (if possible)
             if other_version2 !=other_version:
-                do_all_analyses_for_a_pair(other_versions[other_version2], other_versions[other_version], other_version2, other_version)
+                if other_version2 < other_version:
+                    do_all_analyses_for_a_pair(other_versions[other_version2], other_versions[other_version], other_version2, other_version)
 
 
 if __name__ == '__main__':

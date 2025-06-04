@@ -70,11 +70,11 @@ def main():
     wcvp_results = analyse_taxonomy_data('wcvp')
     wfo_results = analyse_taxonomy_data('wfo')
 
-    sns.scatterplot(data=pd.concat([wcvp_results,wfo_results]), y="Species Discrepancies (%)", x="Resurrections (%)", hue='Taxonomy')
+    sns.scatterplot(data=pd.concat([wfo_results,wcvp_results]), y="Species Discrepancies (%)", x="Resurrections (%)", hue='Taxonomy')
     plt.savefig(os.path.join('outputs', 'sp_vs_ressurections.jpg'), dpi=300)
     plt.close()
 
-    sns.scatterplot(data=pd.concat([wcvp_results, wfo_results]), y="Species Discrepancies (%)", x="Synonymisations (%)", hue='Taxonomy')
+    sns.scatterplot(data=pd.concat([wfo_results,wcvp_results]), y="Species Discrepancies (%)", x="Synonymisations (%)", hue='Taxonomy')
     plt.savefig(os.path.join('outputs', 'sp_vs_Synonymisations.jpg'), dpi=300)
     plt.close()
 

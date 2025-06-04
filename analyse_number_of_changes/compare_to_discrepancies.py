@@ -43,6 +43,8 @@ def analyse_taxonomy_data(name):
             sp_disrecepancies = get_species_discrepancies_for_pair(folder, name)
             data.append([sp_disrecepancies, resurrections, synonymisations])
     out_df = pd.DataFrame(data, columns = ['Species Discrepancies (%)', 'Synonymisations (%)', 'Resurrections (%)'])
+    out_df['Synonymisations (%)'] = out_df['Synonymisations (%)'] * 100
+    out_df['Resurrections (%)'] = out_df['Resurrections (%)'] * 100
     out_df['Taxonomy'] = name.upper()
 
     sns.set_theme()

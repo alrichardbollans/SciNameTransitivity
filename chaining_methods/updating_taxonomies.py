@@ -97,22 +97,22 @@ def compare_and_output_chained_and_direct_updates(chained_updated_records, direc
     results_df.to_csv(os.path.join(out_dir, 'all_results.csv'))
     results_df.describe(include='all').to_csv(os.path.join(out_dir, 'all_results_summary.csv'))
 
-    species_ambiguity_results = results_df.dropna(subset=[new_tag + '_direct_accepted_species'])
+    results_df[new_tag + '_chained_accepted_genus'] = results_df[new_tag + '_chained_accepted_name_w_author'].apply(
+        get_genus_from_full_name)
+    results_df[new_tag + '_direct_accepted_genus'] = results_df[new_tag + '_direct_accepted_name_w_author'].apply(
+        get_genus_from_full_name)
+
+    species_ambiguity_results = results_df.dropna(subset=[new_tag + '_direct_accepted_genus'])
     species_ambiguity_results = species_ambiguity_results[
-        species_ambiguity_results[new_tag + '_direct_accepted_species'] != species_ambiguity_results[
-            new_tag + '_chained_accepted_species']]
+        (species_ambiguity_results[new_tag + '_direct_accepted_species'] != species_ambiguity_results[new_tag + '_chained_accepted_species']) |
+    (species_ambiguity_results[new_tag + '_direct_accepted_genus'] != species_ambiguity_results[new_tag + '_chained_accepted_genus'])]
 
     species_ambiguity_results.to_csv(os.path.join(out_dir, 'species_results.csv'))
     species_ambiguity_results.describe(include='all').to_csv(os.path.join(out_dir, 'species_results_summary.csv'))
 
-    species_ambiguity_results[new_tag + '_chained_accepted_genus'] = species_ambiguity_results[new_tag + '_chained_accepted_species'].apply(
-        get_genus_from_full_name)
-    species_ambiguity_results[new_tag + '_direct_accepted_genus'] = species_ambiguity_results[new_tag + '_direct_accepted_species'].apply(
-        get_genus_from_full_name)
 
-    genus_ambiguity_results = species_ambiguity_results.dropna(subset=[new_tag + '_direct_accepted_genus'])
-    genus_ambiguity_results = genus_ambiguity_results[
-        genus_ambiguity_results[new_tag + '_chained_accepted_genus'] != genus_ambiguity_results[new_tag + '_direct_accepted_genus']]
+    genus_ambiguity_results = species_ambiguity_results[
+        species_ambiguity_results[new_tag + '_chained_accepted_genus'] != species_ambiguity_results[new_tag + '_direct_accepted_genus']]
     genus_ambiguity_results.to_csv(os.path.join(out_dir, 'genus_results.csv'))
     genus_ambiguity_results.describe(include='all').to_csv(os.path.join(out_dir, 'genus_results_summary.csv'))
     # cases_that_cant_update_df.to_csv(os.path.join(out_dir, 'v12_v13_cases_cant_update.csv'))

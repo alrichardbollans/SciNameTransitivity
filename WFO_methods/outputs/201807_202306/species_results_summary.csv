@@ -1,5 +1,5 @@
-,taxon_name_w_authors,201807_accepted_name_w_author,202306_taxon_name_w_authors,202306_chained_accepted_name_w_author,202306_chained_accepted_species,202306_direct_accepted_name_w_author,202306_direct_accepted_species
-count,17994,17994,17994,17994,17571,17994,17994
-unique,17994,8899,8899,8816,8608,10505,10225
-top,Persica Mill.,Cestrum L.,Cestrum L.,Cestrum L.,Dichanthelium acuminatum,Avenula pubescens (Huds.) Dumort.,Avenula pubescens
-freq,1,183,183,183,119,68,68
+,taxon_name_w_authors,201807_accepted_name_w_author,202306_taxon_name_w_authors,202306_chained_accepted_name_w_author,202306_chained_accepted_species,202306_direct_accepted_name_w_author,202306_direct_accepted_species,202306_chained_accepted_genus,202306_direct_accepted_genus
+count,18185,18185,18185,18185,17573,18185,17994,18185,18185
+unique,18185,9044,9044,8961,8609,10684,10225,2911,3048
+top,Werckleocereus Britton & Rose,Cestrum L.,Cestrum L.,Cestrum L.,Dichanthelium acuminatum,Avenula pubescens (Huds.) Dumort.,Avenula pubescens,Carex,Carex
+freq,1,183,183,183,119,68,68,320,320

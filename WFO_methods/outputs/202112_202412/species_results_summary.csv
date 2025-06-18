@@ -1,5 +1,5 @@
-,taxon_name_w_authors,202112_accepted_name_w_author,202412_taxon_name_w_authors,202412_chained_accepted_name_w_author,202412_chained_accepted_species,202412_direct_accepted_name_w_author,202412_direct_accepted_species
-count,18303,18303,18303,18303,18202,18303,18303
-unique,18303,8756,8756,8654,8439,10328,10094
-top,Unisema Raf.,Crocus vernus (L.) Hill,Crocus vernus (L.) Hill,Crocus vernus (L.) Hill,Crocus vernus,Crocus duplex Weston,Crocus duplex
-freq,1,67,67,68,68,66,66
+,taxon_name_w_authors,202112_accepted_name_w_author,202412_taxon_name_w_authors,202412_chained_accepted_name_w_author,202412_chained_accepted_species,202412_direct_accepted_name_w_author,202412_direct_accepted_species,202412_chained_accepted_genus,202412_direct_accepted_genus
+count,18852,18852,18852,18852,18209,18852,18303,18852,18852
+unique,18852,8995,8995,8891,8444,10731,10094,2696,2756
+top,Pyramidium Boiss.,Crocus vernus (L.) Hill,Crocus vernus (L.) Hill,Crocus vernus (L.) Hill,Crocus vernus,Crocus duplex Weston,Crocus duplex,Piper,Senecio
+freq,1,67,67,68,68,66,66,321,383

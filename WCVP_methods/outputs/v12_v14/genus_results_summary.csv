@@ -1,5 +1,5 @@
 ,taxon_name_w_authors,v12_accepted_name_w_author,v14_taxon_name_w_authors,v14_chained_accepted_name_w_author,v14_chained_accepted_species,v14_direct_accepted_name_w_author,v14_direct_accepted_species,v14_chained_accepted_genus,v14_direct_accepted_genus
-count,199,199,199,199,194,199,199,194,199
-unique,199,106,106,106,101,106,106,96,100
-top,Ligusticum apiifolium (Nutt.) A.Gray,Eria javanica (Sw.) Blume,Eria javanica (Sw.) Blume,Bulbophyllum gibbosum (Blume) Lindl.,Bulbophyllum gibbosum,Eria stellata Lindl.,Eria stellata,Bulbophyllum,Eria
-freq,1,22,22,22,22,21,21,22,23
+count,394,394,394,394,194,394,196,394,394
+unique,394,205,205,205,101,225,103,195,211
+top,Eupatorium steviifolium DC.,Eria javanica (Sw.) Blume,Eria javanica (Sw.) Blume,Bulbophyllum gibbosum (Blume) Lindl.,Bulbophyllum gibbosum,Phyllanthus L.,Eria stellata,Bulbophyllum,Eria
+freq,1,22,22,22,22,22,21,22,23

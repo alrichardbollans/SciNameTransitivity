@@ -1,5 +1,5 @@
-,taxon_name_w_authors,202207_accepted_name_w_author,202412_taxon_name_w_authors,202412_chained_accepted_name_w_author,202412_chained_accepted_species,202412_direct_accepted_name_w_author,202412_direct_accepted_species
-count,18349,18349,18349,18349,18248,18349,18349
-unique,18349,8784,8784,8682,8465,10350,10115
-top,Unisema Raf.,Crocus vernus (L.) Hill,Crocus vernus (L.) Hill,Crocus vernus (L.) Hill,Crocus vernus,Crocus duplex Weston,Crocus duplex
-freq,1,67,67,68,68,66,66
+,taxon_name_w_authors,202207_accepted_name_w_author,202412_taxon_name_w_authors,202412_chained_accepted_name_w_author,202412_chained_accepted_species,202412_direct_accepted_name_w_author,202412_direct_accepted_species,202412_chained_accepted_genus,202412_direct_accepted_genus
+count,18896,18896,18896,18896,18255,18896,18349,18896,18896
+unique,18896,9022,9022,8918,8470,10752,10115,2700,2760
+top,Phlebiophyllum v.d.Bosch,Crocus vernus (L.) Hill,Crocus vernus (L.) Hill,Crocus vernus (L.) Hill,Crocus vernus,Crocus duplex Weston,Crocus duplex,Piper,Senecio
+freq,1,67,67,68,68,66,66,321,383

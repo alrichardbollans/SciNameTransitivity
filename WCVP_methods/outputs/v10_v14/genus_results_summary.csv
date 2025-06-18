@@ -1,5 +1,5 @@
 ,taxon_name_w_authors,v10_accepted_name_w_author,v14_taxon_name_w_authors,v14_chained_accepted_name_w_author,v14_chained_accepted_species,v14_direct_accepted_name_w_author,v14_direct_accepted_species,v14_chained_accepted_genus,v14_direct_accepted_genus
-count,425,425,425,425,416,425,425,416,425
-unique,425,243,243,243,235,244,244,221,221
-top,Austrocylindropuntia colubrina (A.Cast.) Backeb.,Eria javanica (Sw.) Blume,Eria javanica (Sw.) Blume,Bulbophyllum gibbosum (Blume) Lindl.,Bulbophyllum gibbosum,Eria stellata Lindl.,Eria stellata,Bulbophyllum,Eria
+count,718,718,718,718,416,718,418,718,718
+unique,718,382,382,382,235,433,239,355,391
+top,Austrocylindropuntia colubrina (A.Cast.) Backeb.,Eria javanica (Sw.) Blume,Eria javanica (Sw.) Blume,Bulbophyllum gibbosum (Blume) Lindl.,Bulbophyllum gibbosum,Phyllanthus L.,Eria stellata,Bulbophyllum,Eria
 freq,1,22,22,22,22,21,21,22,23

@@ -1,5 +1,5 @@
-,taxon_name_w_authors,202212_accepted_name_w_author,202406_taxon_name_w_authors,202406_chained_accepted_name_w_author,202406_chained_accepted_species,202406_direct_accepted_name_w_author,202406_direct_accepted_species
-count,12869,12869,12869,12869,12810,12869,12869
-unique,12869,6230,6230,6162,6008,7211,7030
-top,Poivrea obscura var. octogona H.Perrier,Crocus vernus (L.) Hill,Crocus vernus (L.) Hill,Crocus vernus (L.) Hill,Crocus vernus,Crocus duplex Weston,Crocus duplex
-freq,1,67,67,68,68,66,66
+,taxon_name_w_authors,202212_accepted_name_w_author,202406_taxon_name_w_authors,202406_chained_accepted_name_w_author,202406_chained_accepted_species,202406_direct_accepted_name_w_author,202406_direct_accepted_species,202406_chained_accepted_genus,202406_direct_accepted_genus
+count,13045,13045,13045,13045,12813,13045,12869,13045,13045
+unique,13045,6347,6347,6279,6011,7359,7030,1957,1928
+top,Poivrea obscura var. octogona H.Perrier,Crocus vernus (L.) Hill,Crocus vernus (L.) Hill,Crocus vernus (L.) Hill,Crocus vernus,Crocus duplex Weston,Crocus duplex,Pilosella,Senecio
+freq,1,67,67,68,68,66,66,289,387

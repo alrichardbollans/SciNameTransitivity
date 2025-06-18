@@ -322,7 +322,7 @@ def plot_dist_of_metric(df_with_region_data, metric, colormap: str = 'inferno', 
 
 
 def main():
-    # plot_names_with_issues()
+    plot_names_with_issues()
     analyse_region_count_data()
 
 

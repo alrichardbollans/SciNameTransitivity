@@ -1,5 +1,5 @@
 ,taxon_name_w_authors,v12_accepted_name_w_author,v13_taxon_name_w_authors,v13_chained_accepted_name_w_author,v13_chained_accepted_species,v13_direct_accepted_name_w_author,v13_direct_accepted_species,v13_chained_accepted_genus,v13_direct_accepted_genus
-count,90,90,90,90,89,90,90,89,90
-unique,90,45,45,45,44,45,45,41,41
+count,144,144,144,144,89,144,89,144,144
+unique,144,84,84,84,44,88,44,80,82
 top,Octomeria stellata (Lindl.) Spreng.,Eria javanica (Sw.) Blume,Eria javanica (Sw.) Blume,Bulbophyllum gibbosum (Blume) Lindl.,Bulbophyllum gibbosum,Eria stellata Lindl.,Eria stellata,Bulbophyllum,Eria
 freq,1,22,22,22,22,21,21,22,23

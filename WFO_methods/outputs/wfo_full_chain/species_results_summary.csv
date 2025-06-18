@@ -1,5 +1,5 @@
-,taxon_name_w_authors,previous_chain_accepted_name_w_author,202412_taxon_name_w_authors,202412_chained_accepted_name_w_author,202412_chained_accepted_species,202412_direct_accepted_name_w_author,202412_direct_accepted_species
-count,20038,20038,20038,20038,19534,20038,20038
-unique,20038,8949,8949,8945,8800,11326,11045
-top,Unisema Raf.,Cestrum L.,Cestrum L.,Cestrum L.,Dichanthelium acuminatum,Crocus duplex Weston,Crocus duplex
-freq,1,188,188,188,119,77,77
+,taxon_name_w_authors,previous_chain_accepted_name_w_author,202412_taxon_name_w_authors,202412_chained_accepted_name_w_author,202412_chained_accepted_species,202412_direct_accepted_name_w_author,202412_direct_accepted_species,202412_chained_accepted_genus,202412_direct_accepted_genus
+count,20310,20310,20310,20310,19536,20310,20038,20310,20310
+unique,20310,9112,9112,9108,8802,11565,11045,2950,3044
+top,Zerdana Boiss.,Cestrum L.,Cestrum L.,Cestrum L.,Dichanthelium acuminatum,Crocus duplex Weston,Crocus duplex,Piper,Piper
+freq,1,188,188,188,119,77,77,449,447

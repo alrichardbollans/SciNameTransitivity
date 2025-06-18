@@ -92,8 +92,8 @@ def get_all_databases():
 
 
 def main():
-    # compare_all_pairs()
-    # full_chain_results()
+    compare_all_pairs()
+    full_chain_results()
     summarise_results(os.path.join(_output_path, f'full_chain'), f'v10_11_12_13_v14', old_tag='v10')
     for w in wcvp_version_order:
         for w2 in wcvp_version_order:

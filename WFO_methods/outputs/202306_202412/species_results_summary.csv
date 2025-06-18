@@ -1,5 +1,5 @@
-,taxon_name_w_authors,202306_accepted_name_w_author,202412_taxon_name_w_authors,202412_chained_accepted_name_w_author,202412_chained_accepted_species,202412_direct_accepted_name_w_author,202412_direct_accepted_species
-count,14872,14872,14872,14872,14768,14872,14872
-unique,14872,6848,6848,6789,6585,8150,7934
-top,Polyspora tonkinensis (Pit.) S.X.Yang,Crocus vernus (L.) Hill,Crocus vernus (L.) Hill,Crocus vernus (L.) Hill,Crocus vernus,Crocus duplex Weston,Crocus duplex
-freq,1,67,67,68,68,66,66
+,taxon_name_w_authors,202306_accepted_name_w_author,202412_taxon_name_w_authors,202412_chained_accepted_name_w_author,202412_chained_accepted_species,202412_direct_accepted_name_w_author,202412_direct_accepted_species,202412_chained_accepted_genus,202412_direct_accepted_genus
+count,15322,15322,15322,15322,14779,15322,14872,15322,15322
+unique,15322,7032,7032,6971,6594,8474,7934,2041,2040
+top,Polyspora tonkinensis (Pit.) S.X.Yang,Crocus vernus (L.) Hill,Crocus vernus (L.) Hill,Crocus vernus (L.) Hill,Crocus vernus,Crocus duplex Weston,Crocus duplex,Piper,Senecio
+freq,1,67,67,68,68,66,66,321,394

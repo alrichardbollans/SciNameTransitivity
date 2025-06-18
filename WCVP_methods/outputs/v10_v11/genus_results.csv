@@ -1,5 +1,9 @@
 ,taxon_name_w_authors,v10_accepted_name_w_author,v11_taxon_name_w_authors,v11_chained_accepted_name_w_author,v11_chained_accepted_species,v11_direct_accepted_name_w_author,v11_direct_accepted_species,v11_chained_accepted_genus,v11_direct_accepted_genus
+1935,Andreettaea Luer,Pleurothallis R.Br.,Pleurothallis R.Br.,Pleurothallis R.Br.,,Andreettaea Luer,,Pleurothallis,Andreettaea
+13562,Phyllotaenium André,Caladium Vent.,Caladium Vent.,Caladium Vent.,,Phyllotaenium André,,Caladium,Phyllotaenium
 56178,Dipladenia tetradenia Rusby,Odontadenia lutea (Vell.) Markgr.,Odontadenia lutea (Vell.) Markgr.,Odontadenia lutea (Vell.) Markgr.,Odontadenia lutea,Mandevilla alexicaca (Mart. ex Stadelm.) J.F.Morales & A.Fuentes,Mandevilla alexicaca,Odontadenia,Mandevilla
+60724,Phyllanthodendron Hemsl.,Phyllanthus L.,Phyllanthus L.,Phyllanthus L.,,Glochidion J.R.Forst. & G.Forst.,,Phyllanthus,Glochidion
+81309,Lazarum A.Hay,Typhonium Schott,Typhonium Schott,Typhonium Schott,,Lazarum A.Hay,,Typhonium,Lazarum
 82777,Metrosideros pictipetala Blanco,Xanthostemon verus (Roxb.) Peter G.Wilson,Xanthostemon verus (Roxb.) Peter G.Wilson,Xanthostemon verus (Roxb.) Peter G.Wilson,Xanthostemon verus,Decaspermum parviflorum subsp. parviflorum,Decaspermum parviflorum,Xanthostemon,Decaspermum
 84288,Specklinia minutissima (Luer) Luer,Anathallis barbulata (Lindl.) Pridgeon & M.W.Chase,Anathallis barbulata (Lindl.) Pridgeon & M.W.Chase,Anathallis barbulata (Lindl.) Pridgeon & M.W.Chase,Anathallis barbulata,Specklinia minutissima (Luer) Luer,Specklinia minutissima,Anathallis,Specklinia
 84290,Lankesteriana minutissima (Luer) Karremans,Anathallis barbulata (Lindl.) Pridgeon & M.W.Chase,Anathallis barbulata (Lindl.) Pridgeon & M.W.Chase,Anathallis barbulata (Lindl.) Pridgeon & M.W.Chase,Anathallis barbulata,Specklinia minutissima (Luer) Luer,Specklinia minutissima,Anathallis,Specklinia
@@ -11,13 +15,30 @@
 185104,Stachytarpheta fiebrigii Moldenke,Citharexylum amabile (Bocq.) Christenh. & Byng,Citharexylum amabile (Bocq.) Christenh. & Byng,Citharexylum amabile (Bocq.) Christenh. & Byng,Citharexylum amabile,Stachytarpheta fiebrigii Moldenke,Stachytarpheta fiebrigii,Citharexylum,Stachytarpheta
 186553,Agropyron repens var. littorale (Mutel) Fiori,Thinopyrum acutum (DC.) Banfi,Thinopyrum acutum (DC.) Banfi,Thinopyrum acutum (DC.) Banfi,Thinopyrum acutum,Elymus athericus (Link) Kerguélen,Elymus athericus,Thinopyrum,Elymus
 186561,Agropyron repens subsp. littorale (Mutel) Bonnier,Thinopyrum acutum (DC.) Banfi,Thinopyrum acutum (DC.) Banfi,Thinopyrum acutum (DC.) Banfi,Thinopyrum acutum,Elymus athericus (Link) Kerguélen,Elymus athericus,Thinopyrum,Elymus
+193841,Eucarpha (R.Br.) Spach,Knightia R.Br.,Knightia R.Br.,Knightia R.Br.,,Eucarpha (R.Br.) Spach,,Knightia,Eucarpha
+204684,Geocarpon Mack.,Mononeuria Rchb.,Mononeuria Rchb.,Mononeuria Rchb.,,Geocarpon Mack.,,Mononeuria,Geocarpon
 214335,Turraea thouarsiana (Baill.) Cavaco & Keraudren,Olax psittacorum (Lam.) Vahl,Olax psittacorum (Lam.) Vahl,Olax psittacorum (Lam.) Vahl,Olax psittacorum,Turraea thouarsiana (Baill.) Cavaco & Keraudren,Turraea thouarsiana,Olax,Turraea
 214338,Olax thouarsiana Baill.,Olax psittacorum (Lam.) Vahl,Olax psittacorum (Lam.) Vahl,Olax psittacorum (Lam.) Vahl,Olax psittacorum,Turraea thouarsiana (Baill.) Cavaco & Keraudren,Turraea thouarsiana,Olax,Turraea
 222704,Helianthemum racemosum (L.) Pau,Tuberaria guttata (L.) Fourr.,Tuberaria guttata (L.) Fourr.,Tuberaria guttata (L.) Fourr.,Tuberaria guttata,Helianthemum violaceum subsp. violaceum,Helianthemum violaceum,Tuberaria,Helianthemum
 222736,Helianthemum variabile Spach,Tuberaria guttata (L.) Fourr.,Tuberaria guttata (L.) Fourr.,Tuberaria guttata (L.) Fourr.,Tuberaria guttata,Helianthemum apenninum (L.) Mill.,Helianthemum apenninum,Tuberaria,Helianthemum
+222856,Toumeya Britton & Rose,Turbinicarpus (Backeb.) Buxb. & Backeb.,Turbinicarpus (Backeb.) Buxb. & Backeb.,Turbinicarpus (Backeb.) Buxb. & Backeb.,,Sclerocactus Britton & Rose,,Turbinicarpus,Sclerocactus
+253986,Spirolobium A.D.Orb.,Prosopis L.,Prosopis L.,Prosopis L.,,Strombocarpa (Benth.) Engelm. & A.Gray,,Prosopis,Strombocarpa
+255448,Sopropis Britton & Rose,Prosopis L.,Prosopis L.,Prosopis L.,,Strombocarpa (Benth.) Engelm. & A.Gray,,Prosopis,Strombocarpa
+255458,Neltuma Raf.,Prosopis L.,Prosopis L.,Prosopis L.,,Neltuma Raf.,,Prosopis,Neltuma
+255639,Mitostax Raf.,Prosopis L.,Prosopis L.,Prosopis L.,,Neltuma Raf.,,Prosopis,Neltuma
+255666,Anonychium Schweinf.,Prosopis L.,Prosopis L.,Prosopis L.,,Anonychium Schweinf.,,Prosopis,Anonychium
 256105,Dolichos stipulaceus Lam.,Pueraria montana var. lobata (Willd.) Maesen & S.M.Almeida ex Sanjappa & Predeep,Pueraria montana var. lobata (Willd.) Maesen & S.M.Almeida ex Sanjappa & Predeep,Pueraria montana var. lobata (Willd.) Maesen & S.M.Almeida ex Sanjappa & Predeep,Pueraria montana,Vigna stipulacea (Lam.) Kuntze,Vigna stipulacea,Pueraria,Vigna
+284742,Pseudalbizzia Britton & Rose,Albizia Durazz.,Albizia Durazz.,Albizia Durazz.,,Pseudalbizzia Britton & Rose,,Albizia,Pseudalbizzia
+284748,Arthrosamanea Britton & Rose,Albizia Durazz.,Albizia Durazz.,Albizia Durazz.,,Pseudalbizzia Britton & Rose,,Albizia,Pseudalbizzia
 286030,Alyssum serpyllifolium var. castellanum (Jord. & Fourr.) Nyman,Alyssum serpyllifolium Desf.,Alyssum serpyllifolium Desf.,Alyssum serpyllifolium Desf.,Alyssum serpyllifolium,Odontarrhena alpestris (L.) Ledeb.,Odontarrhena alpestris,Alyssum,Odontarrhena
+287950,Eustylis Hook.f.,Angelica L.,Angelica L.,Angelica L.,,Scandia J.W.Dawson,,Angelica,Scandia
+305204,Bonduc Adans.,Caesalpinia Plum. ex L.,Caesalpinia Plum. ex L.,Caesalpinia Plum. ex L.,,Guilandina L.,,Caesalpinia,Guilandina
+305209,Adenocalyx Bertero ex Kunth,Caesalpinia Plum. ex L.,Caesalpinia Plum. ex L.,Caesalpinia Plum. ex L.,,Coulteria Kunth,,Caesalpinia,Coulteria
+305211,Ticanto Adans.,Caesalpinia Plum. ex L.,Caesalpinia Plum. ex L.,Caesalpinia Plum. ex L.,,Ticanto Adans.,,Caesalpinia,Ticanto
+305212,Echyrospermum Schott,Caesalpinia Plum. ex L.,Caesalpinia Plum. ex L.,Caesalpinia Plum. ex L.,,Plathymenia Benth.,,Caesalpinia,Plathymenia
+310538,Doerriena Borkh.,Cerastium Tourn. ex L.,Cerastium Tourn. ex L.,Cerastium Tourn. ex L.,,Moenchia Ehrh.,,Cerastium,Moenchia
 324088,Didymocarpus pallidus Kraenzl.,Cyrtandra copelandii Elmer,Cyrtandra copelandii Elmer,Rhynchotechum copelandii (Elmer) Merr.,Rhynchotechum copelandii,Cyrtandra edanoi Olivar & Pelser,Cyrtandra edanoi,Rhynchotechum,Cyrtandra
+326960,Oxydium Benn.,Desmodium Desv.,Desmodium Desv.,Desmodium Desv.,,Eleiotis DC.,,Desmodium,Eleiotis
 329103,Babactes oblongifolia (Roxb.) DC.,Didymocarpus acuminatus R.Br.,Didymocarpus acuminatus R.Br.,Didymocarpus acuminatus R.Br.,Didymocarpus acuminatus,Henckelia oblongifolia (Roxb.) D.J.Middleton & Mich.Möller,Henckelia oblongifolia,Didymocarpus,Henckelia
 332654,Echinopsis densispina f. aurantiaca (Wessner) Buining,Echinopsis densispina Werderm.,Echinopsis densispina Werderm.,Echinopsis densispina Werderm.,Echinopsis densispina,Reicheocactus famatinensis (Speg.) Schlumpb.,Reicheocactus famatinensis,Echinopsis,Reicheocactus
 332659,Echinopsis densispina f. cinnabarina (Backeb. ex Wessner) Buining,Echinopsis densispina Werderm.,Echinopsis densispina Werderm.,Echinopsis densispina Werderm.,Echinopsis densispina,Reicheocactus famatinensis (Speg.) Schlumpb.,Reicheocactus famatinensis,Echinopsis,Reicheocactus
@@ -26,7 +47,9 @@
 332680,Echinopsis densispina f. subcarnea (Wessner) Buining,Echinopsis densispina Werderm.,Echinopsis densispina Werderm.,Echinopsis densispina Werderm.,Echinopsis densispina,Reicheocactus famatinensis (Speg.) Schlumpb.,Reicheocactus famatinensis,Echinopsis,Reicheocactus
 332681,Echinopsis densispina f. sufflava (Wessner) Buining,Echinopsis densispina Werderm.,Echinopsis densispina Werderm.,Echinopsis densispina Werderm.,Echinopsis densispina,Reicheocactus famatinensis (Speg.) Schlumpb.,Reicheocactus famatinensis,Echinopsis,Reicheocactus
 332974,Ehretia indica (Dennst. ex Kostel.) M.R.Almeida & S.M.Almeida,Ehretia aspera Willd.,Ehretia aspera Willd.,Ehretia aspera Willd.,Ehretia aspera,Blachia umbellata (Willd.) Baill.,Blachia umbellata,Ehretia,Blachia
+342294,Lenbrassia G.W.Gillett,Fieldia A.Cunn.,Fieldia A.Cunn.,Fieldia A.Cunn.,,Lenbrassia G.W.Gillett,,Fieldia,Lenbrassia
 349928,Guioa chrysantha Radlk.,Guioa semiglauca (F.Muell.) Radlk.,Guioa semiglauca (F.Muell.) Radlk.,Guioa semiglauca (F.Muell.) Radlk.,Guioa semiglauca,Toechima dasyrrhache Radlk.,Toechima dasyrrhache,Guioa,Toechima
+351367,Serrulatocereus Guiggi,Harrisia Britton,Harrisia Britton,Harrisia Britton,,Serrulatocereus Guiggi,,Harrisia,Serrulatocereus
 351558,Hebenstretia fruticosa L.f.,Hebenstretia dentata L.,Hebenstretia dentata L.,Hebenstretia dentata L.,Hebenstretia dentata,Dischisma fruticosum (L.f.) Rolfe,Dischisma fruticosum,Hebenstretia,Dischisma
 371169,Galatella tenuifolia Lindl. ex DC.,Cosmos bipinnatus Cav.,Cosmos bipinnatus Cav.,Cosmos bipinnatus Cav.,Cosmos bipinnatus,Galatella hauptii (Ledeb.) Lindl. ex DC.,Galatella hauptii,Cosmos,Galatella
 389167,Robinia pyramidata Mill.,Cenostigma gaumeri (Greenm.) Gagnon & G.P.Lewis,Cenostigma gaumeri (Greenm.) Gagnon & G.P.Lewis,Cenostigma gaumeri (Greenm.) Gagnon & G.P.Lewis,Cenostigma gaumeri,Erythrostemon yucatanensis var. yucatanensis,Erythrostemon yucatanensis,Cenostigma,Erythrostemon
@@ -39,6 +62,11 @@
 421431,Aster argutus R.Br. ex Benth.,Camptacra gracilis (Benth.) Lander,Camptacra gracilis (Benth.) Lander,Camptacra gracilis (Benth.) Lander,Camptacra gracilis,Olearia arguta var. arguta,Olearia arguta,Camptacra,Olearia
 421432,Olearia arguta Benth.,Camptacra gracilis (Benth.) Lander,Camptacra gracilis (Benth.) Lander,Camptacra gracilis (Benth.) Lander,Camptacra gracilis,Olearia arguta Benth.,Olearia arguta,Camptacra,Olearia
 421543,Brachyscome scapiformis var. glabra DC.,Vittadinia spathulata F.Muell. ex Sond.,Vittadinia spathulata F.Muell. ex Sond.,Vittadinia spathulata F.Muell. ex Sond.,Vittadinia spathulata,Brachyscome spathulata Gaudich.,Brachyscome spathulata,Vittadinia,Brachyscome
+434865,Notonia DC.,Kleinia Jacq.,Kleinia Jacq.,Porophyllum Guett.,,Kleinia Mill.,,Porophyllum,Kleinia
+434867,Notoniopsis B.Nord.,Kleinia Jacq.,Kleinia Jacq.,Porophyllum Guett.,,Kleinia Mill.,,Porophyllum,Kleinia
+434907,Nesothamnus Rydb.,Perityle Benth.,Perityle Benth.,Perityle Benth.,,Nesothamnus Rydb.,,Perityle,Nesothamnus
+434910,Galinsogeopsis Sch.Bip.,Perityle Benth.,Perityle Benth.,Perityle Benth.,,Galinsogeopsis Sch.Bip.,,Perityle,Galinsogeopsis
+434911,Laphamia A.Gray,Perityle Benth.,Perityle Benth.,Perityle Benth.,,Laphamia A.Gray,,Perityle,Laphamia
 441693,Dryopteris disjuncta f. glandulosa (R.M.Tryon) Cody,Gymnocarpium disjunctum (Rupr.) Ching,Gymnocarpium disjunctum (Rupr.) Ching,Gymnocarpium disjunctum (Rupr.) Ching,Gymnocarpium disjunctum,Thelypteris maxoniana A.R.Sm.,Thelypteris maxoniana,Gymnocarpium,Thelypteris
 441764,Cyathea attenuata Fée,Cyathea gardneri (Hook.) Lellinger,Cyathea gardneri (Hook.) Lellinger,Cyathea mexiae Copel.,Cyathea mexiae,Sphaeropteris gardneri (Hook.) R.M.Tryon,Sphaeropteris gardneri,Cyathea,Sphaeropteris
 441765,Cyathea incurvata Kunze,Cyathea gardneri (Hook.) Lellinger,Cyathea gardneri (Hook.) Lellinger,Cyathea mexiae Copel.,Cyathea mexiae,Sphaeropteris gardneri (Hook.) R.M.Tryon,Sphaeropteris gardneri,Cyathea,Sphaeropteris
@@ -47,6 +75,11 @@
 441768,Cyathea taunaysiana Glaz. & Fée,Cyathea gardneri (Hook.) Lellinger,Cyathea gardneri (Hook.) Lellinger,Cyathea mexiae Copel.,Cyathea mexiae,Sphaeropteris gardneri (Hook.) R.M.Tryon,Sphaeropteris gardneri,Cyathea,Sphaeropteris
 441769,Sphaeropteris gardneri (Hook.) R.M.Tryon,Cyathea gardneri (Hook.) Lellinger,Cyathea gardneri (Hook.) Lellinger,Cyathea mexiae Copel.,Cyathea mexiae,Sphaeropteris gardneri (Hook.) R.M.Tryon,Sphaeropteris gardneri,Cyathea,Sphaeropteris
 448599,Polypodium parkinsonii Baker,Phymatosorus parksii (Copel.) Brownlie,Phymatosorus parksii (Copel.) Brownlie,Phymatosorus parksii (Copel.) Brownlie,Phymatosorus parksii,Drynaria parkinsonii (Baker) Diels,Drynaria parkinsonii,Phymatosorus,Drynaria
+453544,Coptidipteris Nakai & Momose,Dennstaedtia Bernh.,Dennstaedtia Bernh.,Dennstaedtia Bernh.,,Sitobolium Desv.,,Dennstaedtia,Sitobolium
+453545,Adectum Link,Dennstaedtia Bernh.,Dennstaedtia Bernh.,Dennstaedtia Bernh.,,Sitobolium Desv.,,Dennstaedtia,Sitobolium
+453549,Emodiopteris Ching & S.K.Wu,Dennstaedtia Bernh.,Dennstaedtia Bernh.,Dennstaedtia Bernh.,,Sitobolium Desv.,,Dennstaedtia,Sitobolium
+453551,Sitobolium Desv.,Dennstaedtia Bernh.,Dennstaedtia Bernh.,Dennstaedtia Bernh.,,Sitobolium Desv.,,Dennstaedtia,Sitobolium
+453561,Fuziifilix Nakai & Momose,Microlepia C.Presl,Microlepia C.Presl,Microlepia C.Presl,,Sitobolium Desv.,,Microlepia,Sitobolium
 457573,Hedysarum oxalifolium Buch.-Ham. ex Benn.,Sohmaea laxiflora (DC.) H.Ohashi & K.Ohashi,Sohmaea laxiflora (DC.) H.Ohashi & K.Ohashi,Sohmaea laxiflora (DC.) H.Ohashi & K.Ohashi,Sohmaea laxiflora,Eleiotis rottleri Wight & Arn.,Eleiotis rottleri,Sohmaea,Eleiotis
 474367,Rhamnus buxifolia Poir.,Rhamnus oleoides subsp. oleoides,Rhamnus oleoides subsp. oleoides,Rhamnus oleoides subsp. oleoides,Rhamnus oleoides,Flueggea tinctoria (L.) G.L.Webster,Flueggea tinctoria,Rhamnus,Flueggea
 481195,Ligusticum apiifolium Desf.,Carum appuanum subsp. appuanum,Carum appuanum subsp. appuanum,Carum appuanum subsp. appuanum,Carum appuanum,Cnidium silaifolium (Jacq.) Simonk.,Cnidium silaifolium,Carum,Cnidium
@@ -56,16 +89,27 @@
 488708,Lepidium draba var. matritense (Pau) Thell.,Iberis carnosa subsp. carnosa,Iberis carnosa subsp. carnosa,Iberis carnosa subsp. carnosa,Iberis carnosa,Lepidium draba L.,Lepidium draba,Iberis,Lepidium
 517214,Nertera dentata Elmer,Nertera granadensis var. granadensis,Nertera granadensis var. granadensis,Nertera granadensis var. granadensis,Nertera granadensis,Hemiphragma heterophyllum var. dentatum (Elmer) T.Yamaz.,Hemiphragma heterophyllum,Nertera,Hemiphragma
 533512,Gymnadenia odoratissima var. heteroglossa Rchb.f.,Gymnadenia odoratissima (L.) Rich.,Gymnadenia odoratissima (L.) Rich.,Gymnadenia odoratissima (L.) Rich.,Gymnadenia odoratissima,× Chamodenia heteroglossa (Rchb.f.) Peitz,× Chamodenia heteroglossa,Gymnadenia,× Chamodenia
+542556,Abebaia Baehni,Manilkara Adans.,Manilkara Adans.,Manilkara Adans.,,Abebaia Baehni,,Manilkara,Abebaia
+575185,Tripogandra Raf.,Callisia Loefl.,Callisia Loefl.,Callisia Loefl.,,Tripogandra Raf.,,Callisia,Tripogandra
+583997,Bakerantha L.B.Sm.,Hechtia Klotzsch,Hechtia Klotzsch,Hechtia Klotzsch,,Bakerantha L.B.Sm.,,Hechtia,Bakerantha
 590501,Amomum latifolium Lam.,Zingiber zerumbet (L.) Roscoe ex Sm.,Zingiber zerumbet (L.) Roscoe ex Sm.,Zingiber zerumbet (L.) Roscoe ex Sm.,Zingiber zerumbet,Curcuma longa L.,Curcuma longa,Zingiber,Curcuma
 622979,Agrostis frondosa Ten. ex Spreng.,Agrostis castellana Boiss. & Reut.,Agrostis castellana Boiss. & Reut.,Agrostis castellana Boiss. & Reut.,Agrostis castellana,Polypogon viridis (Gouan) Breistr.,Polypogon viridis,Agrostis,Polypogon
+661503,Dictyanthus Decne.,Matelea Aubl.,Matelea Aubl.,Matelea Aubl.,,Dictyanthus Decne.,,Matelea,Dictyanthus
+661505,Chthamalia Decne.,Matelea Aubl.,Matelea Aubl.,Matelea Aubl.,,Chthamalia Decne.,,Matelea,Chthamalia
 674861,Geodorum citrinum Andrews,"Eulophia terrestris (L.) M.W.Chase, Kumar & Schuit.","Eulophia terrestris (L.) M.W.Chase, Kumar & Schuit.","Calanthe amboinensis (Blume) M.W.Chase, Christenh. & Schuit.",Calanthe amboinensis,Eulophia citrina (Andrews) Ormerod & Kurzweil,Eulophia citrina,Calanthe,Eulophia
 693323,Odontarrhena murcica Jord. & Fourr.,Odontarrhena alpestris (L.) Ledeb.,Odontarrhena alpestris (L.) Ledeb.,Odontarrhena alpestris (L.) Ledeb.,Odontarrhena alpestris,Alyssum serpyllifolium Desf.,Alyssum serpyllifolium,Odontarrhena,Alyssum
 705169,Laserpitium loscosii (Lange) Calest.,Thapsia asclepium L.,Thapsia asclepium L.,Thapsia asclepium L.,Thapsia asclepium,Ferula loscosii (Lange) Willk.,Ferula loscosii,Thapsia,Ferula
 705174,Elaeoselinum loscosii Lange,Thapsia asclepium L.,Thapsia asclepium L.,Thapsia asclepium L.,Thapsia asclepium,Ferula loscosii (Lange) Willk.,Ferula loscosii,Thapsia,Ferula
+707504,Dennettia Baker f.,Uvariopsis Engl.,Uvariopsis Engl.,Uvariopsis Engl.,,Dennettia Baker f.,,Uvariopsis,Dennettia
 733476,Strombocarpa odorata (Torr. & Frém.) A.Gray,Prosopis pubescens Benth.,Prosopis pubescens Benth.,Strombocarpa pubescens (Benth.) A.Gray,Strombocarpa pubescens,Neltuma odorata (Torr. & Frém.) C.E.Hughes & G.P.Lewis,Neltuma odorata,Strombocarpa,Neltuma
 733479,Prosopis odorata Torr. & Frém.,Prosopis pubescens Benth.,Prosopis pubescens Benth.,Strombocarpa pubescens (Benth.) A.Gray,Strombocarpa pubescens,Neltuma odorata (Torr. & Frém.) C.E.Hughes & G.P.Lewis,Neltuma odorata,Strombocarpa,Neltuma
+748610,Chodaphyton Minod,Stemodia L.,Stemodia L.,Stemodia L.,,Chodaphyton Minod,,Stemodia,Chodaphyton
 749483,Dircaea picta (Hook.) Lem.,Sinningia douglasii (Lindl.) Chautems,Sinningia douglasii (Lindl.) Chautems,Sinningia douglasii (Lindl.) Chautems,Sinningia douglasii,Kohleria tubiflora (Cav.) Hanst.,Kohleria tubiflora,Sinningia,Kohleria
+750898,Pentacme A.DC.,Shorea Roxb. ex C.F.Gaertn.,Shorea Roxb. ex C.F.Gaertn.,Shorea Roxb. ex C.F.Gaertn.,,Pentacme A.DC.,,Shorea,Pentacme
+751073,Doona Thwaites,Shorea Roxb. ex C.F.Gaertn.,Shorea Roxb. ex C.F.Gaertn.,Shorea Roxb. ex C.F.Gaertn.,,Doona Thwaites,,Shorea,Doona
+751078,Anthoshorea Pierre,Shorea Roxb. ex C.F.Gaertn.,Shorea Roxb. ex C.F.Gaertn.,Shorea Roxb. ex C.F.Gaertn.,,Anthoshorea Pierre,,Shorea,Anthoshorea
 759098,Adenandra ovata (Thunb.) Link,Adenandra villosa subsp. sonderi (Dümmer) Strid,Adenandra villosa subsp. sonderi (Dümmer) Strid,Adenandra villosa subsp. sonderi (Dümmer) Strid,Adenandra villosa,Agathosma ovata (Thunb.) F.Dietr.,Agathosma ovata,Adenandra,Agathosma
+766069,Lemphoria O.E.Schulz,Arabidella (F.Muell.) O.E.Schulz,Arabidella (F.Muell.) O.E.Schulz,Arabidella (F.Muell.) O.E.Schulz,,Lemphoria O.E.Schulz,,Arabidella,Lemphoria
 774486,Columnea divaricata (Poepp.) Walp.,Bellonia aspera L.,Bellonia aspera L.,Bellonia aspera L.,Bellonia aspera,Besleria divaricata Poepp.,Besleria divaricata,Bellonia,Besleria
 778127,Mangifera silvestris Roxb.,Buchanania cochinchinensis (Lour.) M.R.Almeida,Buchanania cochinchinensis (Lour.) M.R.Almeida,Glycosmis cochinchinensis (Lour.) Pierre ex Engl.,Glycosmis cochinchinensis,Buchanania lanzan Spreng.,Buchanania lanzan,Glycosmis,Buchanania
 778128,Buchanania lanzan Spreng.,Buchanania cochinchinensis (Lour.) M.R.Almeida,Buchanania cochinchinensis (Lour.) M.R.Almeida,Glycosmis cochinchinensis (Lour.) Pierre ex Engl.,Glycosmis cochinchinensis,Buchanania lanzan Spreng.,Buchanania lanzan,Glycosmis,Buchanania
@@ -75,11 +119,11 @@
 778132,Lundia mangiferoides Puerari ex DC.,Buchanania cochinchinensis (Lour.) M.R.Almeida,Buchanania cochinchinensis (Lour.) M.R.Almeida,Glycosmis cochinchinensis (Lour.) Pierre ex Engl.,Glycosmis cochinchinensis,Buchanania lanzan Spreng.,Buchanania lanzan,Glycosmis,Buchanania
 786688,Cicendia quitensis (Kunth) Griseb.,Cicendia quadrangularis (Lam.) Griseb.,Cicendia quadrangularis (Lam.) Griseb.,Cicendia quadrangularis (Lam.) Griseb.,Cicendia quadrangularis,Zeltnera quitensis (Kunth) G.Mans.,Zeltnera quitensis,Cicendia,Zeltnera
 790329,Ceanothus leschenaultii DC.,Colubrina asiatica (L.) Brongn.,Colubrina asiatica (L.) Brongn.,Colubrina asiatica (L.) Brongn.,Colubrina asiatica,Trema orientale (L.) Blume,Trema orientale,Colubrina,Trema
+798089,Staphisagria Hill,Delphinium Tourn. ex L.,Delphinium Tourn. ex L.,Delphinium Tourn. ex L.,,Staphisagria Hill,,Delphinium,Staphisagria
 808346,Eruca stenocarpa Boiss. & Reut.,Eruca vesicaria (L.) Cav.,Eruca vesicaria (L.) Cav.,Eruca vesicaria (L.) Cav.,Eruca vesicaria,Erucastrum nasturtiifolium subsp. nasturtiifolium,Erucastrum nasturtiifolium,Eruca,Erucastrum
 815625,Gentiana amarella subsp. chlorifolia (Nees) Arcang.,Gentianella germanica (Willd.) Börner,Gentianella germanica (Willd.) Börner,Gentianella germanica (Willd.) Börner,Gentianella germanica,Gentiana × chlorifolia Nees,Gentiana × chlorifolia,Gentianella,Gentiana
 817439,Aillya umbellata var. procumbens (de Vriese) de Vriese,Goodenia filiformis R.Br.,Goodenia filiformis R.Br.,Goodenia filiformis R.Br.,Goodenia filiformis,Scaevola pulchella Carolin,Scaevola pulchella,Goodenia,Scaevola
 817440,Aillya umbellata var. spathulata (de Vriese) de Vriese,Goodenia filiformis R.Br.,Goodenia filiformis R.Br.,Goodenia filiformis R.Br.,Goodenia filiformis,Scaevola pulchella Carolin,Scaevola pulchella,Goodenia,Scaevola
-820092,Haplanthus neilgherryensis Wight,Haplanthodes Kuntze,Haplanthodes Kuntze,Haplanthodes Kuntze,,Haplanthodes neilgherryensis (Wight) R.B.Majumdar,Haplanthodes neilgherryensis,,Haplanthodes
 820284,Cereus serruliflorus Haw.,Harrisia divaricata (Lam.) Backeb.,Harrisia divaricata (Lam.) Backeb.,Harrisia divaricata (Lam.) Backeb.,Harrisia divaricata,Serrulatocereus serruliflorus (Haw.) Guiggi,Serrulatocereus serruliflorus,Harrisia,Serrulatocereus
 820364,Hariota clavata var. deliculata (Loefgr.) A.Cast.,Hatiora salicornoides (Haw.) Britton & Rose,Hatiora salicornoides (Haw.) Britton & Rose,Hatiora salicornoides (Haw.) Britton & Rose,Hatiora salicornoides,Rhipsalis clavata F.A.C.Weber,Rhipsalis clavata,Hatiora,Rhipsalis
 820366,Hariota bambusoides var. delicatula (Loefgr.) A.Cast.,Hatiora salicornoides (Haw.) Britton & Rose,Hatiora salicornoides (Haw.) Britton & Rose,Hatiora salicornoides (Haw.) Britton & Rose,Hatiora salicornoides,Rhipsalis clavata F.A.C.Weber,Rhipsalis clavata,Hatiora,Rhipsalis
@@ -101,12 +145,18 @@
 880282,Doronicum japonicum Lam.,Gynura japonica (Thunb.) Juel,Gynura japonica (Thunb.) Juel,Gynura japonica (Thunb.) Juel,Gynura japonica,Ligularia japonica var. japonica,Ligularia japonica,Gynura,Ligularia
 880863,Werneria ciliata Wedd. ex Sch.Bip.,Werneria pectinata Lingelsh.,Werneria pectinata Lingelsh.,Rockhausenia pectinata (Lingelsh.) D.J.N.Hind,Rockhausenia pectinata,Werneria ciliolata A.Gray,Werneria ciliolata,Rockhausenia,Werneria
 894961,Laphamia palmeri A.Gray,Perityle palmeri S.Watson,Perityle palmeri S.Watson,Perityle palmeri S.Watson,Perityle palmeri,Laphamia palmeri A.Gray,Laphamia palmeri,Perityle,Laphamia
+897786,Haplosticha Phil.,Senecio L.,Senecio L.,Senecio L.,,Haplosticha Phil.,,Senecio,Haplosticha
+897794,Iocenes B.Nord.,Senecio L.,Senecio L.,Senecio L.,,Iocenes B.Nord.,,Senecio,Iocenes
+898505,Berkheyopsis O.Hoffm.,Hirpicium Cass.,Hirpicium Cass.,Gorteria L.,,Berkheyopsis O.Hoffm.,,Gorteria,Berkheyopsis
+898675,Epitrachys (DC. ex Duby) K.Koch,Cirsium Mill.,Cirsium Mill.,Cirsium Mill.,,Epitrachys (DC. ex Duby) K.Koch,,Cirsium,Epitrachys
+898683,Lophiolepis Cass.,Cirsium Mill.,Cirsium Mill.,Cirsium Mill.,,Lophiolepis Cass.,,Cirsium,Lophiolepis
 902016,Vittaria lunulata Roxb.,Nesolindsaea caudata (Hook.) Lehtonen & Christenh.,Nesolindsaea caudata (Hook.) Lehtonen & Christenh.,Nesolindsaea caudata (Hook.) Lehtonen & Christenh.,Nesolindsaea caudata,Lindsaea parasitica (Roxb.) Wall. ex Hieron.,Lindsaea parasitica,Nesolindsaea,Lindsaea
 902018,Lindsaea scandens Hook.,Nesolindsaea caudata (Hook.) Lehtonen & Christenh.,Nesolindsaea caudata (Hook.) Lehtonen & Christenh.,Nesolindsaea caudata (Hook.) Lehtonen & Christenh.,Nesolindsaea caudata,Lindsaea scandens Hook.,Lindsaea scandens,Nesolindsaea,Lindsaea
 902019,Vittaria parasitica Roxb.,Nesolindsaea caudata (Hook.) Lehtonen & Christenh.,Nesolindsaea caudata (Hook.) Lehtonen & Christenh.,Nesolindsaea caudata (Hook.) Lehtonen & Christenh.,Nesolindsaea caudata,Lindsaea parasitica (Roxb.) Wall. ex Hieron.,Lindsaea parasitica,Nesolindsaea,Lindsaea
 902020,Lindsaea bipinnata Roxb.,Nesolindsaea caudata (Hook.) Lehtonen & Christenh.,Nesolindsaea caudata (Hook.) Lehtonen & Christenh.,Nesolindsaea caudata (Hook.) Lehtonen & Christenh.,Nesolindsaea caudata,Lindsaea parasitica (Roxb.) Wall. ex Hieron.,Lindsaea parasitica,Nesolindsaea,Lindsaea
 902947,Lindsaea alexandri var. bipinnata Hillebr.,Asplenium dielerectum Viane,Asplenium dielerectum Viane,Asplenium dielerectum Viane,Asplenium dielerectum,Lindsaea knudsenii Hillebr.,Lindsaea knudsenii,Asplenium,Lindsaea
 907644,Dryopteris strigosa (Willd.) C.Chr.,Ctenitis crinita (Poir.) Ching,Ctenitis crinita (Poir.) Ching,Ctenitis crinita (Poir.) Ching,Ctenitis crinita,Thelypteris strigosa (Willd.) Tardieu,Thelypteris strigosa,Ctenitis,Thelypteris
+915413,Hiya H.Shang,Hypolepis Bernh.,Hypolepis Bernh.,Hypolepis Bernh.,,Hiya H.Shang,,Hypolepis,Hiya
 918211,Cyathea nigrescens (Hook.) J.Sm.,Thelypteris woodlarkensis (Copel.) Christenh.,Thelypteris woodlarkensis (Copel.) Christenh.,Thelypteris woodlarkensis (Copel.) Christenh.,Thelypteris woodlarkensis,Alsophila woodwardioides (Kaulf.) D.S.Conant,Alsophila woodwardioides,Thelypteris,Alsophila
 919970,Anemone soyensis H.Boissieu,Anemonastrum flaccidum (Fr.Schmidt) Mosyakin,Anemonastrum flaccidum (Fr.Schmidt) Mosyakin,Anemonastrum flaccidum (Fr.Schmidt) Mosyakin,Anemonastrum flaccidum,Anemonoides soyensis (H.Boissieu) Holub,Anemonoides soyensis,Anemonastrum,Anemonoides
 927858,Cytisus benehoavensis (Bolle) Svent.,Cytisus scoparius subsp. scoparius,Cytisus scoparius subsp. scoparius,Cytisus scoparius subsp. scoparius,Cytisus scoparius,Convolvulus scoparius L.f.,Convolvulus scoparius,Cytisus,Convolvulus
@@ -126,8 +176,6 @@
 1284876,Eruca vesicaria var. stenocarpa (Boiss. & Reut.) Thell.,Eruca vesicaria (L.) Cav.,Eruca vesicaria (L.) Cav.,Eruca vesicaria (L.) Cav.,Eruca vesicaria,Erucastrum nasturtiifolium subsp. nasturtiifolium,Erucastrum nasturtiifolium,Eruca,Erucastrum
 1284880,Eruca sativa var. stenocarpa (Boiss. & Reut.) Coss.,Eruca vesicaria (L.) Cav.,Eruca vesicaria (L.) Cav.,Eruca vesicaria (L.) Cav.,Eruca vesicaria,Erucastrum nasturtiifolium subsp. nasturtiifolium,Erucastrum nasturtiifolium,Eruca,Erucastrum
 1284887,Eruca sativa subsp. stenocarpa (Boiss. & Reut.) Maire,Eruca vesicaria (L.) Cav.,Eruca vesicaria (L.) Cav.,Eruca vesicaria (L.) Cav.,Eruca vesicaria,Erucastrum nasturtiifolium subsp. nasturtiifolium,Erucastrum nasturtiifolium,Eruca,Erucastrum
-1287559,Haplanthus tentaculatus var. neilgherryensis (Wight) C.B.Clarke,Haplanthodes Kuntze,Haplanthodes Kuntze,Haplanthodes Kuntze,,Haplanthodes neilgherryensis (Wight) R.B.Majumdar,Haplanthodes neilgherryensis,,Haplanthodes
-1287561,Bremekampia neilgherryensis (Wight) Sreem.,Haplanthodes Kuntze,Haplanthodes Kuntze,Haplanthodes Kuntze,,Haplanthodes neilgherryensis (Wight) R.B.Majumdar,Haplanthodes neilgherryensis,,Haplanthodes
 1287599,Harrisia serruliflora (Haw.) Lourteig,Harrisia divaricata (Lam.) Backeb.,Harrisia divaricata (Lam.) Backeb.,Harrisia divaricata (Lam.) Backeb.,Harrisia divaricata,Serrulatocereus serruliflorus (Haw.) Guiggi,Serrulatocereus serruliflorus,Harrisia,Serrulatocereus
 1287601,Serrulatocereus serruliflorus (Haw.) Guiggi,Harrisia divaricata (Lam.) Backeb.,Harrisia divaricata (Lam.) Backeb.,Harrisia divaricata (Lam.) Backeb.,Harrisia divaricata,Serrulatocereus serruliflorus (Haw.) Guiggi,Serrulatocereus serruliflorus,Harrisia,Serrulatocereus
 1296838,× Rowleyara hildmannii (Hildm.) P.V.Heath,Disocactus crenatus subsp. kimnachii (Bavo) M.Á.Cruz & S.Arias,Disocactus crenatus subsp. kimnachii (Bavo) M.Á.Cruz & S.Arias,Disocactus crenatus subsp. kimnachii (Bavo) M.Á.Cruz & S.Arias,Disocactus crenatus,× Disoselenicereus hildmannii (Hildm.) M.H.J.van der Meer,× Disoselenicereus hildmannii,Disocactus,× Disoselenicereus

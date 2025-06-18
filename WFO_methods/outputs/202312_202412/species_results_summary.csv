@@ -1,5 +1,5 @@
-,taxon_name_w_authors,202312_accepted_name_w_author,202412_taxon_name_w_authors,202412_chained_accepted_name_w_author,202412_chained_accepted_species,202412_direct_accepted_name_w_author,202412_direct_accepted_species
-count,7201,7201,7201,7201,7111,7201,7201
-unique,7201,3191,3191,3163,3077,3833,3744
-top,Euphorbia infausta ,Crocus vernus (L.) Hill,Crocus vernus (L.) Hill,Crocus vernus (L.) Hill,Crocus vernus,Crocus duplex Weston,Crocus duplex
-freq,1,67,67,68,68,66,66
+,taxon_name_w_authors,202312_accepted_name_w_author,202412_taxon_name_w_authors,202412_chained_accepted_name_w_author,202412_chained_accepted_species,202412_direct_accepted_name_w_author,202412_direct_accepted_species,202412_chained_accepted_genus,202412_direct_accepted_genus
+count,7671,7671,7671,7671,7121,7671,7201,7671,7671
+unique,7671,3376,3376,3345,3085,4151,3744,1085,1157
+top,Sapium ,Crocus vernus (L.) Hill,Crocus vernus (L.) Hill,Crocus vernus (L.) Hill,Crocus vernus,Crocus duplex Weston,Crocus duplex,Piper,Piper
+freq,1,67,67,68,68,66,66,322,324

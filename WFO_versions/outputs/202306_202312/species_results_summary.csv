@@ -1,0 +1,5 @@
+,taxon_name_w_authors,202306_accepted_name_w_author,202312_taxon_name_w_authors,202312_chained_accepted_name_w_author,202312_chained_accepted_species,202312_direct_accepted_name_w_author,202312_direct_accepted_species,202312_chained_accepted_genus,202312_direct_accepted_genus
+count,9575,9575,9575,9575,9408,9575,9454,9575,9575
+unique,9575,4428,4428,4394,4160,5246,4979,1274,1190
+top,Duttonia F.Muell.,Sebastiania brasiliensis Spreng.,Sebastiania brasiliensis Spreng.,Sebastiania brasiliensis Spreng.,Sebastiania brasiliensis,Sebastiania ramosissima (A.St.-Hil.) A.L.Melo & M.F.Sales,Sebastiania ramosissima,Artemisia,Senecio
+freq,1,47,47,47,47,47,47,247,396

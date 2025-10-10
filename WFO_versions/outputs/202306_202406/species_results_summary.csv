@@ -1,0 +1,5 @@
+,taxon_name_w_authors,202306_accepted_name_w_author,202406_taxon_name_w_authors,202406_chained_accepted_name_w_author,202406_chained_accepted_species,202406_direct_accepted_name_w_author,202406_direct_accepted_species,202406_chained_accepted_genus,202406_direct_accepted_genus
+count,11889,11889,11889,11889,11674,11889,11736,11889,11889
+unique,11889,5594,5594,5542,5273,6487,6174,1680,1607
+top,Polyspora tonkinensis (Pit.) S.X.Yang,Ptychostomum archangelicum (Bruch & Schimp.) J.R. Spence,Ptychostomum archangelicum (Bruch & Schimp.) J.R. Spence,Ptychostomum archangelicum (Bruch & Schimp.) J.R. Spence,Ptychostomum archangelicum,Crocus duplex Weston,Crocus duplex,Pilosella,Senecio
+freq,1,70,70,70,70,66,66,303,396

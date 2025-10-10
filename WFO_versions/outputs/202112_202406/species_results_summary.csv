@@ -1,0 +1,5 @@
+,taxon_name_w_authors,202112_accepted_name_w_author,202406_taxon_name_w_authors,202406_chained_accepted_name_w_author,202406_chained_accepted_species,202406_direct_accepted_name_w_author,202406_direct_accepted_species,202406_chained_accepted_genus,202406_direct_accepted_genus
+count,14307,14307,14307,14307,14020,14307,14080,14307,14307
+unique,14307,7125,7125,7050,6737,8241,7867,2196,2173
+top,Lalexia Luer,Crocus vernus (L.) Hill,Crocus vernus (L.) Hill,Crocus vernus (L.) Hill,Crocus vernus,Crocus duplex Weston,Crocus duplex,Pilosella,Senecio
+freq,1,67,67,68,68,66,66,285,385

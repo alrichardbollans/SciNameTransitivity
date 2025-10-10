@@ -1,0 +1,5 @@
+,taxon_name_w_authors,202112_accepted_name_w_author,202312_taxon_name_w_authors,202312_chained_accepted_name_w_author,202312_chained_accepted_species,202312_direct_accepted_name_w_author,202312_direct_accepted_species,202312_chained_accepted_genus,202312_direct_accepted_genus
+count,12591,12591,12591,12591,12342,12591,12388,12591,12591
+unique,12591,6205,6205,6149,5864,7262,6922,1896,1846
+top,Lalexia Luer,Sebastiania brasiliensis Spreng.,Sebastiania brasiliensis Spreng.,Sebastiania brasiliensis Spreng.,Sebastiania brasiliensis,Sebastiania ramosissima (A.St.-Hil.) A.L.Melo & M.F.Sales,Sebastiania ramosissima,Artemisia,Senecio
+freq,1,47,47,47,47,47,47,226,385

@@ -1,0 +1,5 @@
+,taxon_name_w_authors,202306_accepted_name_w_author,202406_taxon_name_w_authors,202406_chained_accepted_name_w_author,202406_chained_accepted_species,202406_direct_accepted_name_w_author,202406_direct_accepted_species,202406_chained_accepted_genus,202406_direct_accepted_genus
+count,3373,3373,3373,3373,3206,3373,3223,3373,3373
+unique,3373,1743,1743,1729,1585,1936,1759,802,703
+top,Xuris Adans.,Strobocalyx arborea (Buch.-Ham.) Sch.Bip.,Strobocalyx arborea (Buch.-Ham.) Sch.Bip.,Strobocalyx arborea (Buch.-Ham.) Sch.Bip.,Strobocalyx arborea,Solanum violaceum Ortega,Solanum violaceum,Pentanema,Vernonia
+freq,1,23,23,23,23,22,22,77,316

@@ -1,0 +1,5 @@
+,taxon_name_w_authors,202306_accepted_name_w_author,202312_taxon_name_w_authors,202312_chained_accepted_name_w_author,202312_chained_accepted_species,202312_direct_accepted_name_w_author,202312_direct_accepted_species,202312_chained_accepted_genus,202312_direct_accepted_genus
+count,3394,3394,3394,3394,3261,3394,3278,3394,3394
+unique,3394,1670,1670,1658,1527,1883,1726,711,600
+top,Duttonia F.Muell.,Cynanchica aristata subsp. aristata ,Cynanchica aristata subsp. aristata ,Cynanchica aristata subsp. aristata ,Cynanchica aristata,Asperula aristata subsp. aristata ,Asperula aristata,Pilosella,Vernonia
+freq,1,25,25,25,25,25,25,167,316

@@ -1,0 +1,5 @@
+,taxon_name_w_authors,202312_accepted_name_w_author,202406_taxon_name_w_authors,202406_chained_accepted_name_w_author,202406_chained_accepted_species,202406_direct_accepted_name_w_author,202406_direct_accepted_species,202406_chained_accepted_genus,202406_direct_accepted_genus
+count,424,424,424,424,310,424,310,424,424
+unique,424,260,260,258,186,281,204,206,213
+top,Sapium ,Imbribryum alpinum (Huds. ex With.) N. Pedersen,Imbribryum alpinum (Huds. ex With.) N. Pedersen,Cocculus DC.,Imbribryum alpinum,"Gelasia latifolia (Fisch. & C.A.Mey.) Zaika, Sukhor. & N.Kilian",Gelasia latifolia,Scorzonera,Bryum
+freq,1,12,12,12,12,11,11,17,25

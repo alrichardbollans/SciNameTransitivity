@@ -1,0 +1,5 @@
+,taxon_name_w_authors,202207_accepted_name_w_author,202212_taxon_name_w_authors,202212_chained_accepted_name_w_author,202212_chained_accepted_species,202212_direct_accepted_name_w_author,202212_direct_accepted_species,202212_chained_accepted_genus,202212_direct_accepted_genus
+count,407,407,407,407,338,407,338,407,407
+unique,407,266,266,265,220,272,220,190,181
+top,Gynapteina Spach,Asperula cynanchica subsp. cynanchica ,Asperula cynanchica subsp. cynanchica ,Asperula cynanchica subsp. cynanchica ,Asperula cynanchica,Cynanchica pyrenaica subsp. cynanchica (L.) P.Caputo & Del Guacchio,Cynanchica pyrenaica,Asperula,Cynanchica
+freq,1,18,18,18,18,18,18,21,21

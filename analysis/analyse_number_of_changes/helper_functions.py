@@ -3,7 +3,7 @@ import os
 import pandas as pd
 from wcvpy.wcvp_download import wcvp_columns, wcvp_accepted_columns
 
-from WCVP_methods.updating_wcvp import wcvp_version_order
+from WCVP_versions.updating_wcvp import wcvp_version_order
 
 repo_path = os.environ.get('KEWSCRATCHPATH')
 this_repo_path = os.path.join(repo_path, 'TaxoDrift')

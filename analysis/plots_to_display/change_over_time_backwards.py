@@ -5,13 +5,13 @@ import seaborn as sns
 from matplotlib import pyplot as plt
 from scipy import stats
 
-from WCVP_methods.updating_wcvp import wcvp_version_order
-from WFO_methods.get_WFO import all_wfo_version_strings, latest_wfo_version_string
+from WCVP_versions.updating_wcvp import wcvp_version_order
+from WFO_versions.get_WFO import all_wfo_version_strings, latest_wfo_version_string
 
 repo_path = os.environ.get('KEWSCRATCHPATH')
 this_repo_path = os.path.join(repo_path, 'TaxoDrift')
-_wcvp_output_path = os.path.join(this_repo_path, 'WCVP_methods', 'outputs')
-_wfo_output_path = os.path.join(this_repo_path, 'WFO_methods', 'outputs')
+_wcvp_output_path = os.path.join(this_repo_path, 'WCVP_versions', 'outputs')
+_wfo_output_path = os.path.join(this_repo_path, 'WFO_versions', 'outputs')
 version_dict = {'2022-10': 'v10', '2023-04': 'v11', '2023-09': 'v12', '2024-05': 'v13', '2025-05': 'v14'}
 
 

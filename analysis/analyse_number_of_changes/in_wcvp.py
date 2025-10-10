@@ -1,4 +1,4 @@
-from WCVP_methods.updating_wcvp import get_all_databases
+from WCVP_versions.updating_wcvp import get_all_databases
 from analysis.analyse_number_of_changes.helper_functions import do_all_analyses_for_a_pair
 
 

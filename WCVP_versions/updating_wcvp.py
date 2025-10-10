@@ -8,8 +8,8 @@ from chaining_methods import compare_two_versions, chain_two_databases, get_dire
 
 repo_path = os.environ.get('KEWSCRATCHPATH')
 this_repo_path = os.path.join(repo_path, 'TaxoDrift')
-_output_path = os.path.join(this_repo_path, 'WCVP_methods', 'outputs')
-_input_path = os.path.join(this_repo_path, 'WCVP_methods', 'inputs')
+_output_path = os.path.join(this_repo_path, 'WCVP_versions', 'outputs')
+_input_path = os.path.join(this_repo_path, 'WCVP_versions', 'inputs')
 
 wcvp_version_order = ['v10', 'v11', 'v12', 'v13', 'v14']
 

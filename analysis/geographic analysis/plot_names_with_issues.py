@@ -12,11 +12,11 @@ from wcvpy.wcvp_download import plot_native_number_accepted_taxa_in_regions, wcv
 
 from analysis.analyse_number_of_changes.helper_functions import this_repo_path
 
-_input_path = os.path.join(this_repo_path, 'WCVP_methods', 'outputs', 'v10_v14')
+_input_path = os.path.join(this_repo_path, 'WCVP_versions', 'outputs', 'v10_v14')
 issue_df = pd.read_csv(os.path.join(_input_path, 'species_results.csv'))
-v10_taxa = pd.read_csv(os.path.join(this_repo_path, 'WCVP_methods', 'inputs', 'v10_taxa.csv'))
+v10_taxa = pd.read_csv(os.path.join(this_repo_path, 'WCVP_versions', 'inputs', 'v10_taxa.csv'))
 v10_taxa['taxon_name_w_authors'] = add_authors_to_col(v10_taxa, 'taxon_name')
-v14_taxa = pd.read_csv(os.path.join(this_repo_path, 'WCVP_methods', 'inputs', 'v14_taxa.csv'))
+v14_taxa = pd.read_csv(os.path.join(this_repo_path, 'WCVP_versions', 'inputs', 'v14_taxa.csv'))
 v14_taxa['taxon_name_w_authors'] = add_authors_to_col(v14_taxa, 'taxon_name')
 
 

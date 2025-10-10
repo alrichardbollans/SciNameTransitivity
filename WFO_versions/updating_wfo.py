@@ -1,6 +1,6 @@
 import os
 
-from WFO_methods.get_WFO import get_latest_version, get_oldest_version, get_other_versions, other_version_strings, all_wfo_version_strings, \
+from WFO_versions.get_WFO import get_latest_version, get_oldest_version, get_other_versions, other_version_strings, all_wfo_version_strings, \
     oldest_wfo_version_string, get_version_comparable_to_v10, wfo_version_comparable_to_v10_string, get_versions_after_v10, \
     wfo_version_strings_after_v10
 from chaining_methods import compare_two_versions, summarise_results, chain_two_databases, get_direct_name_updates, \
@@ -8,7 +8,7 @@ from chaining_methods import compare_two_versions, summarise_results, chain_two_
 
 repo_path = os.environ.get('KEWSCRATCHPATH')
 this_repo_path = os.path.join(repo_path, 'TaxoDrift')
-_output_path = os.path.join(this_repo_path, 'WFO_methods', 'outputs')
+_output_path = os.path.join(this_repo_path, 'WFO_versions', 'outputs')
 
 
 def main_case():

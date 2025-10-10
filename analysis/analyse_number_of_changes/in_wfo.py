@@ -1,4 +1,4 @@
-from WFO_methods.get_WFO import get_latest_version, get_oldest_version, get_other_versions
+from WFO_versions.get_WFO import get_latest_version, get_oldest_version, get_other_versions
 from analysis.analyse_number_of_changes.helper_functions import do_all_analyses_for_a_pair
 
 

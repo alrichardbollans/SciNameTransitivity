@@ -7,7 +7,7 @@ from WCVP_methods.updating_wcvp import wcvp_version_order
 
 repo_path = os.environ.get('KEWSCRATCHPATH')
 this_repo_path = os.path.join(repo_path, 'TaxoDrift')
-_output_path = os.path.join(this_repo_path, 'analyse_number_of_changes', 'outputs')
+_output_path = os.path.join(this_repo_path, 'analysis','analyse_number_of_changes', 'outputs')
 
 def get_out_dir(old_tag: str, new_tag: str):
     tag = '_'.join([old_tag, new_tag])

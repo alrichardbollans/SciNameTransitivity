@@ -5,6 +5,8 @@ import seaborn as sns
 from matplotlib import pyplot as plt
 from scipy import stats
 
+from analysis.analyse_number_of_changes.helper_functions import this_repo_path
+
 
 def get_data_for_pair(folder):
     # sp_number_df = pd.read_csv(os.path.join(folder, 'species_differences_summary_w_author.csv'), index_col=0)
@@ -25,9 +27,9 @@ def get_data_for_pair(folder):
 
 def get_species_discrepancies_for_pair(folder, taxonomy_name:str):
     if taxonomy_name == 'wcvp':
-        value_dir = os.path.join('..', 'WCVP_methods', 'outputs', folder)
+        value_dir = os.path.join(this_repo_path, 'WCVP_methods', 'outputs', folder)
     if taxonomy_name == 'wfo':
-        value_dir = os.path.join('..', 'WFO_methods', 'outputs', folder)
+        value_dir = os.path.join(this_repo_path, 'WFO_methods', 'outputs', folder)
 
     sp_disagreements_df = pd.read_csv(os.path.join(value_dir, 'result_summary.csv'), index_col=0)
     number = sp_disagreements_df[['Percentages']].loc['species_disagreements'].iloc[0]

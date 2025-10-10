@@ -7,7 +7,7 @@ from scipy import stats
 
 from WCVP_methods.updating_wcvp import wcvp_version_order
 from WFO_methods.get_WFO import all_wfo_version_strings
-from plots_to_display.change_over_time_backwards import version_dict, format_wfo_string
+from analysis.plots_to_display.change_over_time_backwards import version_dict, format_wfo_string
 
 repo_path = os.environ.get('KEWSCRATCHPATH')
 this_repo_path = os.path.join(repo_path, 'TaxoDrift')

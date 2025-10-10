@@ -1,12 +1,13 @@
-## TaxoDrift
+## Transitivity of Scientific Names
 
-In botanical research, and biological research more broadly, taxonomic names change frequently due to new discoveries, updated classifications, and
-revised nomenclature rules. **TaxoDrift** is a project aimed at analyzing and understanding the phenomenon of taxonomic drift and nomenclature changes
-in botanical research.
-This repository explores how taxonomic databases evolve over time and focuses on the following aspects:
-
-- Identifying and understanding taxonomic drift across different database versions.
-- Analyzing the impact of nomenclature changes on data standardization.
+Accepted scientific names are used by botanists to standardise taxonomic classifications of specimens based on authoritative taxonomic
+databases. These databases are continuously rearranged to reflect growing understanding of how plants relate to one another, and so
+'accepted' scientific names assigned to taxa are liable to change over time. This has implications for those involved in compiling botanical datasets:
+Should new records use the originally recorded, verbatim scientific names, including synonyms, misspellings etc.., or should these names be resolved
+to their corresponding accepted names as indicated by current taxonomic research? This question depends on the \textit{transitivity} of name
+resolution across versions of taxonomic databases, i.e. if Name A resolves to Name B as the `
+accepted' name in an early version of a database, and Name B resolves to Name C in a later version, will Name A also resolve to Name C in that later
+version?
 
 ### Licence
 

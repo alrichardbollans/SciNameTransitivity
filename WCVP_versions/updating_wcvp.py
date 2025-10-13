@@ -4,7 +4,7 @@ import pandas as pd
 from wcvpy.wcvp_download import get_all_taxa, add_authors_to_col
 
 from chaining_methods import compare_two_versions, chain_two_databases, get_direct_name_updates, compare_and_output_chained_and_direct_updates, \
-    summarise_results
+    summarise_results, get_overrepresented_genera
 
 repo_path = os.environ.get('KEWSCRATCHPATH')
 this_repo_path = os.path.join(repo_path, 'TaxoDrift')
@@ -101,6 +101,12 @@ def main():
                 summarise_results(os.path.join(_output_path, f'{w}_{w2}'), f'{w}_{w2}', old_tag=w)
             except:
                 print(f'Could not summarise {w}, {w2}')
+
+    # Genus results
+    v10_taxa, v11_taxa, v12_taxa, v13_taxa, v14_taxa = get_all_databases()
+    genus_counts = get_overrepresented_genera(_output_path, 'v10', 'v14', v10_taxa)
+    print(genus_counts)
+    genus_counts.to_csv(os.path.join(_output_path, f'v10_v14', 'genus_counts.csv'))
 
 
 if __name__ == '__main__':

@@ -88,6 +88,7 @@ def compare_and_output_chained_and_direct_updates(chained_updated_records, direc
     unresolved_via_chaining = results_df[results_df[new_tag + '_chained_accepted_name_w_author'].isna()]
     unresolved_via_chaining.to_csv(os.path.join(out_dir, '_'.join([old_tag, new_tag]) + '_unresolved_via_chaining.csv'))
 
+    # remove cases with no direct accepted name in new version
     results_df = results_df.dropna(subset=[new_tag + '_chained_accepted_name_w_author'])
     results_df.to_csv(os.path.join(out_dir, '_'.join([old_tag, new_tag]) + '.csv'))
     results_df = results_df[results_df[new_tag + '_direct_accepted_name_w_author'] != results_df[new_tag + '_chained_accepted_name_w_author']]
@@ -143,6 +144,26 @@ def compare_two_versions(v12_taxa: pd.DataFrame, v13_taxa: pd.DataFrame, old_tag
     problems = results_df[results_df['taxon_name_w_authors'] == results_df[f'{old_tag}_accepted_name_w_author']]
     assert len(problems) == 0
     return results_df
+
+
+def get_overrepresented_genera(_output_path: str, old_tag, new_tag, older_taxa_version):
+    dir_path = os.path.join(_output_path, f'{old_tag}_{new_tag}')
+    species_results = pd.read_csv(os.path.join(dir_path, 'species_results.csv'))
+
+    species_results['Genus'] = species_results['taxon_name_w_authors'].apply(get_genus_from_full_name)
+    genus_count = pd.DataFrame(species_results['Genus'].value_counts()).reset_index()
+    genus_count = genus_count.rename(columns={'count':'Num_names_for_genus_with_species_discrepancy'})
+
+    older_taxa_version = older_taxa_version[['genus','taxon_name_w_authors']].dropna().drop_duplicates(keep='first')
+    older_taxa_version = older_taxa_version.rename(columns={'genus':'Genus'})
+    genus_total_count = pd.DataFrame(older_taxa_version['Genus'].value_counts()).reset_index()
+    genus_total_count = genus_total_count.rename(columns={'count':'Total_names_for_genus'})
+
+    results = pd.merge(genus_count, genus_total_count, on='Genus')
+
+    results['Percent'] = 100 * results['Num_names_for_genus_with_species_discrepancy'] / results['Total_names_for_genus']
+    results = results.sort_values(by='Num_names_for_genus_with_species_discrepancy', ascending=False)
+    return results
 
 
 def summarise_results(dir_path: str, tag: str, old_tag='v10'):

@@ -4,7 +4,7 @@ Accepted scientific names are used by botanists to standardise taxonomic classif
 databases. These databases are continuously rearranged to reflect growing understanding of how plants relate to one another, and so
 'accepted' scientific names assigned to taxa are liable to change over time. This has implications for those involved in compiling botanical datasets:
 Should new records use the originally recorded, verbatim scientific names, including synonyms, misspellings etc.., or should these names be resolved
-to their corresponding accepted names as indicated by current taxonomic research? This question depends on the \textit{transitivity} of name
+to their corresponding accepted names as indicated by current taxonomic research? This question depends on the _transitivity_ of name
 resolution across versions of taxonomic databases, i.e. if Name A resolves to Name B as the `
 accepted' name in an early version of a database, and Name B resolves to Name C in a later version, will Name A also resolve to Name C in that later
 version?

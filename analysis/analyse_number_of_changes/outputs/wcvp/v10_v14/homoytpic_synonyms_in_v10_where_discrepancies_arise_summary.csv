@@ -1,0 +1,12 @@
+accepted_ipni_id,accepted_name,accepted_name_w_author,accepted_family,accepted_rank,accepted_parent,accepted_parent_w_author,accepted_parent_id,accepted_parent_ipni_id,accepted_parent_rank,plant_name_id,ipni_id,taxon_rank,taxon_status,family,genus_hybrid,genus,species_hybrid,species,infraspecific_rank,infraspecies,parenthetical_author,primary_author,publication_author,place_of_publication,volume_and_page,first_published,nomenclatural_remarks,geographic_area,lifeform_description,climate_description,taxon_name,taxon_authors,accepted_plant_name_id,basionym_plant_name_id,replaced_synonym_author,homotypic_synonym,parent_plant_name_id,powo_id,hybrid_formula,reviewed,accepted_species,accepted_species_w_author,accepted_species_ipni_id,accepted_species_id,taxon_name_w_authors
+37,37,37,37,37,35,35,35.0,35,35,37.0,36,37,37,37,0,37,0,36,12,12,15,37,7,37,37,37,14,4,2,3,37,37,37.0,30.0,15,37,0.0,37,0,37,35,35,35,35.0,37
+32,32,32,25,3,29,29,,29,2,,36,5,3,25,0,33,0,35,3,11,12,36,7,37,37,36,3,4,2,2,37,36,,,12,1,,37,0,2,30,30,30,,37
+818181-1,Solanum alatum,Solanum alatum Moench,Asteraceae,Species,Solanum,Solanum L.,,30000630-2,Genus,,262054-1,Species,Synonym,Asteraceae,,Solanum,,coeruleum,var.,rotundifolium,Hook.f.,Schltr.,S.Watson & al.,Epimel. Bot.,: 236,(1868),", nom. superfl.",British Columbia to Montana,perennial,seasonally dry tropical,Dammara rumphii,(Rchb.f.) Schltr.,,,L.,T,,262054-1,,N,Solanum alatum,Solanum alatum Moench,818181-1,,Dammara rumphii C.Presl
+2,2,2,4,31,2,2,,2,31,,1,24,23,4,,2,,2,8,2,2,2,1,1,1,2,9,1,1,2,1,2,,,3,37,,1,,24,2,2,2,,1
+,,,,,,,1966023.2,,,2074337.027027027,,,,,,,,,,,,,,,,,,,,,,,2010826.7027027027,1791084.5666666667,,,,,,,,,,1964863.3142857142,
+,,,,,,,1237842.8942858337,,,1226825.5917553708,,,,,,,,,,,,,,,,,,,,,,,1217100.0432798096,1257355.7596873187,,,,,,,,,,1233433.5120982588,
+,,,,,,,4503.0,,,56194.0,,,,,,,,,,,,,,,,,,,,,,,4514.0,22101.0,,,,,,,,,,4514.0,
+,,,,,,,482330.0,,,514864.0,,,,,,,,,,,,,,,,,,,,,,,482410.0,479943.75,,,,,,,,,,482410.0,
+,,,,,,,2491975.0,,,2684493.0,,,,,,,,,,,,,,,,,,,,,,,2605805.0,2512082.0,,,,,,,,,,2590759.0,
+,,,,,,,2983601.5,,,3062766.0,,,,,,,,,,,,,,,,,,,,,,,3011264.0,2835965.0,,,,,,,,,,2968079.5,
+,,,,,,,3189878.0,,,3275451.0,,,,,,,,,,,,,,,,,,,,,,,3178021.0,3231869.0,,,,,,,,,,3169652.0,

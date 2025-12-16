@@ -69,7 +69,7 @@ def full_chain_results():
     pass
 
 
-def get_all_databases():
+def get_all_databases(do_summaries=False):
     # v10_taxa = get_all_taxa(version='10', output_csv=os.path.join(_input_path, 'v10_taxa.csv'))
     # v11_taxa = get_all_taxa(version='11', output_csv=os.path.join(_input_path, 'v11_taxa.csv'))
     # v12_taxa = get_all_taxa(version='12', output_csv=os.path.join(_input_path, 'v12_taxa.csv'))
@@ -88,10 +88,19 @@ def get_all_databases():
     v13_taxa['taxon_name_w_authors'] = add_authors_to_col(v13_taxa, 'taxon_name')
     v14_taxa['taxon_name_w_authors'] = add_authors_to_col(v14_taxa, 'taxon_name')
 
+    if do_summaries:
+        v10_taxa.describe(include='all').to_csv(os.path.join(_input_path, 'v10_taxa_summary.csv'))
+        v11_taxa.describe(include='all').to_csv(os.path.join(_input_path, 'v11_taxa_summary.csv'))
+        v12_taxa.describe(include='all').to_csv(os.path.join(_input_path, 'v12_taxa_summary.csv'))
+        v13_taxa.describe(include='all').to_csv(os.path.join(_input_path, 'v13_taxa_summary.csv'))
+        v14_taxa.describe(include='all').to_csv(os.path.join(_input_path, 'v14_taxa_summary.csv'))
+
     return v10_taxa, v11_taxa, v12_taxa, v13_taxa, v14_taxa
 
 
 def main():
+    get_all_databases(do_summaries=True)
+
     compare_all_pairs()
     full_chain_results()
     summarise_results(os.path.join(_output_path, f'full_chain'), f'v10_11_12_13_v14', old_tag='v10')

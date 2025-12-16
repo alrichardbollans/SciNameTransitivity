@@ -1,0 +1,5 @@
+,taxonID,taxon_name,taxon_name_w_authors,accepted_name,accepted_name_w_author,accepted_name_id,accepted_species,accepted_species_w_author,accepted_genus,taxon_rank,taxon_status
+count,1279797,1279797,1279797,1279797,1279797,1279797,1251356,1251356,1279797,1279797,1279797
+unique,1279797,1236011,1278357,445256,448390,448594,383073,423006,18102,14,2
+top,wfo-1200026944,Begonia repens,Medicago littoralis f. sinistrorsa Urb.,Solanum tuberosum,Solanum tuberosum L.,wfo-0001031908,Solanum tuberosum,Solanum tuberosum L.,Astragalus,Species,Synonym
+freq,1,9,4,622,622,622,622,622,11366,982271,831203

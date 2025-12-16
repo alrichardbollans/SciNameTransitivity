@@ -1,0 +1,5 @@
+,taxonID,taxon_name,taxon_name_w_authors,accepted_name,accepted_name_w_author,accepted_name_id,accepted_species,accepted_species_w_author,accepted_genus,taxon_rank,taxon_status
+count,1337898,1337898,1337898,1337898,1337898,1337898,1306515,1306515,1337898,1337898,1337898
+unique,1337898,1287932,1336130,435178,438290,438478,371351,414787,17856,14,2
+top,wfo-1000049427,Cineraria integrifolia,Jungermannia lichenastrum Dill. ex F. Weber,Solanum tuberosum,Solanum tuberosum L.,wfo-0001031908,Solanum tuberosum,Solanum tuberosum L.,Astragalus,Species,Synonym
+freq,1,9,5,622,622,622,622,622,11369,1014755,899420

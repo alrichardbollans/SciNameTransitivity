@@ -1,0 +1,5 @@
+,taxonID,taxon_name,taxon_name_w_authors,accepted_name,accepted_name_w_author,accepted_name_id,accepted_species,accepted_species_w_author,accepted_genus,taxon_rank,taxon_status
+count,1253748,1253748,1253748,1253748,1253748,1253748,1226653,1226653,1253748,1253748,1253748
+unique,1253748,1214532,1252837,439100,442083,442257,379322,417460,18190,12,4
+top,wfo-4001303530,Cineraria integrifolia,Medicago obscura f. sinistrorsa Urb.,Solanum tuberosum,Solanum tuberosum L.,wfo-0001031908,Solanum tuberosum,Solanum tuberosum L.,Astragalus,Species,Synonym
+freq,1,9,5,624,624,624,624,624,10426,966322,811432

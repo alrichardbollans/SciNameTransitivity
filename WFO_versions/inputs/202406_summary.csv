@@ -1,0 +1,5 @@
+,taxonID,taxon_name,taxon_name_w_authors,accepted_name,accepted_name_w_author,accepted_name_id,accepted_species,accepted_species_w_author,accepted_genus,taxon_rank,taxon_status
+count,1435143,1435143,1435143,1435143,1435143,1435143,1395935,1395935,1435143,1435143,1435143
+unique,1435143,1377018,1432486,443380,445057,445160,376113,422863,15960,15,2
+top,wfo-1000065718,Orchis angustifolia subf. immaculata,Orchis angustifolia subf. immaculata Klinge,Rosa canina,Rosa canina L.,wfo-0001005999,Rosa canina,Rosa canina L.,Hieracium,Species,Synonym
+freq,1,9,9,1132,1132,1132,1132,1132,11894,1039188,989983

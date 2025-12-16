@@ -1,0 +1,5 @@
+,taxonID,taxon_name,taxon_name_w_authors,accepted_name,accepted_name_w_author,accepted_name_id,accepted_species,accepted_species_w_author,accepted_genus,taxon_rank,taxon_status
+count,1046477,1046477,1046477,1046477,1046477,1046477,1026043,1026043,1046477,1046477,1046477
+unique,1046477,1014809,1046298,389770,389783,389788,350009,370669,17793,7,4
+top,wfo-4001303479,Solanum scandens,Lycium japonicum Thunb.,Solanum tuberosum,Solanum tuberosum L.,wfo-0001031908,Solanum tuberosum,Solanum tuberosum L.,Carex,Species,Synonym
+freq,1,8,4,627,627,627,627,627,9559,807690,652909

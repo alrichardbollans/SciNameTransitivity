@@ -264,9 +264,14 @@ def look_at_example(old_wfo_data, new_wfo_data, taxon_name_w_authors):
 
 
 if __name__ == '__main__':
-    get_other_versions()
+    oversions = get_other_versions()
+    for v in oversions:
+        oversions[v].describe(include='all').to_csv(os.path.join('inputs', f'{v}_summary.csv'))
     new, new_tag = get_latest_version()
+    new.describe(include='all').to_csv(os.path.join('inputs', f'{new_tag}_summary.csv'))
     old, old_tag = get_oldest_version()
+    old.describe(include='all').to_csv(os.path.join('inputs', f'{old_tag}_summary.csv'))
+
     look_at_example(old, new, 'Senecio bowenkampi Phil.')
     look_at_example(old, new, 'Haplopappus wigginsii S.F.Blake')
     look_at_example(old, new, 'Helichrysum leptolepis DC.')

@@ -1,0 +1,5 @@
+,taxonID,taxon_name,taxon_name_w_authors,accepted_name,accepted_name_w_author,accepted_name_id,accepted_species,accepted_species_w_author,accepted_genus,taxon_rank,taxon_status
+count,1247807,1247807,1247807,1247807,1247807,1247807,1220713,1220713,1247807,1247807,1247807
+unique,1247807,1208750,1246939,437654,440630,440799,378804,416165,18186,12,4
+top,wfo-4001303530,Cineraria integrifolia,Rosa davurica Pall.,Solanum tuberosum,Solanum tuberosum L.,wfo-0001031908,Solanum tuberosum,Solanum tuberosum L.,Carex,Species,Synonym
+freq,1,9,2,624,624,624,624,624,10207,965738,806949

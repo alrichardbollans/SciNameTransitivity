@@ -1,0 +1,5 @@
+,taxonID,taxon_name,taxon_name_w_authors,accepted_name,accepted_name_w_author,accepted_name_id,accepted_species,accepted_species_w_author,accepted_genus,taxon_rank,taxon_status
+count,1386144,1386144,1386144,1386144,1386144,1386144,1346442,1346442,1386144,1386144,1386144
+unique,1386144,1330953,1383373,440784,443416,443619,374582,419760,17966,14,2
+top,wfo-1000057513,Solanum scandens,Orchis angustifolia subf. immaculata Klinge,Solanum tuberosum,Solanum tuberosum L.,wfo-0001031908,Solanum tuberosum,Solanum tuberosum L.,Astragalus,Species,Synonym
+freq,1,9,9,826,826,826,826,826,11619,1023759,942525
